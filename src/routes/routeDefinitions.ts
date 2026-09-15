@@ -15,7 +15,7 @@ export const routeDefinitions: RouteDefinition[] = [
     referenceScreenshot: 'ProjectsDetail.jpg',
     figmaNode: null,
   },
-  { path: '/contact', title: 'Contact', referenceScreenshot: 'Contact.jpg', figmaNode: null },
+  { path: '/contact', title: 'Contact', referenceScreenshot: 'Contact.jpg', figmaNode: '565:3751' },
   {
     path: '/services/asphalt-paving',
     title: 'Asphalt Paving',

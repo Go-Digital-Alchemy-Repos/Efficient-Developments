@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { PageShell } from './components/layout/PageShell'
+import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { RouteScaffold } from './pages/RouteScaffold'
 import { routeDefinitions } from './routes/routeDefinitions'
@@ -9,7 +10,8 @@ export function App() {
     <Routes>
       <Route element={<PageShell />}>
         <Route path="/" element={<HomePage />} />
-        {routeDefinitions.filter((route) => route.path !== '/').map((route) => (
+        <Route path="/contact" element={<ContactPage />} />
+        {routeDefinitions.filter((route) => route.path !== '/' && route.path !== '/contact').map((route) => (
           <Route
             key={route.path}
             path={route.path}
