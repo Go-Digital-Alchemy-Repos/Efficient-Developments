@@ -603,3 +603,11 @@ The objective is to ensure that the correct project is built correctly, safely, 
 After completing and validating authorized repository changes, commit and push them to the active remote branch.
 
 Never include unrelated or unverified working-tree changes in a commit.
+
+---
+
+## 27. Codex Workspace Preference
+
+When editing, inspecting, previewing, or reviewing project work, prefer the Codex sidebar and native Codex panels when the required capability is available.
+
+Open an external browser only when a task genuinely requires browser-specific behavior or cannot be completed effectively through the Codex workspace.
