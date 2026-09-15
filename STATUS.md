@@ -15,12 +15,16 @@ Project initialization and infrastructure setup.
 - Project ID: `8b6c9f12-09ec-4df7-a25f-a742f7d812c1`
 - Project URL: `https://railway.com/project/8b6c9f12-09ec-4df7-a25f-a742f7d812c1`
 - Environment: `production`
-- GitHub service connection: Blocked pending organization-owner authorization
+- Service name: `Efficient-Developments`
+- Service ID: `8add55f7-d482-4e61-98da-20380da11216`
+- GitHub service connection: Connected to `Go-Digital-Alchemy-Repos/Efficient-Developments`
+- Automatic deployment source: GitHub `main`
+- Current deployment: Building from commit `ba2f084`
 
-## Active Blocker
+## Active Blockers
 
-GitHub reports that updating the Railway App installation for the `Go-Digital-Alchemy-Repos` organization must be performed by an organization owner. The owner must grant Railway App access to the `Efficient-Developments` repository before Railway can create the connected service.
+None.
 
 ## Next Action
 
-After an organization owner authorizes the repository, refresh Railway's GitHub repository list and deploy `Go-Digital-Alchemy-Repos/Efficient-Developments` into the existing Railway project.
+Implement the deployable website application and validate its Railway build, runtime, health check, and public networking configuration.
