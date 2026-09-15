@@ -17,6 +17,7 @@ export function Footer() {
       <Container className="site-footer__grid" size="wide">
         <div className="site-footer__brand">
           <Logo />
+          <p>Heavy civil infrastructure contractor serving municipalities and developers across the Carolinas.</p>
         </div>
         <nav aria-label="Services">
           <p className="site-footer__heading">Services</p>
@@ -28,12 +29,23 @@ export function Footer() {
           <p className="site-footer__heading">Company</p>
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
+          <Link to="/about">Careers</Link>
           <Link to="/contact">Contact</Link>
         </nav>
-        <div>
+        <div className="site-footer__contact">
           <p className="site-footer__heading">Contact</p>
+          <span>+1 (XXX) XXX-XXXX</span>
+          <span>info@example.com</span>
+          <span>Address line</span>
         </div>
       </Container>
+      <div className="site-footer__legal">
+        <p>© Efficient Developments <span>Privacy Policy · Terms</span></p>
+        <div className="site-footer__made-by">
+          <span>Made by</span>
+          <img src="/assets/logos/digital-alchemy.svg" alt="Digital Alchemy" />
+        </div>
+      </div>
     </footer>
   )
 }

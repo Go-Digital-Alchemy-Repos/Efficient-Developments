@@ -6,7 +6,7 @@ export type RouteDefinition = {
 }
 
 export const routeDefinitions: RouteDefinition[] = [
-  { path: '/', title: 'Home', referenceScreenshot: 'Homepage.jpg', figmaNode: '565:3071' },
+  { path: '/', title: 'Home', referenceScreenshot: 'Homepage.jpg', figmaNode: '565:3145' },
   { path: '/about', title: 'About', referenceScreenshot: 'About.jpg', figmaNode: null },
   { path: '/projects', title: 'Projects', referenceScreenshot: 'Projects.jpg', figmaNode: null },
   {

@@ -18,7 +18,7 @@ export function Header() {
   return (
     <header className="site-header">
       <Container className="site-header__inner" size="wide">
-        <Logo className="site-header__logo" />
+        <Logo className="site-header__logo" variant="header" />
         <button
           type="button"
           className="mobile-nav-toggle"
@@ -50,7 +50,7 @@ export function Header() {
           ))}
         </nav>
         <ButtonLink className="site-header__cta" to="/contact">
-          Contact Us <span aria-hidden="true">↗</span>
+          Contact Us <img aria-hidden="true" src="/assets/icons/cta-arrow.svg" alt="" />
         </ButtonLink>
       </Container>
     </header>

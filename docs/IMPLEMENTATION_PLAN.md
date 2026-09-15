@@ -4,16 +4,17 @@
 
 - Reference screenshots: all 11 desktop JPG files inspected at their original 1440px width.
 - Figma target: file `6SGP9lxIhielddd4rH0LCJ`, node `565:3071`.
-- Figma `get_design_context`: attempted first as required, but the configured Figma connector is not connected.
-- Figma metadata and per-variant screenshots: pending connection. No node IDs beyond the supplied node have been guessed.
-- Mobile references: not present in the supplied screenshot folder and not yet retrievable from Figma.
+- Figma connector: connected and authenticated on 2026-09-16; access to file `6SGP9lxIhielddd4rH0LCJ`, node `565:3071`, was verified through metadata retrieval.
+- Figma `get_design_context` and the exact 1440×6419 screenshot for homepage frame `565:3145`: retrieved and implemented on 2026-09-16.
+- Remaining route design contexts, variables, and per-variant screenshots: pending retrieval. No node IDs beyond verified metadata have been guessed.
+- Mobile references: not present in the supplied screenshot folder and not yet retrieved from Figma.
 - Website images and logos: intentionally not downloaded; the project owner will supply them.
 
 ## Route map
 
 | Route | Figma frame | Reference screenshot | Variant status |
 | --- | --- | --- | --- |
-| `/` | `565:3071` supplied; exact frame role pending Figma access | `Homepage.jpg` (1440×6419) | Desktop inspected; mobile missing |
+| `/` | `565:3145` (`Homepage/`), verified within supplied canvas `565:3071` | `Homepage.jpg` (1440×6419) | Desktop implemented and verified; mobile reference missing |
 | `/about` | Pending metadata | `About.jpg` (1440×3333) | Desktop inspected; mobile missing |
 | `/projects` | Pending metadata | `Projects.jpg` (1440×1628) | Desktop inspected; mobile missing |
 | `/projects/:projectSlug` | Pending metadata | `ProjectsDetail.jpg` (1440×2849) | Desktop inspected; mobile missing |
@@ -55,13 +56,13 @@ Observed image treatments include:
 
 ## Design-system status
 
-CSS custom properties live in `src/styles/tokens.css`. Current tokens are deliberately labeled screenshot-observed and should be reconciled against Figma variables/properties after access is connected. Exact Figma values take precedence.
+CSS custom properties live in `src/styles/tokens.css`. Homepage colors and font families have been reconciled against frame `565:3145`; tokens not exercised by that frame still require verification against relevant Figma variables/properties. Exact Figma values take precedence.
 
 The screenshots establish these stable design directions: white and pale-gray surfaces, charcoal text, muted green accents, condensed uppercase display typography, neutral sans-serif body copy, square buttons/controls, fine gray dividers, wide desktop gutters, and a 1440px presentation canvas.
 
 ## Unknowns and required follow-up
 
-1. Connect Figma, then rerun `get_design_context` on `565:3071` before page-section implementation.
+1. Run `get_design_context` on each verified page/frame node before implementing that route.
 2. Use metadata only if the supplied node is too broad; retrieve exact child frames and screenshots for every desktop and mobile variant.
 3. Confirm exact font family files/weights and licensing. The screenshot suggests a condensed display family but does not prove its identity.
 4. Reconcile exact colors, type metrics, gutters, container widths, breakpoints, radii, shadows, and controls against Figma.

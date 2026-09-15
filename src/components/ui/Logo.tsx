@@ -1,13 +1,15 @@
 import type { ImgHTMLAttributes } from 'react'
 
 type LogoProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
-  variant?: 'default' | 'inverse'
+  variant?: 'default' | 'header' | 'inverse'
 }
 
 export function Logo({ className = '', onError, variant = 'default', ...props }: LogoProps) {
   const source = variant === 'inverse'
     ? '/assets/logos/efficient-developments-inverse.svg'
-    : '/assets/logos/efficient-developments.svg'
+    : variant === 'header'
+      ? '/assets/logos/efficient-developments-header.svg'
+      : '/assets/logos/efficient-developments.svg'
 
   return (
     <img

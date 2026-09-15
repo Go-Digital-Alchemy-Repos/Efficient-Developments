@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Project foundation and design-system setup.
+Homepage implementation and design-system reconciliation.
 
 ## Repository
 
@@ -23,12 +23,21 @@ Project foundation and design-system setup.
 
 ## Active Blockers
 
-- The Figma connector is not connected, so exact node metadata, design context,
-  variables, and per-variant screenshots cannot yet be retrieved.
-- Source website images and logos are pending delivery from the project owner.
-- Mobile references are not present in the supplied screenshot folder.
+- Owner-supplied source assets for routes beyond the homepage remain pending.
+- Mobile reference frames have not yet been identified in Figma.
+
+## Completed
+
+- Implemented the `/` route from Figma frame `565:3145` using exact exported
+  imagery, logos, icons, and locally hosted Inter and Oswald fonts.
+- Reconciled the shared color and typography tokens used by the homepage against
+  the Figma design context.
+- Verified the 1440px desktop render against the exact 1440×6419 Figma screenshot
+  and the supplied `Homepage.jpg`; all documented section boundaries align.
+- Verified lint, TypeScript/Vite production build, responsive overflow at tablet
+  and mobile widths, and a clean browser console.
 
 ## Next Action
 
-Connect Figma, reconcile screenshot-derived tokens against exact design values,
-ingest the owner-supplied assets without modifying them, and begin shared page-section implementation.
+Review and accept the implemented homepage, identify any available mobile Figma
+frames, then retrieve the next approved route's exact design context and assets.
