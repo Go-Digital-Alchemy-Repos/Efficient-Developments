@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Project initialization and infrastructure setup.
+Project foundation and design-system setup.
 
 ## Repository
 
@@ -23,8 +23,12 @@ Project initialization and infrastructure setup.
 
 ## Active Blockers
 
-None.
+- The Figma connector is not connected, so exact node metadata, design context,
+  variables, and per-variant screenshots cannot yet be retrieved.
+- Source website images and logos are pending delivery from the project owner.
+- Mobile references are not present in the supplied screenshot folder.
 
 ## Next Action
 
-Implement the deployable website application and validate its Railway build, runtime, health check, and public networking configuration.
+Connect Figma, reconcile screenshot-derived tokens against exact design values,
+ingest the owner-supplied assets without modifying them, and begin shared page-section implementation.

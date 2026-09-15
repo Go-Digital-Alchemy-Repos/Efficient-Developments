@@ -1,0 +1,88 @@
+:root {
+  /* Screenshot-observed values. Replace only with exact Figma values once access is connected. */
+  --color-ink: #1d2024;
+  --color-ink-soft: #3d3f3d;
+  --color-text-muted: #717783;
+  --color-white: #ffffff;
+  --color-surface-muted: #e6e7ea;
+  --color-surface-deep: #1d2024;
+  --color-green: #62aa7d;
+  --color-green-dark: #3f5b42;
+  --color-border: #d6d8db;
+  --color-overlay: rgb(15 18 19 / 58%);
+
+  --font-display: "Oswald", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-card: clamp(1.5rem, 2vw, 2rem);
+  --font-size-section: clamp(2.25rem, 3.2vw, 3.25rem);
+  --font-size-page: clamp(3.75rem, 7vw, 6.5rem);
+  --font-size-hero: clamp(4rem, 8vw, 7.25rem);
+  --line-height-tight: 1.05;
+  --line-height-heading: 1.12;
+  --line-height-body: 1.5;
+  --letter-spacing-display: 0;
+  --letter-spacing-label: 0.02em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --border-width: 1px;
+  --border-accent-width: 3px;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-card: 0 0.125rem 0.5rem rgb(29 32 36 / 10%);
+
+  --container-content: 81rem;
+  --container-wide: 90rem;
+  --page-gutter: 4.5rem;
+  --section-space-compact: 4rem;
+  --section-space-default: 6rem;
+  --section-space-spacious: 8rem;
+
+  --header-height: 5.625rem;
+  --button-height: 2.875rem;
+  --button-padding-inline: 1.75rem;
+  --control-height: 2.875rem;
+
+  --breakpoint-mobile: 47.9375rem;
+  --breakpoint-tablet: 63.9375rem;
+  --breakpoint-desktop: 90rem;
+
+  --aspect-landscape: 16 / 9;
+  --aspect-project-card: 1.67 / 1;
+  --aspect-portrait-card: 0.78 / 1;
+}
+
+@media (max-width: 63.9375rem) {
+  :root {
+    --page-gutter: 2rem;
+    --section-space-default: 5rem;
+    --section-space-spacious: 6rem;
+  }
+}
+
+@media (max-width: 47.9375rem) {
+  :root {
+    --page-gutter: 1.25rem;
+    --section-space-compact: 3rem;
+    --section-space-default: 4rem;
+    --section-space-spacious: 5rem;
+  }
+}
