@@ -1,10 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { PageShell } from './components/layout/PageShell'
+import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { ProjectDetailPage } from './pages/ProjectDetailPage'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { RouteScaffold } from './pages/RouteScaffold'
+import { ServicePage } from './pages/ServicePage'
 import { routeDefinitions } from './routes/routeDefinitions'
 
 export function App() {
@@ -12,15 +14,19 @@ export function App() {
     <Routes>
       <Route element={<PageShell />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetailPage />} />
+        <Route path="/services/:serviceSlug" element={<ServicePage />} />
         {routeDefinitions
           .filter((route) => (
             route.path !== '/'
+            && route.path !== '/about'
             && route.path !== '/contact'
             && route.path !== '/projects'
             && route.path !== '/projects/:projectSlug'
+            && !route.path.startsWith('/services/')
           ))
           .map((route) => (
             <Route

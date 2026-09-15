@@ -73,6 +73,7 @@ html {
   background: var(--color-white);
   font-family: var(--font-body);
   line-height: var(--line-height-body);
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
 

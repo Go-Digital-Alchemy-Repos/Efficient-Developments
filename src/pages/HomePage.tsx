@@ -1,3 +1,4 @@
+import { type CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
@@ -26,6 +27,18 @@ const services = [
     description: 'Shared-use paths, trails, and pedestrian infrastructure for communities.',
     image: '/assets/images/service-greenways.png',
     to: '/services/greenways',
+  },
+  {
+    title: 'Roads & Bridges',
+    description: 'Road and bridge construction for municipalities and DOT projects across the Carolinas.',
+    image: '/assets/images/service-roads-bridges.jpg',
+    to: '/services/roads-bridges',
+  },
+  {
+    title: 'Underground Utilities',
+    description: 'Water, sewer, and storm line installation for municipalities and developments.',
+    image: '/assets/images/service-underground-utilities.jpg',
+    to: '/services/underground-utilities',
   },
 ]
 
@@ -63,11 +76,78 @@ const expectations = [
   },
 ]
 
+const workPrinciples = [
+  {
+    title: 'Self-Performed Work',
+    description: 'Our own crews handle grading, paving, concrete, and utility installation - keeping scheduling and quality control under one roof.',
+  },
+  {
+    title: 'One Contract, One Contractor',
+    description: 'One contractor remains accountable for the full scope of work, giving every phase one clear owner.',
+  },
+  {
+    title: 'Experienced Management',
+    description: 'Experienced leadership keeps crews, schedules, and quality standards aligned from planning through completion.',
+  },
+  {
+    title: 'Thorough Estimating',
+    description: 'Detailed estimating establishes realistic scopes, schedules, and budgets before work begins.',
+  },
+  {
+    title: 'Clear Communication',
+    description: 'Straightforward communication keeps owners, partners, and crews informed throughout every phase.',
+  },
+]
+
 function ArrowIcon() {
   return <img className="cta-arrow" aria-hidden="true" src="/assets/icons/cta-arrow.svg" alt="" />
 }
 
 export function HomePage() {
+  const servicesViewportRef = useRef<HTMLDivElement>(null)
+  const servicesSliderRef = useRef<HTMLInputElement>(null)
+  const [servicesScroll, setServicesScroll] = useState(0)
+  const [servicesThumbWidth, setServicesThumbWidth] = useState(298)
+  const [activeWorkPrinciple, setActiveWorkPrinciple] = useState<number | null>(0)
+
+  const syncServicesSlider = useCallback(() => {
+    const viewport = servicesViewportRef.current
+    const slider = servicesSliderRef.current
+
+    if (!viewport || !slider) return
+
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth
+    setServicesScroll(maxScroll > 0 ? (viewport.scrollLeft / maxScroll) * 100 : 0)
+    setServicesThumbWidth(Math.max(40, slider.clientWidth * (viewport.clientWidth / viewport.scrollWidth)))
+  }, [])
+
+  useEffect(() => {
+    syncServicesSlider()
+
+    const viewport = servicesViewportRef.current
+    const slider = servicesSliderRef.current
+    if (!viewport || !slider) return
+
+    const observer = new ResizeObserver(syncServicesSlider)
+    observer.observe(viewport)
+    observer.observe(slider)
+
+    return () => observer.disconnect()
+  }, [syncServicesSlider])
+
+  const handleServicesSlider = (value: number) => {
+    const viewport = servicesViewportRef.current
+    if (!viewport) return
+
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth
+    viewport.scrollLeft = maxScroll * (value / 100)
+    setServicesScroll(value)
+  }
+
+  const servicesSliderStyle = {
+    '--services-slider-thumb-width': `${servicesThumbWidth}px`,
+  } as CSSProperties
+
   return (
     <main id="main-content" className="home-page">
       <section className="home-hero" aria-labelledby="home-hero-title">
@@ -99,16 +179,28 @@ export function HomePage() {
           </div>
           <ButtonLink to="/about">Learn More <ArrowIcon /></ButtonLink>
           <div className="work-principles">
-            <article className="work-principle work-principle--active">
-              <Heading as="h3" size="card">Self-Performed Work</Heading>
-              <p>Our own crews handle grading, paving, concrete, and utility installation - keeping scheduling and quality control under one roof.</p>
-            </article>
-            {['One Contract, One Contractor', 'Experienced Management', 'Thorough Estimating', 'Clear Communication'].map((item) => (
-              <article className="work-principle" key={item}>
-                <Heading as="h3" size="card">{item}</Heading>
-                <span aria-hidden="true">↗</span>
-              </article>
-            ))}
+            {workPrinciples.map((item, index) => {
+              const isActive = activeWorkPrinciple === index
+              const panelId = `work-principle-panel-${index}`
+
+              return (
+                <article className={`work-principle${isActive ? ' is-active' : ''}`} key={item.title}>
+                  <button
+                    aria-controls={panelId}
+                    aria-expanded={isActive}
+                    className="work-principle__trigger"
+                    onClick={() => setActiveWorkPrinciple(isActive ? null : index)}
+                    type="button"
+                  >
+                    <Heading as="h3" size="card">{item.title}</Heading>
+                    <span className="work-principle__indicator" aria-hidden="true">{isActive ? '−' : '↗'}</span>
+                  </button>
+                  <div className="work-principle__panel" id={panelId} aria-hidden={!isActive}>
+                    <div><p>{item.description}</p></div>
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -120,21 +212,40 @@ export function HomePage() {
           <p>Paving, concrete, utilities, greenways, and bridge work - performed by our own crews.</p>
         </div>
         <div className="services-carousel">
-          <div className="services-carousel__row">
-            {services.map((service) => (
-              <Link className="service-card" to={service.to} key={service.title}>
-                <img src={service.image} alt="" />
-                <div className="service-card__panel">
-                  <div>
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
+          <div
+            aria-label="Service cards"
+            className="services-carousel__viewport"
+            onScroll={syncServicesSlider}
+            ref={servicesViewportRef}
+            tabIndex={0}
+          >
+            <div className="services-carousel__row">
+              {services.map((service) => (
+                <Link className="service-card" to={service.to} key={service.title}>
+                  <img src={service.image} alt="" />
+                  <div className="service-card__panel">
+                    <div>
+                      <h3>{service.title}</h3>
+                      <p>{service.description}</p>
+                    </div>
+                    <span className="service-card__arrow" aria-hidden="true"><img src="/assets/icons/chevron.svg" alt="" /></span>
                   </div>
-                  <span className="service-card__arrow" aria-hidden="true"><img src="/assets/icons/chevron.svg" alt="" /></span>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
-          <img className="services-carousel__bar" src="/assets/icons/slider-bar.svg" alt="" aria-hidden="true" />
+          <input
+            aria-label="Scroll through services"
+            className="services-carousel__slider"
+            max="100"
+            min="0"
+            onChange={(event) => handleServicesSlider(Number(event.currentTarget.value))}
+            ref={servicesSliderRef}
+            step="0.1"
+            style={servicesSliderStyle}
+            type="range"
+            value={servicesScroll}
+          />
         </div>
       </section>
 
@@ -150,7 +261,7 @@ export function HomePage() {
         <div className="who-we-work-with__image">
           <img src="/assets/images/home-who-we-work-with.png" alt="Civil construction site serving a growing community" />
           <div className="who-we-work-with__overlay">
-            <p>Who We Work With</p>
+            <Eyebrow className="eyebrow--on-dark">Who We Work With</Eyebrow>
             <Heading id="who-title">Building For Those Who Build Communities</Heading>
             <p>From municipal governments to private developers, we partner with organizations that shape the built environment. Our expertise spans public infrastructure, commercial construction, and residential development.</p>
           </div>
@@ -211,7 +322,7 @@ export function HomePage() {
 
       <section className="service-area" aria-labelledby="service-area-title">
         <div className="service-area__content">
-          <Eyebrow>Service Area</Eyebrow>
+          <Eyebrow className="eyebrow--on-dark">Service Area</Eyebrow>
           <Heading id="service-area-title">Serving Communities Across The Carolinas</Heading>
           <p>To discuss an upcoming project, get in touch with our team.</p>
           <ButtonLink to="/contact">Contact Us <span aria-hidden="true">↗</span></ButtonLink>

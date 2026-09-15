@@ -16,7 +16,9 @@ export function Footer() {
     <footer className="site-footer">
       <Container className="site-footer__grid" size="wide">
         <div className="site-footer__brand">
-          <Logo />
+          <Link aria-label="Efficient Developments home" className="site-footer__logo-link" to="/">
+            <Logo />
+          </Link>
           <p>Heavy civil infrastructure contractor serving municipalities and developers across the Carolinas.</p>
         </div>
         <nav aria-label="Services">
@@ -40,7 +42,12 @@ export function Footer() {
         </div>
       </Container>
       <div className="site-footer__legal">
-        <p>© Efficient Developments <span>Privacy Policy · Terms</span></p>
+        <p>
+          © Efficient Developments
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/terms">Terms</Link>
+        </p>
         <div className="site-footer__made-by">
           <span>Made by</span>
           <img src="/assets/logos/digital-alchemy.svg" alt="Digital Alchemy" />

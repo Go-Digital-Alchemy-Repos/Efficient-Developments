@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Homepage implementation and design-system reconciliation.
+Core marketing-page implementation and design-system reconciliation.
 
 ## Repository
 
@@ -23,7 +23,6 @@ Homepage implementation and design-system reconciliation.
 
 ## Active Blockers
 
-- Owner-supplied source assets for routes beyond the homepage remain pending.
 - Mobile reference frames have not yet been identified in Figma.
 
 ## Completed
@@ -36,8 +35,23 @@ Homepage implementation and design-system reconciliation.
   and the supplied `Homepage.jpg`; all documented section boundaries align.
 - Verified lint, TypeScript/Vite production build, responsive overflow at tablet
   and mobile widths, and a clean browser console.
+- Implemented and visually validated the `/about` route from Figma frame
+  `565:3418`, including the leadership-card modal interaction.
+- Implemented the six service routes from Figma frames `565:3488`, `565:3887`,
+  `565:3995`, `565:4101`, `565:4218`, and `565:4341` with exact local Figma
+  imagery/icons, shared service-page structure, and the cross-service sidebar.
+- Confirmed that service-page heroes contain no CTA button, per the owner's
+  correction to the supplied Figma frames and screenshots.
+- Implemented the `/contact` route using the established shared header, footer,
+  typography, form controls, and responsive layout system.
+- Implemented `/projects` and `/projects/:projectSlug`, including category
+  filtering, six-card pagination, the responsive project gallery, image
+  lightbox, and adjacent-project navigation.
+- Made the shared navigation sticky and reconciled the affected hero and project
+  offsets so completed routes retain their intended geometry.
 
 ## Next Action
 
-Review and accept the implemented homepage, identify any available mobile Figma
-frames, then retrieve the next approved route's exact design context and assets.
+Review the completed desktop routes, identify any available mobile Figma frames,
+and replace remaining placeholder business/contact copy when final content is
+provided.
