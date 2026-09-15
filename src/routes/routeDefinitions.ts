@@ -8,12 +8,12 @@ export type RouteDefinition = {
 export const routeDefinitions: RouteDefinition[] = [
   { path: '/', title: 'Home', referenceScreenshot: 'Homepage.jpg', figmaNode: '565:3145' },
   { path: '/about', title: 'About', referenceScreenshot: 'About.jpg', figmaNode: null },
-  { path: '/projects', title: 'Projects', referenceScreenshot: 'Projects.jpg', figmaNode: null },
+  { path: '/projects', title: 'Projects', referenceScreenshot: 'Projects.jpg', figmaNode: '565:3802' },
   {
     path: '/projects/:projectSlug',
     title: 'Project detail',
     referenceScreenshot: 'ProjectsDetail.jpg',
-    figmaNode: null,
+    figmaNode: '565:3595',
   },
   { path: '/contact', title: 'Contact', referenceScreenshot: 'Contact.jpg', figmaNode: '565:3751' },
   {

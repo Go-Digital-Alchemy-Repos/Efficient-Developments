@@ -7,6 +7,7 @@ import './styles/global.css'
 import './styles/components.css'
 import './styles/home.css'
 import './styles/contact.css'
+import './styles/projects.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
