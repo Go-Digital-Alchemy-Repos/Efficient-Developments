@@ -109,6 +109,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   Efficient Developments SVG while retaining responsive logo containers.
 - Rebuilt the supplied Digital Alchemy EPS as an inline footer vector, linked it
   to the agency site, and added the requested text-only green hover treatment.
+- Standardized the service offering and homepage expectation cards on the same
+  4px `#7FA67A` bottom accent border.
 
 ## Known Limitations
 
