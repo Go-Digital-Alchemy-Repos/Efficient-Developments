@@ -25,8 +25,10 @@ export function ProjectDetailPage() {
     : projects[(projectIndex + 1) % projects.length]
   const [galleryStart, setGalleryStart] = useState(0)
   const [visibleGalleryCount, setVisibleGalleryCount] = useState(4)
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const lightboxCloseRef = useRef<HTMLButtonElement>(null)
+  const lightboxDialogRef = useRef<HTMLElement>(null)
+  const isLightboxOpen = lightboxIndex !== null
   const visibleGallery = useMemo(
     () => galleryImages.slice(galleryStart, galleryStart + visibleGalleryCount),
     [galleryStart, visibleGalleryCount],
@@ -45,13 +47,21 @@ export function ProjectDetailPage() {
   }, [])
 
   useEffect(() => {
-    if (!lightboxImage) return
+    if (!isLightboxOpen) return
     const previousOverflow = document.body.style.overflow
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setLightboxImage(null)
+      if (event.key === 'Escape') setLightboxIndex(null)
+      if (event.key === 'ArrowLeft') setLightboxIndex((value) => value === null ? null : Math.max(0, value - 1))
+      if (event.key === 'ArrowRight') setLightboxIndex((value) => value === null ? null : Math.min(galleryImages.length - 1, value + 1))
       if (event.key === 'Tab') {
+        const controls = [...(lightboxDialogRef.current?.parentElement?.querySelectorAll<HTMLButtonElement>('button:not(:disabled)') ?? [])]
+        if (!controls.length) return
+        const activeIndex = controls.indexOf(document.activeElement as HTMLButtonElement)
+        const nextIndex = event.shiftKey
+          ? (activeIndex <= 0 ? controls.length - 1 : activeIndex - 1)
+          : (activeIndex + 1) % controls.length
         event.preventDefault()
-        lightboxCloseRef.current?.focus()
+        controls[nextIndex].focus()
       }
     }
     document.body.style.overflow = 'hidden'
@@ -61,7 +71,7 @@ export function ProjectDetailPage() {
       document.body.style.overflow = previousOverflow
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [lightboxImage])
+  }, [isLightboxOpen])
 
   return (
     <main id="main-content" className="project-detail-page">
@@ -110,7 +120,7 @@ export function ProjectDetailPage() {
           <button className="project-gallery__arrow" data-reveal-item disabled={galleryStart === 0} onClick={() => setGalleryStart((value) => value - 1)} type="button" aria-label="Previous photos">‹</button>
           <div className="project-gallery__row">
             {visibleGallery.map((image, index) => (
-              <button className="project-gallery__image" data-reveal-delay={String(index + 1)} data-reveal-item key={image} onClick={() => setLightboxImage(image)} type="button" aria-label={`Enlarge project photo ${galleryStart + index + 1}`}>
+              <button className="project-gallery__image" data-reveal-delay={String(index + 1)} data-reveal-item key={image} onClick={() => setLightboxIndex(galleryStart + index)} type="button" aria-label={`Enlarge project photo ${galleryStart + index + 1}`}>
                 <img src={image} alt="" />
               </button>
             ))}
@@ -131,12 +141,16 @@ export function ProjectDetailPage() {
       </nav>
       <div className="project-stripes" aria-hidden="true" />
 
-      {lightboxImage && (
-        <div className="project-lightbox" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setLightboxImage(null) }}>
-          <section aria-label="Enlarged project photo" aria-modal="true" role="dialog">
-            <img src={lightboxImage} alt="Enlarged project view" />
-            <ModalCloseButton aria-label="Close enlarged photo" onClick={() => setLightboxImage(null)} ref={lightboxCloseRef} />
+      {lightboxIndex !== null && (
+        <div className="project-lightbox" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setLightboxIndex(null) }}>
+          <button aria-label="Previous project image" className="project-gallery__arrow project-lightbox__arrow project-lightbox__arrow--previous" disabled={lightboxIndex === 0} onClick={() => setLightboxIndex((value) => value === null ? null : value - 1)} type="button">‹</button>
+          <section aria-label={`Enlarged project photo ${lightboxIndex + 1} of ${galleryImages.length}`} aria-modal="true" className="project-lightbox__dialog" ref={lightboxDialogRef} role="dialog">
+            <div className="project-lightbox__content">
+              <img src={galleryImages[lightboxIndex]} alt={`Enlarged project view ${lightboxIndex + 1} of ${galleryImages.length}`} />
+            </div>
+            <ModalCloseButton className="modal-close--project-lightbox" aria-label="Close enlarged photo" onClick={() => setLightboxIndex(null)} ref={lightboxCloseRef} />
           </section>
+          <button aria-label="Next project image" className="project-gallery__arrow project-lightbox__arrow project-lightbox__arrow--next" disabled={lightboxIndex === galleryImages.length - 1} onClick={() => setLightboxIndex((value) => value === null ? null : value + 1)} type="button">›</button>
         </div>
       )}
     </main>

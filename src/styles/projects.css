@@ -252,9 +252,30 @@
   background: var(--color-ink) url('/assets/images/projects/detail/diagonal-stripe-pattern.svg') center / cover no-repeat;
 }
 
-.project-lightbox { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 32px; background: rgb(0 0 0 / 84%); }
-.project-lightbox section { position: relative; max-width: min(1200px, 92vw); max-height: 90vh; overflow: hidden; background: var(--color-white); border: 1px solid var(--color-border); border-radius: 16px; box-shadow: 0 16px 40px rgb(0 0 0 / 50%); }
-.project-lightbox section > img { display: block; max-height: 90vh; object-fit: contain; }
+.project-lightbox { position: fixed; z-index: 100; inset: 0; height: 100dvh; display: grid; place-items: center; overflow: hidden; background: rgb(0 0 0 / 84%); }
+
+.project-lightbox__dialog {
+  position: relative;
+  width: min(1100px, calc(100vw - 144px));
+  max-height: clamp(1px, calc(100dvh - 400px), 800px);
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 50%);
+}
+
+.project-lightbox__content {
+  max-height: inherit;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.project-lightbox__content > img { width: 100%; height: auto; display: block; }
+.modal-close--project-lightbox { z-index: 1; }
+.project-lightbox__arrow { position: absolute; z-index: 1; top: 50%; translate: 0 -50%; }
+.project-lightbox__arrow--previous { left: 26px; }
+.project-lightbox__arrow--next { right: 26px; }
 
 @media (max-width: 63.9375rem) {
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -295,5 +316,4 @@
   .project-sequence__item + .project-sequence__item { border-top: 1px solid #3d503b; border-left: 0; }
   .project-sequence__item strong { white-space: normal; }
   .project-stripes { height: 48px; }
-  .project-lightbox { padding: 16px; }
 }

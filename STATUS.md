@@ -117,6 +117,10 @@ replacement, mobile-reference reconciliation, and production integration work.
   homepage project statistics without changing their final content or sizing.
 - Matched the project image lightbox to the About bio modal with a shared
   rounded shell treatment and reusable circular close control.
+- Isolated the project image lightbox dimensions from the bio modal with a
+  dedicated viewport-constrained dialog and internally scrollable content area.
+- Added accessible previous and next controls to the project image lightbox,
+  including keyboard arrow navigation and endpoint states matching the gallery.
 
 ## Known Limitations
 
