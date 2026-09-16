@@ -238,7 +238,11 @@
 .project-stats > div { width: 214px; display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid #b6bac1; }
 .project-stats > div:last-child { width: 196px; }
 .project-stats strong { color: var(--color-text-muted); font-family: var(--font-display); font-size: 96px; line-height: 104px; letter-spacing: -0.27px; }
-.project-stats span { color: #333; font-size: 20px; font-weight: 600; line-height: 24px; padding-bottom: 8px; }
+.stat-counter { display: inline-grid; white-space: nowrap; }
+.stat-counter__sizer,
+.stat-counter__value { grid-area: 1 / 1; }
+.stat-counter__sizer { visibility: hidden; }
+.project-stats > div > span { color: #333; font-size: 20px; font-weight: 600; line-height: 24px; padding-bottom: 8px; }
 
 .testimonial {
   height: 493px;
@@ -333,7 +337,7 @@
   .project-stats { gap: 20px; }
   .project-stats > div, .project-stats > div:last-child { width: calc(50% - 10px); }
   .project-stats strong { font-size: 64px; line-height: 72px; }
-  .project-stats span { font-size: 15px; }
+  .project-stats > div > span { font-size: 15px; }
   .testimonial { min-height: 560px; padding: 64px var(--page-gutter); }
   .testimonial-carousel__viewport { height: 340px; }
   .testimonial blockquote p { font-size: 19px; line-height: 28px; }

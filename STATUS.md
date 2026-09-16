@@ -113,6 +113,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   4px `#7FA67A` bottom accent border.
 - Centralized the six service hero image sources and reused them directly for
   the matching homepage service cards with cache-safe asset URLs.
+- Added a one-time, staggered, reduced-motion-aware count-up treatment to the
+  homepage project statistics without changing their final content or sizing.
 
 ## Known Limitations
 

@@ -1,5 +1,6 @@
 import { type CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { StatCounter } from '../components/motion/StatCounter'
 import { TestimonialCarousel } from '../components/sections/TestimonialCarousel'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
@@ -311,9 +312,9 @@ export function HomePage() {
                 <p data-reveal-delay="5" data-reveal-item>The N. Rocky River Rd / Lawyers Rd Roundabout project was a complex infrastructure development designed to improve traffic flow and safety in the region. Our team managed the excavation, grading, and asphalt paving, ensuring a seamless transition for commuters and local residents. This project showcases our expertise in heavy civil construction and our commitment to delivering high-quality results on time.</p>
                 <ButtonLink data-reveal-delay="6" data-reveal-item variant="dark" to="/projects/n-rocky-river-road-roundabout">View Project <span aria-hidden="true">↗</span></ButtonLink>
               </div>
-              <div className="project-stats">
-                <div data-reveal-delay="7" data-reveal-item><strong>600+</strong><span>Projects Built</span></div>
-                <div data-reveal-delay="8" data-reveal-item><strong>30+</strong><span>Years Experience</span></div>
+              <div className="project-stats" data-statistics>
+                <div data-reveal-delay="7" data-reveal-item><strong><StatCounter value="600+" /></strong><span>Projects Built</span></div>
+                <div data-reveal-delay="8" data-reveal-item><strong><StatCounter delay={180} value="30+" /></strong><span>Years Experience</span></div>
               </div>
             </div>
           </div>
