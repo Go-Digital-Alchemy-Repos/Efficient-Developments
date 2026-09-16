@@ -61,6 +61,9 @@ replacement, mobile-reference reconciliation, and production integration work.
 - Replaced the matched homepage, About, service, project-list, and project-detail
   imagery with the supplied source assets, retaining the established responsive
   containers and verifying the affected routes at desktop and mobile widths.
+- Added one-time, reduced-motion-aware viewport reveals to static content across
+  the implemented routes without changing the existing interactive transitions
+  or accordion, hover, modal, carousel, and navigation behavior.
 
 ## Known Limitations
 

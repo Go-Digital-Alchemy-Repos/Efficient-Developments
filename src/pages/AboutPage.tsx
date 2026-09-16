@@ -99,7 +99,7 @@ export function AboutPage() {
     <main id="main-content" className="about-page">
       <section className="about-hero" aria-labelledby="about-hero-title">
         <div className="about-hero__shade" />
-        <div className="about-hero__content">
+        <div className="about-hero__content" data-reveal>
           <Eyebrow className="eyebrow--on-dark">Efficient Developments</Eyebrow>
           <Heading as="h1" id="about-hero-title" size="page">About Us</Heading>
           <p>A heavy civil contractor building infrastructure across the Carolinas.</p>
@@ -112,12 +112,12 @@ export function AboutPage() {
           key={story.eyebrow}
         >
           <div className={`about-story__inner${story.reverse ? ' about-story__inner--reverse' : ''}`}>
-            <div className="about-story__copy">
+            <div className="about-story__copy" data-reveal>
               <Eyebrow>{story.eyebrow}</Eyebrow>
               <Heading>{story.title}</Heading>
               <p>{story.body}</p>
             </div>
-            <div className="about-story__media">
+            <div className="about-story__media" data-reveal data-reveal-delay="1">
               <img src={story.image} alt={story.alt} />
             </div>
           </div>
@@ -126,16 +126,18 @@ export function AboutPage() {
 
       <section className="about-team" aria-labelledby="about-team-title">
         <div className="about-team__gradient" aria-hidden="true" />
-        <div className="about-team__heading">
+        <div className="about-team__heading" data-reveal>
           <p>Our Team</p>
           <Heading id="about-team-title">Meet the Leadership</Heading>
           <p>Our experienced leadership team brings decades of heavy civil construction expertise to every project.</p>
         </div>
         <div className="about-team__grid">
-          {leaders.map((leader) => (
+          {leaders.map((leader, index) => (
             <button
               aria-haspopup="dialog"
               className="leader-card"
+              data-reveal
+              data-reveal-delay={String(index)}
               key={leader.name}
               onClick={(event) => {
                 activeCardRef.current = event.currentTarget

@@ -19,12 +19,12 @@ export function ProjectsPage() {
   return (
     <main id="main-content" className="projects-page">
       <section className="projects-index" aria-labelledby="projects-title">
-        <header className="projects-index__header">
+        <header className="projects-index__header" data-reveal>
           <h1 id="projects-title">Projects</h1>
           <p>Explore our portfolio of civil infrastructure projects across the Carolinas. From highway interchanges<br className="projects-index__desktop-break" /> to underground utilities, each project reflects our commitment to quality, safety, and on-time delivery.</p>
         </header>
 
-        <div className="project-filters" aria-label="Filter projects">
+        <div className="project-filters" aria-label="Filter projects" data-reveal data-reveal-delay="1">
           {(['All', ...projectCategories] as const).map((category) => (
             <button
               aria-pressed={activeCategory === category}
@@ -43,8 +43,8 @@ export function ProjectsPage() {
         </div>
 
         <div className="project-grid" aria-live="polite">
-          {visibleProjects.map((project) => (
-            <Link className="project-card" key={project.slug} to={`/projects/${project.slug}`}>
+          {visibleProjects.map((project, index) => (
+            <Link className="project-card" data-reveal data-reveal-delay={String(index % 3)} key={project.slug} to={`/projects/${project.slug}`}>
               <span className="project-card__media">
                 <img src={project.image} alt="" />
               </span>
@@ -61,7 +61,7 @@ export function ProjectsPage() {
         </div>
 
         {pageCount > 1 && (
-          <nav className="project-pagination" aria-label="Project pages">
+          <nav className="project-pagination" aria-label="Project pages" data-reveal>
             <button disabled={page === 1} onClick={() => setPage((value) => value - 1)} type="button" aria-label="Previous project page">←</button>
             {Array.from({ length: pageCount }, (_, index) => index + 1).map((pageNumber) => (
               <button

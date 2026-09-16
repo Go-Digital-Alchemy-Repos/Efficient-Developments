@@ -63,17 +63,17 @@ export function ProjectDetailPage() {
 
   return (
     <main id="main-content" className="project-detail-page">
-      <header className="project-detail-heading">
+      <header className="project-detail-heading" data-reveal>
         <p><span aria-hidden="true" />{project.category}</p>
         <h1>{project.title}</h1>
       </header>
 
-      <section className="project-detail-hero" aria-label={`${project.title} overview image`}>
+      <section className="project-detail-hero" aria-label={`${project.title} overview image`} data-reveal>
         <img src={projectIndex === 0 ? '/assets/images/projects/detail/hero-project-detail.jpg' : project.image} alt="" />
       </section>
 
       <section className="project-overview" aria-labelledby="project-overview-title">
-        <aside className="project-facts" aria-labelledby="project-facts-title">
+        <aside className="project-facts" aria-labelledby="project-facts-title" data-reveal>
           <h2 id="project-facts-title">At a Glance</h2>
           <div className="project-facts__divider" />
           <dl>
@@ -87,7 +87,7 @@ export function ProjectDetailPage() {
           <Link to="/projects">← Return to Portfolio</Link>
         </aside>
 
-        <article className="project-overview__content">
+        <article className="project-overview__content" data-reveal data-reveal-delay="1">
           <h2 id="project-overview-title">Project Overview</h2>
           <p>Efficient Developments was awarded the contract for the Highway 74 Interchange reconstruction project in Charlotte, NC. This complex infrastructure project involved the complete redesign and rebuild of a critical interchange connecting Highway 74 with Interstate 485, serving over 80,000 vehicles daily.</p>
           <p>Our team managed all phases of the project including demolition of the existing interchange structure, earthwork and grading for the new alignment, construction of reinforced concrete bridge decks and abutments, installation of modern drainage systems, and integration of intelligent transportation systems.</p>
@@ -99,7 +99,7 @@ export function ProjectDetailPage() {
 
       <section className="project-gallery" aria-label="Project photos">
         <button className="project-gallery__arrow" disabled={galleryStart === 0} onClick={() => setGalleryStart((value) => value - 1)} type="button" aria-label="Previous photos">‹</button>
-        <div className="project-gallery__row">
+        <div className="project-gallery__row" data-reveal>
           {visibleGallery.map((image, index) => (
             <button className="project-gallery__image" key={image} onClick={() => setLightboxImage(image)} type="button" aria-label={`Enlarge project photo ${galleryStart + index + 1}`}>
               <img src={image} alt="" />
@@ -109,7 +109,7 @@ export function ProjectDetailPage() {
         <button className="project-gallery__arrow" disabled={galleryStart === maxGalleryStart} onClick={() => setGalleryStart((value) => value + 1)} type="button" aria-label="Next photos">›</button>
       </section>
 
-      <nav className="project-sequence" aria-label="Adjacent projects">
+      <nav className="project-sequence" aria-label="Adjacent projects" data-reveal>
         <Link className="project-sequence__item project-sequence__item--previous" to={`/projects/${previousProject.slug}`}>
           <img src="/assets/images/projects/detail/nav-prev.jpg" alt="" />
           <span><small>← Previous Project</small><strong>{previousProject.title}</strong></span>

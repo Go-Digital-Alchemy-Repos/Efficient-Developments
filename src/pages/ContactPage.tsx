@@ -28,7 +28,7 @@ export function ContactPage() {
     <main className="contact-page" id="main-content">
       <section className="contact-page__section" aria-labelledby="contact-page-title">
         <Container className="contact-page__layout" size="wide">
-          <div className="contact-page__intro">
+          <div className="contact-page__intro" data-reveal>
             <Heading as="h1" className="contact-page__title" id="contact-page-title" size="page">
               Contact Efficient<br />Developments
             </Heading>
@@ -54,7 +54,7 @@ export function ContactPage() {
             <p className="contact-page__service-note">Serving municipalities and developers across the Carolinas.</p>
           </div>
 
-          <div className="contact-form-card">
+          <div className="contact-form-card" data-reveal data-reveal-delay="1">
             <h2 className="contact-form-card__title">Send Us a Message</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-form__fields">

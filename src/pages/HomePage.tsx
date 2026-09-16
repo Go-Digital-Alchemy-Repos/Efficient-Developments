@@ -152,7 +152,7 @@ export function HomePage() {
     <main id="main-content" className="home-page">
       <section className="home-hero" aria-labelledby="home-hero-title">
         <div className="home-hero__shade" />
-        <div className="home-hero__content">
+        <div className="home-hero__content" data-reveal>
           <Heading as="h1" id="home-hero-title" size="hero">
             Heavy Civil<br />
             Infrastructure Contractor<br />
@@ -163,17 +163,17 @@ export function HomePage() {
       </section>
 
       <section className="home-intro" aria-label="Company introduction">
-        <p>
+        <p data-reveal>
           <strong>Efficient Developments is a heavy highway and civil contractor serving municipalities, government agencies, and developers across the Carolinas.</strong>{' '}
           We self-perform asphalt paving, concrete work, underground utilities, greenway construction, and road and bridge work — managing every phase of a project with our own crews under a single contract.
         </p>
       </section>
 
       <section className="how-we-work" aria-labelledby="how-we-work-title">
-        <img className="how-we-work__image" src="/assets/images/home-how-we-work.jpg" alt="Road paving crew operating heavy equipment" />
+        <img className="how-we-work__image" data-reveal src="/assets/images/home-how-we-work.jpg" alt="Road paving crew operating heavy equipment" />
         <div className="how-we-work__content">
           <div className="how-we-work__content-inner">
-            <div className="how-we-work__heading">
+            <div className="how-we-work__heading" data-reveal>
               <Eyebrow>How We Work</Eyebrow>
               <Heading id="how-we-work-title">Building With Purpose &amp; Precision</Heading>
               <p>Our own crews handle every discipline - from grading and paving to concrete and utility installation - keeping scheduling and quality control under one roof.</p>
@@ -208,7 +208,7 @@ export function HomePage() {
       </section>
 
       <section className="home-services" aria-labelledby="home-services-title">
-        <div className="home-section-heading home-section-heading--center">
+        <div className="home-section-heading home-section-heading--center" data-reveal>
           <Eyebrow>Services</Eyebrow>
           <Heading id="home-services-title">Our Heavy<br />Construction Services</Heading>
           <p>Paving, concrete, utilities, greenways, and bridge work - performed by our own crews.</p>
@@ -222,8 +222,8 @@ export function HomePage() {
             tabIndex={0}
           >
             <div className="services-carousel__row">
-              {services.map((service) => (
-                <Link className="service-card" to={service.to} key={service.title}>
+              {services.map((service, index) => (
+                <Link className="service-card" data-reveal data-reveal-delay={String(index % 4)} to={service.to} key={service.title}>
                   <img src={service.image} alt="" />
                   <div className="service-card__panel">
                     <div>
@@ -254,13 +254,13 @@ export function HomePage() {
       <section className="who-we-work-with" aria-labelledby="who-title">
         <div className="client-list">
           {clientTypes.map((client, index) => (
-            <div className="client-list__item" key={client}>
+            <div className="client-list__item" data-reveal data-reveal-delay={String(index % 4)} key={client}>
               <span>{String(index + 1).padStart(2, '0')}</span>
               <h3>{client}</h3>
             </div>
           ))}
         </div>
-        <div className="who-we-work-with__image">
+        <div className="who-we-work-with__image" data-reveal>
           <img src="/assets/images/home-who-we-work-with.png" alt="Civil construction site serving a growing community" />
           <div className="who-we-work-with__overlay">
             <Eyebrow className="eyebrow--on-dark">Who We Work With</Eyebrow>
@@ -272,15 +272,15 @@ export function HomePage() {
 
       <section className="expectations" aria-labelledby="expectations-title">
         <div className="expectations__inner">
-          <div className="home-section-heading home-section-heading--center">
+          <div className="home-section-heading home-section-heading--center" data-reveal>
             <Eyebrow>What To Expect</Eyebrow>
             <Heading id="expectations-title">What To Expect<br />On Every Project</Heading>
             <p>A consistent experience across every project: durable construction, transparent budgeting, clear accountability, and a safe jobsite.</p>
             <ButtonLink to="/contact">Contact Us <span aria-hidden="true">↗</span></ButtonLink>
           </div>
           <div className="expectations__grid">
-            {expectations.map((expectation) => (
-              <article className="expectation-card" key={expectation.title}>
+            {expectations.map((expectation, index) => (
+              <article className="expectation-card" data-reveal data-reveal-delay={String(index)} key={expectation.title}>
                 <img src={expectation.icon} alt="" aria-hidden="true" />
                 <Heading as="h3" size="card">{expectation.title}</Heading>
                 <p>{expectation.description}</p>
@@ -292,7 +292,7 @@ export function HomePage() {
 
       <section className="featured-project" aria-labelledby="featured-title">
         <div className="featured-project__inner">
-          <div className="featured-project__header">
+          <div className="featured-project__header" data-reveal>
             <div>
               <Eyebrow>Featured Project</Eyebrow>
               <Heading id="featured-title">Take a look at our most recent project</Heading>
@@ -300,8 +300,8 @@ export function HomePage() {
             <ButtonLink to="/projects">View Portfolio <span aria-hidden="true">↗</span></ButtonLink>
           </div>
           <div className="featured-project__body">
-            <img className="featured-project__image" src="/assets/images/home-featured-project.jpg" alt="N. Rocky River Road and Lawyers Road roundabout under construction" />
-            <div className="featured-project__content">
+            <img className="featured-project__image" data-reveal src="/assets/images/home-featured-project.jpg" alt="N. Rocky River Road and Lawyers Road roundabout under construction" />
+            <div className="featured-project__content" data-reveal data-reveal-delay="1">
               <div>
                 <Heading as="h3" size="card">N. Rocky River Rd / Lawyers Rd Roundabout</Heading>
                 <p>The N. Rocky River Rd / Lawyers Rd Roundabout project was a complex infrastructure development designed to improve traffic flow and safety in the region. Our team managed the excavation, grading, and asphalt paving, ensuring a seamless transition for commuters and local residents. This project showcases our expertise in heavy civil construction and our commitment to delivering high-quality results on time.</p>
@@ -318,8 +318,8 @@ export function HomePage() {
 
       <section className="testimonial" aria-labelledby="testimonial-title">
         <div className="testimonial__shade" />
-        <Heading id="testimonial-title">What Our Clients Say</Heading>
-        <blockquote>
+        <Heading id="testimonial-title" data-reveal>What Our Clients Say</Heading>
+        <blockquote data-reveal data-reveal-delay="1">
           <p>“Efficient Developments stepped in when our project schedule was failing due to poor trade coordination. Their disciplined team took extreme ownership of the site and self-performed the critical path work to get us back on track. We finally found a partner who values precision as much as we do.”</p>
           <footer>Marcus Thorne - Senior Director of Facilities</footer>
         </blockquote>
@@ -327,13 +327,13 @@ export function HomePage() {
       </section>
 
       <section className="service-area" aria-labelledby="service-area-title">
-        <div className="service-area__content">
+        <div className="service-area__content" data-reveal>
           <Eyebrow className="eyebrow--on-dark">Service Area</Eyebrow>
           <Heading id="service-area-title">Serving Communities Across The Carolinas</Heading>
           <p>To discuss an upcoming project, get in touch with our team.</p>
           <ButtonLink to="/contact">Contact Us <span aria-hidden="true">↗</span></ButtonLink>
         </div>
-        <img className="service-area__map" src="/assets/images/home-service-area-map.jpg" alt="Map of the Efficient Developments service area across the Carolinas" />
+        <img className="service-area__map" data-reveal data-reveal-delay="1" src="/assets/images/home-service-area-map.jpg" alt="Map of the Efficient Developments service area across the Carolinas" />
       </section>
     </main>
   )

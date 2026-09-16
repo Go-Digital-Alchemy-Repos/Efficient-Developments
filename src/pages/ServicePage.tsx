@@ -163,7 +163,7 @@ export function ServicePage() {
           '--service-hero-position': service.heroPosition ?? 'center',
         } as React.CSSProperties}
       >
-        <div className="service-hero__content">
+        <div className="service-hero__content" data-reveal>
           <Eyebrow className="eyebrow--on-dark">Service</Eyebrow>
           <Heading as="h1" className="service-hero__title" id="service-page-title" size="hero">{service.title}</Heading>
           <p className="service-hero__support">{service.support}</p>
@@ -172,7 +172,7 @@ export function ServicePage() {
 
       <section className="service-detail" style={{ '--service-detail-height': `${service.detailHeight}px`, '--service-detail-top': `${service.detailTop}px` } as React.CSSProperties}>
         <div className="service-detail__inner">
-          <aside className="service-sidebar" aria-label="Services">
+          <aside className="service-sidebar" aria-label="Services" data-reveal>
             <nav>
               {services.map((item) => (
                 <NavLink className={({ isActive }) => `service-sidebar__link${isActive ? ' is-active' : ''}`} key={item.slug} to={`/services/${item.slug}`}>
@@ -186,11 +186,11 @@ export function ServicePage() {
           </aside>
 
           <div className="service-detail__content">
-            <div className="service-detail__copy service-detail__copy--overview">
+            <div className="service-detail__copy service-detail__copy--overview" data-reveal>
               <Heading as="h2" size="section">What We Do</Heading>
               <p>{service.overview}</p>
             </div>
-            <div className="service-detail__copy service-detail__copy--approach">
+            <div className="service-detail__copy service-detail__copy--approach" data-reveal>
               <Heading as="h2" size="section">{service.approachTitle}</Heading>
               <p>{service.approach}</p>
               <div className="service-detail__image"><img alt="" src={service.approachImage} /></div>
@@ -201,7 +201,7 @@ export function ServicePage() {
 
       <section className="service-offerings" style={{ '--service-overlay-image': `url(${service.overlayImage})` } as React.CSSProperties}>
         <div className="service-offerings__top">
-          <div className="service-offerings__heading">
+          <div className="service-offerings__heading" data-reveal>
             <Eyebrow className="eyebrow--on-dark">Services</Eyebrow>
             <Heading as="h2" size="section">
               {service.overlayTitleLines.map((line) => (
@@ -209,14 +209,14 @@ export function ServicePage() {
               ))}
             </Heading>
           </div>
-          <div className="service-offerings__contact">
+          <div className="service-offerings__contact" data-reveal data-reveal-delay="1">
             <p>To discuss an upcoming project,<br />get in touch with our team.</p>
             <ButtonLink to="/contact">Contact Us <img aria-hidden="true" alt="" src="/assets/icons/cta-arrow.svg" /></ButtonLink>
           </div>
         </div>
         <div className="service-offerings__cards" data-count={service.cards.length}>
-          {service.cards.map((card) => (
-            <article className="service-offerings__card" key={card.title}>
+          {service.cards.map((card, index) => (
+            <article className="service-offerings__card" data-reveal data-reveal-delay={String(index % 4)} key={card.title}>
               <div className="service-offerings__icon"><img aria-hidden="true" alt="" src={card.icon} /></div>
               <div>
                 <Heading as="h3" size="card">{card.title}</Heading>
