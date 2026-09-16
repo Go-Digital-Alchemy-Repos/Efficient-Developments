@@ -79,6 +79,8 @@ replacement, mobile-reference reconciliation, and production integration work.
 - Implemented the Figma-matched responsive navigation drawer at 1200px and
   below, including nested service links, focus trapping, scroll locking, and
   accessible close behavior.
+- Added the requested white-and-green hover treatment specifically to the
+  homepage Service Area contact button.
 
 ## Known Limitations
 
