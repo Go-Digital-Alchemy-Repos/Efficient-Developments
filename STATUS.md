@@ -105,6 +105,8 @@ replacement, mobile-reference reconciliation, and production integration work.
 - Re-sequenced viewport entry effects by section and visual hierarchy, slowed
   their duration and stagger by 50%, and preserved one-time and reduced-motion
   behavior across desktop and mobile layouts.
+- Replaced the shared header and footer brand marks with the supplied primary
+  Efficient Developments SVG while retaining responsive logo containers.
 
 ## Known Limitations
 
