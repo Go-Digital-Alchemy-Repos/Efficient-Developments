@@ -253,12 +253,25 @@
   background: var(--color-ink) url('/assets/images/projects/detail/diagonal-stripe-pattern.svg') center / cover no-repeat;
 }
 
-.project-lightbox { position: fixed; z-index: 100; inset: 0; height: 100dvh; display: grid; place-items: center; overflow: hidden; background: rgb(0 0 0 / 84%); }
+.project-lightbox {
+  --project-lightbox-max-width: min(1100px, calc(100vw - 144px));
+  --project-lightbox-max-height: clamp(1px, calc(100dvh - 400px), 800px);
+
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: rgb(0 0 0 / 84%);
+}
 
 .project-lightbox__dialog {
   position: relative;
-  width: min(1100px, calc(100vw - 144px));
-  max-height: clamp(1px, calc(100dvh - 400px), 800px);
+  width: fit-content;
+  max-width: var(--project-lightbox-max-width);
+  max-height: var(--project-lightbox-max-height);
   overflow: hidden;
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -267,16 +280,31 @@
 }
 
 .project-lightbox__content {
-  max-height: inherit;
-  overflow: auto;
-  overscroll-behavior: contain;
+  display: grid;
+  place-items: center;
+  max-width: calc(var(--project-lightbox-max-width) - 2px);
+  max-height: calc(var(--project-lightbox-max-height) - 2px);
+  overflow: hidden;
 }
 
-.project-lightbox__content > img { width: 100%; height: auto; display: block; }
+.project-lightbox__content > img {
+  width: auto;
+  height: auto;
+  max-width: calc(var(--project-lightbox-max-width) - 2px);
+  max-height: calc(var(--project-lightbox-max-height) - 2px);
+  display: block;
+  object-fit: contain;
+}
 .modal-close--project-lightbox { z-index: 1; }
 .project-lightbox__arrow { position: absolute; z-index: 2; top: 50%; translate: 0 -50%; }
 .project-lightbox__arrow--previous { left: 16px; }
 .project-lightbox__arrow--next { right: 16px; }
+
+@media (max-height: 400px) {
+  .project-lightbox {
+    --project-lightbox-max-height: max(1px, calc(100dvh - 32px));
+  }
+}
 
 @media (max-width: 63.9375rem) {
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

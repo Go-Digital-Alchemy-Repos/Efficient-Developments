@@ -125,6 +125,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   project route.
 - Moved the project lightbox navigation controls onto the photo edges so their
   existing gallery-arrow styling remains visible against the overlay.
+- Updated the project lightbox to size itself to each image and proportionally
+  contain it within the viewport without internal or page scrollbars.
 
 ## Known Limitations
 
