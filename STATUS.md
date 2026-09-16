@@ -88,6 +88,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   both sides shrink proportionally with the viewport.
 - Set exact 64px top spacing above both the How We Work image and text content
   throughout the 768px–1023px tablet range.
+- Made service-page detail sections grow with their content and kept every
+  approach image in normal flow at its intrinsic aspect ratio across breakpoints.
 
 ## Known Limitations
 
