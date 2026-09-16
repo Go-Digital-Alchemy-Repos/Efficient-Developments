@@ -3,42 +3,43 @@ import { Link } from 'react-router-dom'
 import { TestimonialCarousel } from '../components/sections/TestimonialCarousel'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
+import { serviceHeroImages } from '../data/serviceImages'
 
 const services = [
   {
     title: 'Asphalt Paving',
     description: 'Full-depth paving, resurfacing, and maintenance for roads, parking lots, and driveways.',
-    image: '/assets/images/services/asphalt-paving-hero-provided.jpg',
+    image: serviceHeroImages['asphalt-paving'],
     to: '/services/asphalt-paving',
   },
   {
     title: 'Commercial Concrete',
     description: 'Slabs, foundations, sidewalks, curbs, and loading areas for commercial and municipal sites.',
-    image: '/assets/images/services/commercial-concrete-hero-provided.jpg',
+    image: serviceHeroImages['commercial-concrete'],
     to: '/services/commercial-concrete',
   },
   {
     title: 'Residential Concrete',
     description: 'Concrete flatwork for housing developments, estates, and large residential properties.',
-    image: '/assets/images/services/residential-concrete-hero-provided.jpg',
+    image: serviceHeroImages['residential-concrete'],
     to: '/services/residential-concrete',
   },
   {
     title: 'Greenways',
     description: 'Shared-use paths, trails, and pedestrian infrastructure for communities.',
-    image: '/assets/images/services/greenways-hero-provided.jpg',
+    image: serviceHeroImages.greenways,
     to: '/services/greenways',
   },
   {
     title: 'Roads & Bridges',
     description: 'Road and bridge construction for municipalities and DOT projects across the Carolinas.',
-    image: '/assets/images/services/roads-bridges-hero-provided.jpg',
+    image: serviceHeroImages['roads-bridges'],
     to: '/services/roads-bridges',
   },
   {
     title: 'Underground Utilities',
     description: 'Water, sewer, and storm line installation for municipalities and developments.',
-    image: '/assets/images/services/underground-utilities-hero-provided.jpg',
+    image: serviceHeroImages['underground-utilities'],
     to: '/services/underground-utilities',
   },
 ]

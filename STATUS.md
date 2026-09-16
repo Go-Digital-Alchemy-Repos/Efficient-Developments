@@ -111,6 +111,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   to the agency site, and added the requested text-only green hover treatment.
 - Standardized the service offering and homepage expectation cards on the same
   4px `#7FA67A` bottom accent border.
+- Centralized the six service hero image sources and reused them directly for
+  the matching homepage service cards with cache-safe asset URLs.
 
 ## Known Limitations
 

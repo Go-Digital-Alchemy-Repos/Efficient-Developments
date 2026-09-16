@@ -1,6 +1,7 @@
 import { Navigate, NavLink, useParams } from 'react-router-dom'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
+import { serviceHeroImages } from '../data/serviceImages'
 
 type ServiceCard = {
   description: string
@@ -30,7 +31,7 @@ const services: ServicePageDefinition[] = [
     slug: 'asphalt-paving',
     title: 'Asphalt Paving',
     support: 'Quality paving for roads, parking lots, and driveways across the Carolinas.',
-    heroImage: '/assets/images/services/asphalt-paving-hero-provided.jpg',
+    heroImage: serviceHeroImages['asphalt-paving'],
     approachImage: '/assets/images/services/asphalt-paving-approach-provided.jpg',
     overlayImage: '/assets/images/services/asphalt-paving-overlay.png',
     detailHeight: 958,
@@ -49,7 +50,7 @@ const services: ServicePageDefinition[] = [
     slug: 'commercial-concrete',
     title: 'Commercial Concrete',
     support: 'Structural and flatwork concrete for commercial and municipal sites.',
-    heroImage: '/assets/images/services/commercial-concrete-hero-provided.jpg',
+    heroImage: serviceHeroImages['commercial-concrete'],
     approachImage: '/assets/images/services/commercial-concrete-approach-provided.jpg',
     overlayImage: '/assets/images/services/commercial-concrete-overlay.jpg',
     detailHeight: 904,
@@ -68,7 +69,7 @@ const services: ServicePageDefinition[] = [
     slug: 'residential-concrete',
     title: 'Residential Concrete',
     support: 'Concrete flatwork for housing developments, estates, and large residential properties.',
-    heroImage: '/assets/images/services/residential-concrete-hero-provided.jpg',
+    heroImage: serviceHeroImages['residential-concrete'],
     approachImage: '/assets/images/services/residential-concrete-approach-provided.jpg',
     overlayImage: '/assets/images/services/residential-concrete-overlay.jpg',
     detailHeight: 958,
@@ -87,7 +88,7 @@ const services: ServicePageDefinition[] = [
     slug: 'greenways',
     title: 'Greenways',
     support: 'Trail and greenway construction connecting parks, neighborhoods, and schools.',
-    heroImage: '/assets/images/services/greenways-hero-provided.jpg',
+    heroImage: serviceHeroImages.greenways,
     approachImage: '/assets/images/services/greenways-approach-provided.jpg',
     overlayImage: '/assets/images/services/greenways-overlay-provided.jpg',
     detailHeight: 948,
@@ -107,7 +108,7 @@ const services: ServicePageDefinition[] = [
     slug: 'roads-bridges',
     title: 'Roads & Bridges',
     support: 'Road and bridge construction for municipalities and DOT projects across the Carolinas.',
-    heroImage: '/assets/images/services/roads-bridges-hero-provided.jpg',
+    heroImage: serviceHeroImages['roads-bridges'],
     approachImage: '/assets/images/services/roads-bridges-approach-provided.jpg',
     overlayImage: '/assets/images/services/roads-bridges-overlay.jpg',
     detailHeight: 924,
@@ -127,7 +128,7 @@ const services: ServicePageDefinition[] = [
     slug: 'underground-utilities',
     title: 'Underground Utilities',
     support: 'Water, sewer, and storm line installation for municipalities and developments.',
-    heroImage: '/assets/images/services/underground-utilities-hero-provided.jpg',
+    heroImage: serviceHeroImages['underground-utilities'],
     approachImage: '/assets/images/services/underground-utilities-approach-provided.jpg',
     overlayImage: '/assets/images/services/underground-utilities-overlay.jpg',
     detailHeight: 924,
