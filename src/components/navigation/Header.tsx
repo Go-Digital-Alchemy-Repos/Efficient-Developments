@@ -23,6 +23,8 @@ const serviceNavigation = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [areServicesOpen, setAreServicesOpen] = useState(false)
+  const desktopServicesRef = useRef<HTMLDivElement>(null)
+  const desktopServicesTriggerRef = useRef<HTMLButtonElement>(null)
   const drawerRef = useRef<HTMLElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const shouldRestoreFocusRef = useRef(false)
@@ -33,6 +35,29 @@ export function Header() {
     shouldRestoreFocusRef.current = restoreFocus
     setIsOpen(false)
   }, [])
+
+  useEffect(() => {
+    if (!areServicesOpen) return
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!(event.target instanceof Node)) return
+      if (desktopServicesRef.current?.contains(event.target)) return
+      setAreServicesOpen(false)
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setAreServicesOpen(false)
+      desktopServicesTriggerRef.current?.focus()
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [areServicesOpen])
 
   useEffect(() => {
     if (isOpen) return
@@ -131,9 +156,11 @@ export function Header() {
               {item.label}
             </NavLink>
           ))}
-          <div className="primary-navigation__services">
+          <div className="primary-navigation__services" ref={desktopServicesRef}>
             <button
+              ref={desktopServicesTriggerRef}
               aria-expanded={areServicesOpen}
+              aria-controls="service-dropdown"
               aria-haspopup="menu"
               className={`primary-navigation__link primary-navigation__services-trigger${isServiceRoute ? ' is-active' : ''}`}
               onClick={() => setAreServicesOpen((value) => !value)}
@@ -141,7 +168,7 @@ export function Header() {
             >
               Services <span aria-hidden="true">▾</span>
             </button>
-            <div aria-label="Services submenu" className="service-dropdown" data-open={areServicesOpen || undefined} role="menu">
+            <div id="service-dropdown" aria-label="Services submenu" className="service-dropdown" data-open={areServicesOpen || undefined} role="menu">
               {serviceNavigation.map((item) => (
                 <NavLink
                   className={({ isActive }) => `service-dropdown__link${isActive ? ' is-active' : ''}`}

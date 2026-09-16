@@ -83,6 +83,7 @@ replacement, mobile-reference reconciliation, and production integration work.
   homepage Service Area contact button.
 - Made the homepage expectation cards content-driven in height, with equal
   heights per grid row and responsive four-, two-, and one-column layouts.
+- Added outside-click and Escape dismissal to the desktop Services dropdown.
 
 ## Known Limitations
 
