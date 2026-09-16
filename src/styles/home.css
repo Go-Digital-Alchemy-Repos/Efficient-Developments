@@ -90,8 +90,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 24px;
   padding: 72px 72px 72px 96px;
+}
+
+.how-we-work__content-inner {
+  width: 100%;
+  max-width: 552px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 .how-we-work__heading { display: grid; gap: 16px; width: 100%; }
@@ -156,7 +164,7 @@
   height: 753px;
   display: grid;
   grid-template-columns: 640px minmax(0, 1fr);
-  padding-left: max(80px, calc((100% - 1440px) / 2 + 80px));
+  padding-left: max(var(--page-gutter), calc((100% - var(--container-content)) / 2));
   color: var(--color-white);
   background: linear-gradient(123.58deg, #3d503b 33.58%, #3e6d50 56.1%, #7fa67a 84.96%);
 }
@@ -171,7 +179,7 @@
 .who-we-work-with__image { position: relative; height: 753px; overflow: hidden; }
 .who-we-work-with__image > img { width: 100%; height: 100%; object-fit: cover; }
 .who-we-work-with__image::after { position: absolute; inset: 0; content: ''; background: linear-gradient(to bottom, rgb(0 0 0 / 60%), rgb(0 0 0 / 30%)); }
-.who-we-work-with__overlay { position: absolute; z-index: 1; top: 74px; right: 80px; left: 84px; display: grid; gap: 16px; }
+.who-we-work-with__overlay { position: absolute; z-index: 1; top: 74px; right: max(var(--page-gutter), calc((100vw - var(--container-content)) / 2)); left: 84px; display: grid; gap: 16px; }
 .who-we-work-with__overlay .eyebrow { color: var(--color-white); }
 .who-we-work-with__overlay .heading { font-size: 40px; font-weight: 500; line-height: 48px; letter-spacing: -0.27px; }
 .who-we-work-with__overlay p { font-size: 16px; line-height: 24px; }
@@ -182,9 +190,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px;
-  padding: 58px 72px 72px;
+  padding: 58px 0 72px;
   background: var(--color-border);
+}
+
+.expectations__inner {
+  width: min(calc(100% - (2 * var(--page-gutter))), var(--container-content));
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-inline: auto;
 }
 
 .expectations .home-section-heading { width: 100%; gap: 16px; }
@@ -198,10 +213,15 @@
 
 .featured-project {
   height: 847px;
+  padding: 80px 0;
+}
+
+.featured-project__inner {
+  width: min(calc(100% - (2 * var(--page-gutter))), var(--container-content));
   display: flex;
   flex-direction: column;
   gap: 36px;
-  padding: 80px 72px;
+  margin-inline: auto;
 }
 
 .featured-project__header { display: flex; align-items: center; justify-content: space-between; }
@@ -252,7 +272,7 @@
 
 .home-page > .service-area { border-bottom: 0; }
 
-.service-area__content { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 24px; padding: 80px; }
+.service-area__content { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 24px; padding: 80px 72px 80px max(var(--page-gutter), calc((100vw - var(--container-content)) / 2)); }
 .service-area__content .heading { font-size: 40px; font-weight: 500; line-height: 48px; letter-spacing: -0.27px; }
 .service-area__content > p { font-size: 16px; line-height: 24px; }
 .service-area__map { width: 100%; height: 580px; object-fit: cover; }
@@ -266,13 +286,14 @@
   .how-we-work, .who-we-work-with, .service-area { grid-template-columns: 1fr; padding-left: 0; }
   .how-we-work__image, .how-we-work__content, .who-we-work-with__image, .service-area__map { height: 620px; }
   .how-we-work__content { padding: 64px var(--page-gutter); }
+  .how-we-work__content-inner { max-width: none; }
   .home-services { padding-block: 80px; }
   .services-carousel { padding-left: var(--page-gutter); }
   .client-list { width: 100%; padding: 64px var(--page-gutter); }
   .client-list__item { width: 100%; }
-  .expectations { padding: 64px var(--page-gutter); }
+  .expectations { padding: 64px 0; }
   .expectations__grid { grid-template-columns: repeat(2, 1fr); }
-  .featured-project { padding: 64px var(--page-gutter); }
+  .featured-project { padding: 64px 0; }
   .featured-project__body { grid-template-columns: 1fr; }
   .featured-project__image { width: 100%; }
   .featured-project__content { padding: 0; }

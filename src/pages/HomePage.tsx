@@ -172,35 +172,37 @@ export function HomePage() {
       <section className="how-we-work" aria-labelledby="how-we-work-title">
         <img className="how-we-work__image" src="/assets/images/home-how-we-work.png" alt="Road paving crew operating heavy equipment" />
         <div className="how-we-work__content">
-          <div className="how-we-work__heading">
-            <Eyebrow>How We Work</Eyebrow>
-            <Heading id="how-we-work-title">Building With Purpose &amp; Precision</Heading>
-            <p>Our own crews handle every discipline - from grading and paving to concrete and utility installation - keeping scheduling and quality control under one roof.</p>
-          </div>
-          <ButtonLink to="/about">Learn More <ArrowIcon /></ButtonLink>
-          <div className="work-principles">
-            {workPrinciples.map((item, index) => {
-              const isActive = activeWorkPrinciple === index
-              const panelId = `work-principle-panel-${index}`
+          <div className="how-we-work__content-inner">
+            <div className="how-we-work__heading">
+              <Eyebrow>How We Work</Eyebrow>
+              <Heading id="how-we-work-title">Building With Purpose &amp; Precision</Heading>
+              <p>Our own crews handle every discipline - from grading and paving to concrete and utility installation - keeping scheduling and quality control under one roof.</p>
+            </div>
+            <ButtonLink to="/about">Learn More <ArrowIcon /></ButtonLink>
+            <div className="work-principles">
+              {workPrinciples.map((item, index) => {
+                const isActive = activeWorkPrinciple === index
+                const panelId = `work-principle-panel-${index}`
 
-              return (
-                <article className={`work-principle${isActive ? ' is-active' : ''}`} key={item.title}>
-                  <button
-                    aria-controls={panelId}
-                    aria-expanded={isActive}
-                    className="work-principle__trigger"
-                    onClick={() => setActiveWorkPrinciple(isActive ? null : index)}
-                    type="button"
-                  >
-                    <Heading as="h3" size="card">{item.title}</Heading>
-                    <span className="work-principle__indicator" aria-hidden="true">{isActive ? '−' : '↗'}</span>
-                  </button>
-                  <div className="work-principle__panel" id={panelId} aria-hidden={!isActive}>
-                    <div><p>{item.description}</p></div>
-                  </div>
-                </article>
-              )
-            })}
+                return (
+                  <article className={`work-principle${isActive ? ' is-active' : ''}`} key={item.title}>
+                    <button
+                      aria-controls={panelId}
+                      aria-expanded={isActive}
+                      className="work-principle__trigger"
+                      onClick={() => setActiveWorkPrinciple(isActive ? null : index)}
+                      type="button"
+                    >
+                      <Heading as="h3" size="card">{item.title}</Heading>
+                      <span className="work-principle__indicator" aria-hidden="true">{isActive ? '−' : '↗'}</span>
+                    </button>
+                    <div className="work-principle__panel" id={panelId} aria-hidden={!isActive}>
+                      <div><p>{item.description}</p></div>
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -269,42 +271,46 @@ export function HomePage() {
       </section>
 
       <section className="expectations" aria-labelledby="expectations-title">
-        <div className="home-section-heading home-section-heading--center">
-          <Eyebrow>What To Expect</Eyebrow>
-          <Heading id="expectations-title">What To Expect<br />On Every Project</Heading>
-          <p>A consistent experience across every project: durable construction, transparent budgeting, clear accountability, and a safe jobsite.</p>
-          <ButtonLink to="/contact">Contact Us <span aria-hidden="true">↗</span></ButtonLink>
-        </div>
-        <div className="expectations__grid">
-          {expectations.map((expectation) => (
-            <article className="expectation-card" key={expectation.title}>
-              <img src={expectation.icon} alt="" aria-hidden="true" />
-              <Heading as="h3" size="card">{expectation.title}</Heading>
-              <p>{expectation.description}</p>
-            </article>
-          ))}
+        <div className="expectations__inner">
+          <div className="home-section-heading home-section-heading--center">
+            <Eyebrow>What To Expect</Eyebrow>
+            <Heading id="expectations-title">What To Expect<br />On Every Project</Heading>
+            <p>A consistent experience across every project: durable construction, transparent budgeting, clear accountability, and a safe jobsite.</p>
+            <ButtonLink to="/contact">Contact Us <span aria-hidden="true">↗</span></ButtonLink>
+          </div>
+          <div className="expectations__grid">
+            {expectations.map((expectation) => (
+              <article className="expectation-card" key={expectation.title}>
+                <img src={expectation.icon} alt="" aria-hidden="true" />
+                <Heading as="h3" size="card">{expectation.title}</Heading>
+                <p>{expectation.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="featured-project" aria-labelledby="featured-title">
-        <div className="featured-project__header">
-          <div>
-            <Eyebrow>Featured Project</Eyebrow>
-            <Heading id="featured-title">Take a look at our most recent project</Heading>
-          </div>
-          <ButtonLink to="/projects">View Portfolio <span aria-hidden="true">↗</span></ButtonLink>
-        </div>
-        <div className="featured-project__body">
-          <img className="featured-project__image" src="/assets/images/home-featured-project.png" alt="N. Rocky River Road and Lawyers Road roundabout under construction" />
-          <div className="featured-project__content">
+        <div className="featured-project__inner">
+          <div className="featured-project__header">
             <div>
-              <Heading as="h3" size="card">N. Rocky River Rd / Lawyers Rd Roundabout</Heading>
-              <p>The N. Rocky River Rd / Lawyers Rd Roundabout project was a complex infrastructure development designed to improve traffic flow and safety in the region. Our team managed the excavation, grading, and asphalt paving, ensuring a seamless transition for commuters and local residents. This project showcases our expertise in heavy civil construction and our commitment to delivering high-quality results on time.</p>
-              <ButtonLink variant="dark" to="/projects/n-rocky-river-road-roundabout">View Project <span aria-hidden="true">↗</span></ButtonLink>
+              <Eyebrow>Featured Project</Eyebrow>
+              <Heading id="featured-title">Take a look at our most recent project</Heading>
             </div>
-            <div className="project-stats">
-              <div><strong>600+</strong><span>Projects Built</span></div>
-              <div><strong>30+</strong><span>Years Experience</span></div>
+            <ButtonLink to="/projects">View Portfolio <span aria-hidden="true">↗</span></ButtonLink>
+          </div>
+          <div className="featured-project__body">
+            <img className="featured-project__image" src="/assets/images/home-featured-project.png" alt="N. Rocky River Road and Lawyers Road roundabout under construction" />
+            <div className="featured-project__content">
+              <div>
+                <Heading as="h3" size="card">N. Rocky River Rd / Lawyers Rd Roundabout</Heading>
+                <p>The N. Rocky River Rd / Lawyers Rd Roundabout project was a complex infrastructure development designed to improve traffic flow and safety in the region. Our team managed the excavation, grading, and asphalt paving, ensuring a seamless transition for commuters and local residents. This project showcases our expertise in heavy civil construction and our commitment to delivering high-quality results on time.</p>
+                <ButtonLink variant="dark" to="/projects/n-rocky-river-road-roundabout">View Project <span aria-hidden="true">↗</span></ButtonLink>
+              </div>
+              <div className="project-stats">
+                <div><strong>600+</strong><span>Projects Built</span></div>
+                <div><strong>30+</strong><span>Years Experience</span></div>
+              </div>
             </div>
           </div>
         </div>
