@@ -81,6 +81,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   accessible close behavior.
 - Added the requested white-and-green hover treatment specifically to the
   homepage Service Area contact button.
+- Made the homepage expectation cards content-driven in height, with equal
+  heights per grid row and responsive four-, two-, and one-column layouts.
 
 ## Known Limitations
 
