@@ -98,6 +98,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   button hover treatment.
 - Grouped the responsive footer with explicit grid areas so Brand and Contact
   share one row while Services and Company remain together on the next row.
+- Kept the responsive header visible above its drawer and refined the mobile
+  navigation spacing, hover states, service disclosure, and child-route active state.
 
 ## Known Limitations
 

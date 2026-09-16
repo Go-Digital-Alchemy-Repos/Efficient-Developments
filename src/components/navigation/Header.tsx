@@ -21,16 +21,16 @@ const serviceNavigation = [
 ]
 
 export function Header() {
+  const { pathname } = useLocation()
+  const isServiceRoute = pathname.startsWith('/services/')
   const [isOpen, setIsOpen] = useState(false)
   const [areServicesOpen, setAreServicesOpen] = useState(false)
+  const [areMobileServicesOpen, setAreMobileServicesOpen] = useState(isServiceRoute)
   const desktopServicesRef = useRef<HTMLDivElement>(null)
   const desktopServicesTriggerRef = useRef<HTMLButtonElement>(null)
   const drawerRef = useRef<HTMLElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const shouldRestoreFocusRef = useRef(false)
-  const { pathname } = useLocation()
-  const isServiceRoute = pathname.startsWith('/services/')
-
   const closeMobileNavigation = useCallback((restoreFocus = false) => {
     shouldRestoreFocusRef.current = restoreFocus
     setIsOpen(false)
@@ -210,21 +210,34 @@ export function Header() {
               className={({ isActive }) => `mobile-navigation__link${isActive ? ' is-active' : ''}`}
               end={item.to === '/'}
               to={item.to}
-              onClick={() => closeMobileNavigation(false)}
+              onClick={() => {
+                setAreMobileServicesOpen(false)
+                closeMobileNavigation(false)
+              }}
               tabIndex={isOpen ? 0 : -1}
             >
               {item.label}
             </NavLink>
           ))}
           <div className="mobile-navigation__services">
-            <span className={`mobile-navigation__link mobile-navigation__services-label${isServiceRoute ? ' is-active' : ''}`}>Services</span>
-            <div className="mobile-navigation__service-links">
+            <button
+              aria-controls="mobile-service-links"
+              aria-expanded={areMobileServicesOpen}
+              className="mobile-navigation__link mobile-navigation__services-trigger"
+              onClick={() => setAreMobileServicesOpen((value) => !value)}
+              tabIndex={isOpen ? 0 : -1}
+              type="button"
+            >
+              <span>Services</span>
+              <span aria-hidden="true" className="mobile-navigation__services-arrow">▾</span>
+            </button>
+            <div className="mobile-navigation__service-links" hidden={!areMobileServicesOpen} id="mobile-service-links">
               {serviceNavigation.map((item) => (
                 <NavLink
                   className={({ isActive }) => `mobile-navigation__service-link${isActive ? ' is-active' : ''}`}
                   key={item.to}
                   onClick={() => closeMobileNavigation(false)}
-                  tabIndex={isOpen ? 0 : -1}
+                  tabIndex={isOpen && areMobileServicesOpen ? 0 : -1}
                   to={item.to}
                 >
                   {item.label}
@@ -237,7 +250,10 @@ export function Header() {
               key={item.to}
               className={({ isActive }) => `mobile-navigation__link${isActive ? ' is-active' : ''}`}
               to={item.to}
-              onClick={() => closeMobileNavigation(false)}
+              onClick={() => {
+                setAreMobileServicesOpen(false)
+                closeMobileNavigation(false)
+              }}
               tabIndex={isOpen ? 0 : -1}
             >
               {item.label}
@@ -247,7 +263,10 @@ export function Header() {
         <ButtonLink
           className="mobile-navigation__cta"
           to="/contact"
-          onClick={() => closeMobileNavigation(false)}
+          onClick={() => {
+            setAreMobileServicesOpen(false)
+            closeMobileNavigation(false)
+          }}
           tabIndex={isOpen ? 0 : -1}
         >
           Contact Us <img aria-hidden="true" src="/assets/icons/cta-arrow.svg" alt="" />
