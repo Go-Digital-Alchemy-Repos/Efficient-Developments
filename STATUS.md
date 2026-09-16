@@ -64,6 +64,8 @@ replacement, mobile-reference reconciliation, and production integration work.
 - Added one-time, reduced-motion-aware viewport reveals to static content across
   the implemented routes without changing the existing interactive transitions
   or accordion, hover, modal, carousel, and navigation behavior.
+- Updated the global ink/deep-surface color and all matching translucent and SVG
+  uses from `#1A1D21` to `#333333` across the implemented website.
 
 ## Known Limitations
 

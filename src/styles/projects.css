@@ -253,7 +253,7 @@
 .project-lightbox { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 32px; background: rgb(0 0 0 / 84%); }
 .project-lightbox section { position: relative; max-width: min(1200px, 92vw); max-height: 90vh; }
 .project-lightbox section > img { max-height: 90vh; object-fit: contain; }
-.project-lightbox button { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 0; color: white; background: rgb(26 29 33 / 88%); font-size: 30px; cursor: pointer; }
+.project-lightbox button { position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; border: 0; color: white; background: rgb(51 51 51 / 88%); font-size: 30px; cursor: pointer; }
 
 @media (max-width: 63.9375rem) {
   .projects-index { padding-inline: 32px; }

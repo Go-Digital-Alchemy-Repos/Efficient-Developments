@@ -249,7 +249,7 @@
   place-items: center;
   padding: 24px;
   overflow-y: auto;
-  background: rgb(26 29 33 / 96%);
+  background: rgb(51 51 51 / 96%);
   backdrop-filter: blur(8px);
 }
 

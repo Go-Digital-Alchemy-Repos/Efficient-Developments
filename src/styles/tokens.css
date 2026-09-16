@@ -1,11 +1,11 @@
 :root {
   /* Reconciled against Figma frame 565:3145. */
-  --color-ink: #1a1d21;
+  --color-ink: #333333;
   --color-ink-soft: #3b3e3b;
   --color-text-muted: #6b7280;
   --color-white: #ffffff;
   --color-surface-muted: #e5e7eb;
-  --color-surface-deep: #1a1d21;
+  --color-surface-deep: #333333;
   --color-green: #7fa67a;
   --color-green-dark: #3d503b;
   --color-green-soft: var(--color-green);
