@@ -74,6 +74,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   with paused-on-interaction autoplay and reduced-motion support.
 - Increased the homepage How We Work image and its aligned section by 60px at
   each responsive layout size while preserving the image crop behavior.
+- Updated the desktop featured-project layout so the text column stays fixed at
+  its designed width while the adjacent project image absorbs width changes.
 
 ## Known Limitations
 
