@@ -7,37 +7,37 @@ const services = [
   {
     title: 'Asphalt Paving',
     description: 'Full-depth paving, resurfacing, and maintenance for roads, parking lots, and driveways.',
-    image: '/assets/images/service-asphalt.jpg',
+    image: '/assets/images/services/asphalt-paving-hero-provided.jpg',
     to: '/services/asphalt-paving',
   },
   {
     title: 'Commercial Concrete',
     description: 'Slabs, foundations, sidewalks, curbs, and loading areas for commercial and municipal sites.',
-    image: '/assets/images/service-commercial-concrete.jpg',
+    image: '/assets/images/services/commercial-concrete-hero-provided.jpg',
     to: '/services/commercial-concrete',
   },
   {
     title: 'Residential Concrete',
     description: 'Concrete flatwork for housing developments, estates, and large residential properties.',
-    image: '/assets/images/service-residential-concrete.jpg',
+    image: '/assets/images/services/residential-concrete-hero-provided.jpg',
     to: '/services/residential-concrete',
   },
   {
     title: 'Greenways',
     description: 'Shared-use paths, trails, and pedestrian infrastructure for communities.',
-    image: '/assets/images/service-greenways.jpg',
+    image: '/assets/images/services/greenways-hero-provided.jpg',
     to: '/services/greenways',
   },
   {
     title: 'Roads & Bridges',
     description: 'Road and bridge construction for municipalities and DOT projects across the Carolinas.',
-    image: '/assets/images/service-roads-bridges.jpg',
+    image: '/assets/images/services/roads-bridges-hero-provided.jpg',
     to: '/services/roads-bridges',
   },
   {
     title: 'Underground Utilities',
     description: 'Water, sewer, and storm line installation for municipalities and developments.',
-    image: '/assets/images/service-underground-utilities.jpg',
+    image: '/assets/images/services/underground-utilities-hero-provided.jpg',
     to: '/services/underground-utilities',
   },
 ]

@@ -68,6 +68,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   uses from `#1A1D21` to `#333333` across the implemented website.
 - Standardized every page-level hero heading to uppercase while preserving the
   existing hero typography, dimensions, and responsive behavior.
+- Replaced all six service-page hero images and matching homepage service-card
+  images with the owner-supplied service photography.
 
 ## Known Limitations
 
