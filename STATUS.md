@@ -76,6 +76,9 @@ replacement, mobile-reference reconciliation, and production integration work.
   each responsive layout size while preserving the image crop behavior.
 - Updated the desktop featured-project layout so the text column stays fixed at
   its designed width while the adjacent project image absorbs width changes.
+- Implemented the Figma-matched responsive navigation drawer at 1200px and
+  below, including nested service links, focus trapping, scroll locking, and
+  accessible close behavior.
 
 ## Known Limitations
 
