@@ -123,6 +123,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   including keyboard arrow navigation and endpoint states matching the gallery.
 - Standardized project-detail category eyebrows to uppercase across every
   project route.
+- Moved the project lightbox navigation controls onto the photo edges so their
+  existing gallery-arrow styling remains visible against the overlay.
 
 ## Known Limitations
 

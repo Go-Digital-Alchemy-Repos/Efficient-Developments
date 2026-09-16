@@ -143,14 +143,14 @@ export function ProjectDetailPage() {
 
       {lightboxIndex !== null && (
         <div className="project-lightbox" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setLightboxIndex(null) }}>
-          <button aria-label="Previous project image" className="project-gallery__arrow project-lightbox__arrow project-lightbox__arrow--previous" disabled={lightboxIndex === 0} onClick={() => setLightboxIndex((value) => value === null ? null : value - 1)} type="button">‹</button>
           <section aria-label={`Enlarged project photo ${lightboxIndex + 1} of ${galleryImages.length}`} aria-modal="true" className="project-lightbox__dialog" ref={lightboxDialogRef} role="dialog">
             <div className="project-lightbox__content">
               <img src={galleryImages[lightboxIndex]} alt={`Enlarged project view ${lightboxIndex + 1} of ${galleryImages.length}`} />
             </div>
+            <button aria-label="Previous project image" className="project-gallery__arrow project-lightbox__arrow project-lightbox__arrow--previous" disabled={lightboxIndex === 0} onClick={() => setLightboxIndex((value) => value === null ? null : value - 1)} type="button">‹</button>
             <ModalCloseButton className="modal-close--project-lightbox" aria-label="Close enlarged photo" onClick={() => setLightboxIndex(null)} ref={lightboxCloseRef} />
+            <button aria-label="Next project image" className="project-gallery__arrow project-lightbox__arrow project-lightbox__arrow--next" disabled={lightboxIndex === galleryImages.length - 1} onClick={() => setLightboxIndex((value) => value === null ? null : value + 1)} type="button">›</button>
           </section>
-          <button aria-label="Next project image" className="project-gallery__arrow project-lightbox__arrow project-lightbox__arrow--next" disabled={lightboxIndex === galleryImages.length - 1} onClick={() => setLightboxIndex((value) => value === null ? null : value + 1)} type="button">›</button>
         </div>
       )}
     </main>

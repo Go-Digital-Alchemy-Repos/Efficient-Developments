@@ -274,9 +274,9 @@
 
 .project-lightbox__content > img { width: 100%; height: auto; display: block; }
 .modal-close--project-lightbox { z-index: 1; }
-.project-lightbox__arrow { position: absolute; z-index: 1; top: 50%; translate: 0 -50%; }
-.project-lightbox__arrow--previous { left: 26px; }
-.project-lightbox__arrow--next { right: 26px; }
+.project-lightbox__arrow { position: absolute; z-index: 2; top: 50%; translate: 0 -50%; }
+.project-lightbox__arrow--previous { left: 16px; }
+.project-lightbox__arrow--next { right: 16px; }
 
 @media (max-width: 63.9375rem) {
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
