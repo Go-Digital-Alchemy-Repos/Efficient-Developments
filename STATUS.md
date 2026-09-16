@@ -127,6 +127,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   existing gallery-arrow styling remains visible against the overlay.
 - Updated the project lightbox to size itself to each image and proportionally
   contain it within the viewport without internal or page scrollbars.
+- Removed the project lightbox's residual native scrollbar gutter so gallery
+  images meet the popup edge consistently without a white strip.
 
 ## Known Limitations
 
