@@ -248,6 +248,25 @@ html.mobile-navigation-open body {
 .card--interactive { transition: translate 160ms ease, box-shadow 160ms ease; }
 .card--interactive:hover { translate: 0 -2px; }
 
+.modal-close {
+  position: absolute;
+  top: 23px;
+  right: 23px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.modal-close:hover { background: var(--color-border); }
+.modal-close img { width: 16px; height: 16px; }
+
 .form-field {
   display: grid;
   gap: var(--space-2);
@@ -503,6 +522,7 @@ html.mobile-navigation-open body {
   .brand-logo { width: 13rem; height: auto; }
   .site-header__logo-link { width: 13rem; height: auto; }
   .mobile-navigation { width: 100%; }
+  .modal-close { top: 16px; right: 16px; }
   .site-footer__legal { height: auto; gap: 24px; padding-block: 24px; flex-direction: column; align-items: flex-start; }
 }
 

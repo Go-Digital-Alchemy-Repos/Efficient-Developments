@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Container } from '../components/layout/Container'
+import { ModalCloseButton } from '../components/ui/ModalCloseButton'
 import { projects } from '../data/projects'
 
 const galleryImages = [
@@ -134,7 +135,7 @@ export function ProjectDetailPage() {
         <div className="project-lightbox" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setLightboxImage(null) }}>
           <section aria-label="Enlarged project photo" aria-modal="true" role="dialog">
             <img src={lightboxImage} alt="Enlarged project view" />
-            <button aria-label="Close enlarged photo" onClick={() => setLightboxImage(null)} ref={lightboxCloseRef} type="button">×</button>
+            <ModalCloseButton aria-label="Close enlarged photo" onClick={() => setLightboxImage(null)} ref={lightboxCloseRef} />
           </section>
         </div>
       )}

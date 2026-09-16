@@ -115,6 +115,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   the matching homepage service cards with cache-safe asset URLs.
 - Added a one-time, staggered, reduced-motion-aware count-up treatment to the
   homepage project statistics without changing their final content or sizing.
+- Matched the project image lightbox to the About bio modal with a shared
+  rounded shell treatment and reusable circular close control.
 
 ## Known Limitations
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { ModalCloseButton } from '../components/ui/ModalCloseButton'
 import { Eyebrow, Heading } from '../components/ui/Typography'
 
 const stories = [
@@ -191,15 +192,11 @@ export function AboutPage() {
                 {activeLeader.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
             </div>
-            <button
+            <ModalCloseButton
               aria-label={`Close ${activeLeader.name} profile`}
-              className="member-modal__close"
               onClick={closeModal}
               ref={closeButtonRef}
-              type="button"
-            >
-              <img src="/assets/icons/modal-close.svg" alt="" />
-            </button>
+            />
           </section>
         </div>
       )}
