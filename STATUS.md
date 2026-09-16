@@ -90,6 +90,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   throughout the 768px–1023px tablet range.
 - Made service-page detail sections grow with their content and kept every
   approach image in normal flow at its intrinsic aspect ratio across breakpoints.
+- Removed the Asphalt Paving top divider in the two-column service navigation
+  and added 40px more space below its Contact Us button.
 
 ## Known Limitations
 

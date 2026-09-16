@@ -277,9 +277,10 @@
   .service-detail { padding: 56px 0; }
   .service-detail__inner { width: calc(100% - 40px); display: block; }
   .service-detail__inner::before { display: none; }
-  .service-sidebar { min-height: 0; padding: 0 0 40px; border-right: 0; }
+  .service-sidebar { min-height: 0; padding: 0 0 80px; border-right: 0; }
   .service-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
   .service-sidebar__link { font-size: 15px; }
+  .service-sidebar__link:first-child { border-top: 0; }
   .service-detail__copy h2 { font-size: 34px; line-height: 42px; }
   .service-offerings { padding: 48px 20px 56px; }
   .service-offerings__top,
