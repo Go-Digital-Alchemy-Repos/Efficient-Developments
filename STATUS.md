@@ -107,6 +107,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   behavior across desktop and mobile layouts.
 - Replaced the shared header and footer brand marks with the supplied primary
   Efficient Developments SVG while retaining responsive logo containers.
+- Rebuilt the supplied Digital Alchemy EPS as an inline footer vector, linked it
+  to the agency site, and added the requested text-only green hover treatment.
 
 ## Known Limitations
 

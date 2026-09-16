@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Container } from '../layout/Container'
+import { DigitalAlchemyLogo } from '../ui/DigitalAlchemyLogo'
 import { Logo } from '../ui/Logo'
 
 const serviceLinks = [
@@ -48,10 +49,14 @@ export function Footer() {
           <span aria-hidden="true">·</span>
           <Link to="/terms">Terms</Link>
         </p>
-        <div className="site-footer__made-by">
+        <a
+          aria-label="Visit Digital Alchemy"
+          className="site-footer__made-by"
+          href="https://godigitalalchemy.com/"
+        >
           <span>Made by</span>
-          <img src="/assets/logos/digital-alchemy.svg" alt="Digital Alchemy" />
-        </div>
+          <DigitalAlchemyLogo />
+        </a>
       </div>
     </footer>
   )

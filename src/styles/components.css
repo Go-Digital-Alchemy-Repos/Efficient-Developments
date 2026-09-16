@@ -357,7 +357,12 @@ html.mobile-navigation-open body {
 .site-footer__legal p span { font-size: 13px; }
 .site-footer__made-by { display: flex; align-items: center; gap: 4px; color: var(--color-text-muted); }
 .site-footer__made-by span { width: 66px; font-size: 14px; }
-.site-footer__made-by img { width: 165px; height: 16px; }
+.digital-alchemy-logo { width: 165px; height: auto; }
+.digital-alchemy-logo__mark,
+.digital-alchemy-logo__wordmark { fill: #6b7280; }
+.digital-alchemy-logo__wordmark { transition: fill 160ms ease; }
+.site-footer__made-by:hover .digital-alchemy-logo__wordmark,
+.site-footer__made-by:focus-visible .digital-alchemy-logo__wordmark { fill: #7fa67a; }
 .site-footer a { transition: color 160ms ease; }
 .site-footer a:hover,
 .breadcrumbs a:hover { color: var(--color-green); }
