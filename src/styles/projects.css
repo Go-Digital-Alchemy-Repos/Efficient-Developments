@@ -131,7 +131,7 @@
 .project-detail-heading {
   width: 100%;
   min-height: 248px;
-  padding-top: 89px;
+  padding: 89px 0 32px;
   text-align: center;
 }
 
@@ -272,7 +272,7 @@
   .project-filters { gap: 8px; margin-top: 32px; }
   .project-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
   .project-card__media { height: auto; aspect-ratio: 1.664 / 1; }
-  .project-detail-heading { min-height: 239px; padding-top: 57px; }
+  .project-detail-heading { min-height: 239px; padding: 57px 0 0; }
   .project-detail-heading h1 { font-size: 38px; line-height: 1.12; }
   .project-detail-hero { height: auto; }
   .project-detail-hero img { height: auto; aspect-ratio: 1.6 / 1; }

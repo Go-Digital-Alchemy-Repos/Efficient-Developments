@@ -100,6 +100,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   share one row while Services and Company remain together on the next row.
 - Kept the responsive header visible above its drawer and refined the mobile
   navigation spacing, hover states, service disclosure, and child-route active state.
+- Preserved a 32px desktop gap between wrapping project-detail titles and their
+  hero images without changing the mobile title layout.
 
 ## Known Limitations
 
