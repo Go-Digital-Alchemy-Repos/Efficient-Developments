@@ -66,6 +66,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   or accordion, hover, modal, carousel, and navigation behavior.
 - Updated the global ink/deep-surface color and all matching translucent and SVG
   uses from `#1A1D21` to `#333333` across the implemented website.
+- Standardized every page-level hero heading to uppercase while preserving the
+  existing hero typography, dimensions, and responsive behavior.
 
 ## Known Limitations
 
