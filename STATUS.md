@@ -92,6 +92,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   approach image in normal flow at its intrinsic aspect ratio across breakpoints.
 - Removed the Asphalt Paving top divider in the two-column service navigation
   and added 40px more space below its Contact Us button.
+- Aligned the Projects listing and project-detail content to the shared site
+  container and responsive gutters while retaining full-width project navigation.
 
 ## Known Limitations
 

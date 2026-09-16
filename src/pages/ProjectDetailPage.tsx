@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { Container } from '../components/layout/Container'
 import { projects } from '../data/projects'
 
 const galleryImages = [
@@ -63,50 +64,58 @@ export function ProjectDetailPage() {
 
   return (
     <main id="main-content" className="project-detail-page">
-      <header className="project-detail-heading" data-reveal>
-        <p><span aria-hidden="true" />{project.category}</p>
-        <h1>{project.title}</h1>
-      </header>
+      <Container>
+        <header className="project-detail-heading" data-reveal>
+          <p><span aria-hidden="true" />{project.category}</p>
+          <h1>{project.title}</h1>
+        </header>
+      </Container>
 
-      <section className="project-detail-hero" aria-label={`${project.title} overview image`} data-reveal>
-        <img src={projectIndex === 0 ? '/assets/images/projects/detail/hero-project-detail.jpg' : project.image} alt="" />
-      </section>
+      <Container>
+        <section className="project-detail-hero" aria-label={`${project.title} overview image`} data-reveal>
+          <img src={projectIndex === 0 ? '/assets/images/projects/detail/hero-project-detail.jpg' : project.image} alt="" />
+        </section>
+      </Container>
 
-      <section className="project-overview" aria-labelledby="project-overview-title">
-        <aside className="project-facts" aria-labelledby="project-facts-title" data-reveal>
-          <h2 id="project-facts-title">At a Glance</h2>
-          <div className="project-facts__divider" />
-          <dl>
-            <div><dt>Project Name</dt><dd>{project.title}</dd></div>
-            <div><dt>Location</dt><dd>Charlotte, NC</dd></div>
-            <div><dt>Duration</dt><dd>18 Months</dd></div>
-            <div><dt>Project Type</dt><dd>Roads &amp; Bridges</dd></div>
-            <div><dt>Status</dt><dd>Completed</dd></div>
-          </dl>
-          <div className="project-facts__divider" />
-          <Link to="/projects">← Return to Portfolio</Link>
-        </aside>
+      <Container>
+        <section className="project-overview" aria-labelledby="project-overview-title">
+          <aside className="project-facts" aria-labelledby="project-facts-title" data-reveal>
+            <h2 id="project-facts-title">At a Glance</h2>
+            <div className="project-facts__divider" />
+            <dl>
+              <div><dt>Project Name</dt><dd>{project.title}</dd></div>
+              <div><dt>Location</dt><dd>Charlotte, NC</dd></div>
+              <div><dt>Duration</dt><dd>18 Months</dd></div>
+              <div><dt>Project Type</dt><dd>Roads &amp; Bridges</dd></div>
+              <div><dt>Status</dt><dd>Completed</dd></div>
+            </dl>
+            <div className="project-facts__divider" />
+            <Link to="/projects">← Return to Portfolio</Link>
+          </aside>
 
-        <article className="project-overview__content" data-reveal data-reveal-delay="1">
-          <h2 id="project-overview-title">Project Overview</h2>
-          <p>Efficient Developments was awarded the contract for the Highway 74 Interchange reconstruction project in Charlotte, NC. This complex infrastructure project involved the complete redesign and rebuild of a critical interchange connecting Highway 74 with Interstate 485, serving over 80,000 vehicles daily.</p>
-          <p>Our team managed all phases of the project including demolition of the existing interchange structure, earthwork and grading for the new alignment, construction of reinforced concrete bridge decks and abutments, installation of modern drainage systems, and integration of intelligent transportation systems.</p>
-          <p>The project was completed on schedule within the 18-month timeline, maintaining traffic flow throughout construction through carefully planned detour routes and phased construction sequences. Safety remained our top priority with zero lost-time incidents recorded across the project lifecycle.</p>
-          <p>Key achievements include the installation of 4 new bridge structures, over 12,000 linear feet of storm drainage, and 28,000 tons of asphalt paving. The new interchange design improves traffic capacity by 35% and significantly reduces accident rates at the intersection.</p>
-          <img className="project-overview__media" src="/assets/images/projects/detail/at-a-glance.jpg" alt="Aerial view of the roundabout under construction" />
-        </article>
-      </section>
+          <article className="project-overview__content" data-reveal data-reveal-delay="1">
+            <h2 id="project-overview-title">Project Overview</h2>
+            <p>Efficient Developments was awarded the contract for the Highway 74 Interchange reconstruction project in Charlotte, NC. This complex infrastructure project involved the complete redesign and rebuild of a critical interchange connecting Highway 74 with Interstate 485, serving over 80,000 vehicles daily.</p>
+            <p>Our team managed all phases of the project including demolition of the existing interchange structure, earthwork and grading for the new alignment, construction of reinforced concrete bridge decks and abutments, installation of modern drainage systems, and integration of intelligent transportation systems.</p>
+            <p>The project was completed on schedule within the 18-month timeline, maintaining traffic flow throughout construction through carefully planned detour routes and phased construction sequences. Safety remained our top priority with zero lost-time incidents recorded across the project lifecycle.</p>
+            <p>Key achievements include the installation of 4 new bridge structures, over 12,000 linear feet of storm drainage, and 28,000 tons of asphalt paving. The new interchange design improves traffic capacity by 35% and significantly reduces accident rates at the intersection.</p>
+            <img className="project-overview__media" src="/assets/images/projects/detail/at-a-glance.jpg" alt="Aerial view of the roundabout under construction" />
+          </article>
+        </section>
+      </Container>
 
       <section className="project-gallery" aria-label="Project photos">
-        <button className="project-gallery__arrow" disabled={galleryStart === 0} onClick={() => setGalleryStart((value) => value - 1)} type="button" aria-label="Previous photos">‹</button>
-        <div className="project-gallery__row" data-reveal>
-          {visibleGallery.map((image, index) => (
-            <button className="project-gallery__image" key={image} onClick={() => setLightboxImage(image)} type="button" aria-label={`Enlarge project photo ${galleryStart + index + 1}`}>
-              <img src={image} alt="" />
-            </button>
-          ))}
-        </div>
-        <button className="project-gallery__arrow" disabled={galleryStart === maxGalleryStart} onClick={() => setGalleryStart((value) => value + 1)} type="button" aria-label="Next photos">›</button>
+        <Container className="project-gallery__inner">
+          <button className="project-gallery__arrow" disabled={galleryStart === 0} onClick={() => setGalleryStart((value) => value - 1)} type="button" aria-label="Previous photos">‹</button>
+          <div className="project-gallery__row" data-reveal>
+            {visibleGallery.map((image, index) => (
+              <button className="project-gallery__image" key={image} onClick={() => setLightboxImage(image)} type="button" aria-label={`Enlarge project photo ${galleryStart + index + 1}`}>
+                <img src={image} alt="" />
+              </button>
+            ))}
+          </div>
+          <button className="project-gallery__arrow" disabled={galleryStart === maxGalleryStart} onClick={() => setGalleryStart((value) => value + 1)} type="button" aria-label="Next photos">›</button>
+        </Container>
       </section>
 
       <nav className="project-sequence" aria-label="Adjacent projects" data-reveal>
