@@ -96,6 +96,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   container and responsive gutters while retaining full-width project navigation.
 - Prevented the active Projects pagination button from receiving the inactive
   button hover treatment.
+- Grouped the responsive footer with explicit grid areas so Brand and Contact
+  share one row while Services and Company remain together on the next row.
 
 ## Known Limitations
 

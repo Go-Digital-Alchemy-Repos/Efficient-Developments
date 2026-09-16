@@ -21,13 +21,13 @@ export function Footer() {
           </Link>
           <p>Heavy civil infrastructure contractor serving municipalities and developers across the Carolinas.</p>
         </div>
-        <nav aria-label="Services">
+        <nav aria-label="Services" className="site-footer__services">
           <p className="site-footer__heading">Services</p>
           {serviceLinks.map(([label, to]) => (
             <Link key={to} to={to}>{label}</Link>
           ))}
         </nav>
-        <nav aria-label="Company">
+        <nav aria-label="Company" className="site-footer__company">
           <p className="site-footer__heading">Company</p>
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>

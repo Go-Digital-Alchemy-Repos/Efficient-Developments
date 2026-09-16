@@ -315,6 +315,7 @@ html.mobile-navigation-open body {
   height: 277px;
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-areas: 'brand services company contact';
   gap: 32px;
   padding-block: 44px;
 }
@@ -335,7 +336,10 @@ html.mobile-navigation-open body {
   text-decoration: none;
 }
 
-.site-footer__brand { gap: 9px !important; }
+.site-footer__brand { grid-area: brand; gap: 9px !important; }
+.site-footer__services { grid-area: services; }
+.site-footer__company { grid-area: company; }
+.site-footer__contact { grid-area: contact; }
 .site-footer__logo-link { display: block; }
 .site-footer__brand p { max-width: 260px; }
 .site-footer__heading { margin-bottom: 9px; font-size: 16px; line-height: 24px; }
@@ -456,7 +460,13 @@ html.mobile-navigation-open body {
 
 @media (max-width: 63.9375rem) {
   .site-footer { height: auto; }
-  .site-footer__grid { height: auto; grid-template-columns: repeat(2, 1fr); }
+  .site-footer__grid {
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'brand contact'
+      'services company';
+  }
   .site-footer__legal { padding-inline: var(--page-gutter); }
 }
 
@@ -464,8 +474,19 @@ html.mobile-navigation-open body {
   .brand-logo { width: 13rem; height: auto; }
   .site-header__logo-link { width: 13rem; height: auto; }
   .mobile-navigation { width: 100%; }
-  .site-footer__grid { grid-template-columns: 1fr; gap: var(--space-10); }
   .site-footer__legal { height: auto; gap: 24px; padding-block: 24px; flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 39.9375rem) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'brand'
+      'contact'
+      'services'
+      'company';
+    gap: var(--space-10);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
