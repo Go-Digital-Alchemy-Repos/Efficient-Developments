@@ -2,7 +2,8 @@
 
 ## Current Phase
 
-Core marketing-page implementation and design-system reconciliation.
+Core desktop marketing pages are implemented. The project is ready for content
+replacement, mobile-reference reconciliation, and production integration work.
 
 ## Repository
 
@@ -19,7 +20,7 @@ Core marketing-page implementation and design-system reconciliation.
 - Service ID: `8add55f7-d482-4e61-98da-20380da11216`
 - GitHub service connection: Connected to `Go-Digital-Alchemy-Repos/Efficient-Developments`
 - Automatic deployment source: GitHub `main`
-- Current deployment: Building from commit `ba2f084`
+- Automatic deployments follow the latest pushed commit on GitHub `main`.
 
 ## Active Blockers
 
@@ -49,9 +50,26 @@ Core marketing-page implementation and design-system reconciliation.
   lightbox, and adjacent-project navigation.
 - Made the shared navigation sticky and reconciled the affected hero and project
   offsets so completed routes retain their intended geometry.
+- Constrained homepage foreground content to the established 1296px content
+  boundary while keeping background images, gradients, and maps full bleed.
+- Reconciled the Commercial Concrete overview section to the shared 80px desktop
+  top padding used by the other service pages.
+- Updated the canonical primary green token and all former `#5FA67A` references
+  to `#7FA67A`, including shared states and local SVG assets.
+- Verified the latest implementation with ESLint, the TypeScript/Vite production
+  build, major-route browser inspection, and a repository-wide old-color scan.
+
+## Known Limitations
+
+- The contact form is presentational only and has no submission endpoint.
+- Phone, email, address, some leadership biographies, and several project entries
+  are placeholders awaiting final business content.
+- The exact primary green `#7FA67A` has 2.75:1 contrast against white; an approved
+  foreground or palette change is required for WCAG AA text contrast.
+- The project currently has no automated test script.
 
 ## Next Action
 
-Review the completed desktop routes, identify any available mobile Figma frames,
-and replace remaining placeholder business/contact copy when final content is
-provided.
+On the next device, follow the root `README.md`, pull `origin/main`, and verify a
+clean working tree before editing. Then identify available mobile Figma frames
+or replace placeholder business/contact content when final copy is provided.
