@@ -110,7 +110,7 @@
 .work-principle { border-bottom: 1px solid var(--color-border); }
 .work-principle__trigger { width: 100%; min-height: 67px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 0; border: 0; color: var(--color-text-muted); background: transparent; text-align: left; cursor: pointer; }
 .work-principle__trigger .heading { color: currentColor; font-size: 24px; line-height: 1; transition: color 180ms ease; }
-.work-principle__trigger:hover { color: #5fa67a; }
+.work-principle__trigger:hover { color: var(--color-green); }
 .work-principle.is-active .work-principle__trigger,
 .work-principle.is-active .work-principle__trigger:hover { color: #1a1d21; }
 .work-principle__indicator { width: 24px; display: grid; flex: 0 0 24px; place-items: center; color: var(--color-green); font-family: var(--font-body); font-size: 20px; font-weight: 400; line-height: 24px; }
@@ -150,7 +150,7 @@
 .service-card__arrow,
 .service-card__arrow img { transition: background-color 160ms ease, filter 160ms ease; }
 .service-card__arrow img { width: 16px; height: 16px; }
-.service-card:hover .service-card__arrow { background: #5fa67a; }
+.service-card:hover .service-card__arrow { background: var(--color-green); }
 .service-card:hover .service-card__arrow img { filter: brightness(0) invert(1); }
 .services-carousel__slider { width: 1192px; height: 8px; max-width: calc(100% - 104px); margin: 0; appearance: none; border: 0; border-radius: 999px; background: var(--color-border); cursor: grab; }
 .services-carousel__slider:active { cursor: grabbing; }
@@ -166,7 +166,7 @@
   grid-template-columns: 640px minmax(0, 1fr);
   padding-left: max(var(--page-gutter), calc((100% - var(--container-content)) / 2));
   color: var(--color-white);
-  background: linear-gradient(123.58deg, #3d503b 33.58%, #3e6d50 56.1%, #7fa67a 84.96%);
+  background: linear-gradient(123.58deg, #3d503b 33.58%, #3e6d50 56.1%, var(--color-green) 84.96%);
 }
 
 .home-page > .who-we-work-with { border-bottom: 0; }
@@ -267,7 +267,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: var(--color-white);
-  background: linear-gradient(130.76deg, #3d503b 33.58%, #3e6d50 56.1%, #7fa67a 84.96%);
+  background: linear-gradient(130.76deg, #3d503b 33.58%, #3e6d50 56.1%, var(--color-green) 84.96%);
 }
 
 .home-page > .service-area { border-bottom: 0; }

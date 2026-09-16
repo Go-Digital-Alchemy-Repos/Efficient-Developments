@@ -1,6 +1,6 @@
 <svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="28" height="8" viewBox="0 0 28 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Dots">
 <circle id="DotActive" cx="4" cy="4" r="4" fill="white"/>
-<circle id="DotInactive" cx="24" cy="4" r="4" fill="#5FA67A"/>
+<circle id="DotInactive" cx="24" cy="4" r="4" fill="#7FA67A"/>
 </g>
 </svg>

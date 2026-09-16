@@ -41,8 +41,8 @@
   transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
-.project-filter:hover { color: #7fa67a; }
-.project-filter[data-active] { color: var(--color-white); background: #7fa67a; border-color: #7fa67a; }
+.project-filter:hover { color: var(--color-green); }
+.project-filter[data-active] { color: var(--color-white); background: var(--color-green); border-color: var(--color-green); }
 
 .project-grid {
   display: grid;
@@ -82,7 +82,7 @@
 }
 
 .project-card__category {
-  color: #7fa67a;
+  color: var(--color-green);
   font-size: 11px;
   font-weight: 600;
   line-height: 14px;
@@ -104,7 +104,7 @@
 }
 
 .project-card__arrow { flex: 0 0 auto; font-size: 23px; font-weight: 700; line-height: 1; transition: color 180ms ease; }
-.project-card:hover .project-card__arrow { color: #7fa67a; }
+.project-card:hover .project-card__arrow { color: var(--color-green); }
 
 .project-pagination {
   display: flex;
@@ -124,8 +124,8 @@
   transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
-.project-pagination button:hover:not(:disabled) { color: #7fa67a; border-color: #7fa67a; }
-.project-pagination button[data-active] { color: var(--color-white); background: #7fa67a; border-color: #7fa67a; }
+.project-pagination button:hover:not(:disabled) { color: var(--color-green); border-color: var(--color-green); }
+.project-pagination button[data-active] { color: var(--color-white); background: var(--color-green); border-color: var(--color-green); }
 .project-pagination button:disabled { color: #b6bac1; cursor: not-allowed; }
 
 .project-detail-heading {
@@ -218,7 +218,7 @@
   transition: color 180ms ease, background-color 180ms ease;
 }
 
-.project-gallery__arrow:hover:not(:disabled) { color: #7fa67a; }
+.project-gallery__arrow:hover:not(:disabled) { color: var(--color-green); }
 .project-gallery__arrow:disabled { background: var(--color-text-muted); cursor: not-allowed; }
 .project-gallery__row { min-width: 0; flex: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 

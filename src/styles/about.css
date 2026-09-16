@@ -121,7 +121,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(123.58deg, #3d503b 33.58%, #3e6d50 56.1%, #7fa67a 84.96%);
+  background: linear-gradient(123.58deg, #3d503b 33.58%, #3e6d50 56.1%, var(--color-green) 84.96%);
 }
 
 .about-team__heading {
@@ -238,7 +238,7 @@
 }
 
 .leader-card__arrow img { width: 16px; height: 16px; transition: filter 160ms ease; }
-.leader-card:hover .leader-card__arrow { background: #5fa67a; }
+.leader-card:hover .leader-card__arrow { background: var(--color-green); }
 .leader-card:hover .leader-card__arrow img { filter: brightness(0) invert(1); }
 
 .member-modal {

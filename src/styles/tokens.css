@@ -6,9 +6,9 @@
   --color-white: #ffffff;
   --color-surface-muted: #e5e7eb;
   --color-surface-deep: #1a1d21;
-  --color-green: #5fa67a;
+  --color-green: #7fa67a;
   --color-green-dark: #3d503b;
-  --color-green-soft: #7fa67a;
+  --color-green-soft: var(--color-green);
   --color-border: #e5e7eb;
   --color-overlay: rgb(15 18 19 / 58%);
 
