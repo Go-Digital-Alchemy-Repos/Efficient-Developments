@@ -70,6 +70,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   existing hero typography, dimensions, and responsive behavior.
 - Replaced all six service-page hero images and matching homepage service-card
   images with the owner-supplied service photography.
+- Converted the homepage testimonial into an accessible two-slide text carousel
+  with paused-on-interaction autoplay and reduced-motion support.
 
 ## Known Limitations
 

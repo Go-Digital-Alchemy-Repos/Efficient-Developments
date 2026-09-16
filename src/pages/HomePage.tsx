@@ -1,5 +1,6 @@
 import { type CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { TestimonialCarousel } from '../components/sections/TestimonialCarousel'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
 
@@ -319,11 +320,7 @@ export function HomePage() {
       <section className="testimonial" aria-labelledby="testimonial-title">
         <div className="testimonial__shade" />
         <Heading id="testimonial-title" data-reveal>What Our Clients Say</Heading>
-        <blockquote data-reveal data-reveal-delay="1">
-          <p>“Efficient Developments stepped in when our project schedule was failing due to poor trade coordination. Their disciplined team took extreme ownership of the site and self-performed the critical path work to get us back on track. We finally found a partner who values precision as much as we do.”</p>
-          <footer>Marcus Thorne - Senior Director of Facilities</footer>
-        </blockquote>
-        <img src="/assets/icons/carousel-dots.svg" alt="" aria-hidden="true" />
+        <TestimonialCarousel />
       </section>
 
       <section className="service-area" aria-labelledby="service-area-title">
