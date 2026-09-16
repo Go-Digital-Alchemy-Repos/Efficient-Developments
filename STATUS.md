@@ -121,6 +121,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   dedicated viewport-constrained dialog and internally scrollable content area.
 - Added accessible previous and next controls to the project image lightbox,
   including keyboard arrow navigation and endpoint states matching the gallery.
+- Standardized project-detail category eyebrows to uppercase across every
+  project route.
 
 ## Known Limitations
 
