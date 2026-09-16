@@ -53,7 +53,7 @@ const services: ServicePageDefinition[] = [
     approachImage: '/assets/images/services/commercial-concrete-approach.jpg',
     overlayImage: '/assets/images/services/commercial-concrete-overlay.jpg',
     detailHeight: 904,
-    detailTop: 72,
+    detailTop: 80,
     overview: 'We pour the concrete that commercial and municipal sites are built on: slabs, foundations, sidewalks, curb and gutter, and heavy-duty loading and industrial areas. Our crews handle formwork, reinforcement, placement, and finishing.',
     approachTitle: 'How We Approach Concrete Work',
     approach: 'Your site plan drives every choice we make on a pour - subgrade preparation, mix design, joint layout, and finish. We tie slabs into the parking, docks, and utilities around them so the entire property works as one connected surface.',
