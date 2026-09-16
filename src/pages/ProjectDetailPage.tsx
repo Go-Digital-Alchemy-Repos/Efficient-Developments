@@ -3,12 +3,12 @@ import { Link, useParams } from 'react-router-dom'
 import { projects } from '../data/projects'
 
 const galleryImages = [
-  '/assets/images/projects/detail/gallery-01.png',
-  '/assets/images/projects/detail/gallery-02.png',
-  '/assets/images/projects/detail/gallery-03.png',
-  '/assets/images/projects/detail/gallery-04.png',
-  '/assets/images/projects/detail/hero-roundabout.png',
-  '/assets/images/projects/detail/overview-roundabout.png',
+  '/assets/images/projects/detail/gallery-01.jpg',
+  '/assets/images/projects/detail/gallery-02.jpg',
+  '/assets/images/projects/detail/gallery-03.jpg',
+  '/assets/images/projects/detail/gallery-04.jpg',
+  '/assets/images/projects/detail/hero-project-detail.jpg',
+  '/assets/images/projects/detail/at-a-glance.jpg',
 ]
 
 export function ProjectDetailPage() {
@@ -69,7 +69,7 @@ export function ProjectDetailPage() {
       </header>
 
       <section className="project-detail-hero" aria-label={`${project.title} overview image`}>
-        <img src={projectIndex === 0 ? '/assets/images/projects/detail/hero-roundabout.png' : project.image} alt="" />
+        <img src={projectIndex === 0 ? '/assets/images/projects/detail/hero-project-detail.jpg' : project.image} alt="" />
       </section>
 
       <section className="project-overview" aria-labelledby="project-overview-title">
@@ -93,7 +93,7 @@ export function ProjectDetailPage() {
           <p>Our team managed all phases of the project including demolition of the existing interchange structure, earthwork and grading for the new alignment, construction of reinforced concrete bridge decks and abutments, installation of modern drainage systems, and integration of intelligent transportation systems.</p>
           <p>The project was completed on schedule within the 18-month timeline, maintaining traffic flow throughout construction through carefully planned detour routes and phased construction sequences. Safety remained our top priority with zero lost-time incidents recorded across the project lifecycle.</p>
           <p>Key achievements include the installation of 4 new bridge structures, over 12,000 linear feet of storm drainage, and 28,000 tons of asphalt paving. The new interchange design improves traffic capacity by 35% and significantly reduces accident rates at the intersection.</p>
-          <img className="project-overview__media" src="/assets/images/projects/detail/overview-roundabout.png" alt="Aerial view of the roundabout under construction" />
+          <img className="project-overview__media" src="/assets/images/projects/detail/at-a-glance.jpg" alt="Aerial view of the roundabout under construction" />
         </article>
       </section>
 
@@ -111,12 +111,12 @@ export function ProjectDetailPage() {
 
       <nav className="project-sequence" aria-label="Adjacent projects">
         <Link className="project-sequence__item project-sequence__item--previous" to={`/projects/${previousProject.slug}`}>
-          <img src="/assets/images/projects/detail/nav-prev.png" alt="" />
+          <img src="/assets/images/projects/detail/nav-prev.jpg" alt="" />
           <span><small>← Previous Project</small><strong>{previousProject.title}</strong></span>
         </Link>
         <Link className="project-sequence__item project-sequence__item--next" to={`/projects/${nextProject.slug}`}>
           <span><small>Next Project →</small><strong>{nextProject.title}</strong></span>
-          <img src="/assets/images/projects/detail/nav-next.png" alt="" />
+          <img src="/assets/images/projects/detail/nav-next.jpg" alt="" />
         </Link>
       </nav>
       <div className="project-stripes" aria-hidden="true" />

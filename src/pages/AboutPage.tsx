@@ -6,14 +6,14 @@ const stories = [
     eyebrow: 'Background',
     title: <>Heavy Civil Work,<br />Done Right</>,
     body: 'Efficient Developments is a turnkey civil contractor serving municipalities and developers across the Carolinas. We build the roads, bridges, and underground systems that keep communities running. Since 2019, we have grown into a trusted name in civil infrastructure, known for finishing quality work ahead of schedule.',
-    image: '/assets/images/about/aerial-intersection.png',
+    image: '/assets/images/about/aerial-view-4-way-stop.jpg',
     alt: 'Aerial view of a completed downtown road and pedestrian intersection',
   },
   {
     eyebrow: 'Differentiator',
     title: <>Built Around Efficiency</>,
     body: 'Efficiency is how we operate, not just our name. Prompt estimates, fast mobilization, and tight scheduling keep projects moving from bid through completion. It is the reason much of our work comes from long-standing relationships with the municipalities and agencies we serve.',
-    image: '/assets/images/about/graded-site.png',
+    image: '/assets/images/about/road-construction-paved-dirt.jpg',
     alt: 'Graded construction site beside a municipal building',
     reverse: true,
     muted: true,
@@ -22,7 +22,7 @@ const stories = [
     eyebrow: 'Multi-Disciplinary',
     title: <>Heavy Civil Work,<br />Done Right</>,
     body: 'On our jobs, the grading crew, the paving crew, and the utility crew all answer to the same project team. We self-perform across disciplines, so a single contractor manages the full scope of work and there is always one clear point of responsibility.',
-    image: '/assets/images/about/roundabout.png',
+    image: '/assets/images/about/roundabout-concrete-edge.jpg',
     alt: 'Crew installing the concrete edge of a roundabout',
   },
 ]
@@ -32,7 +32,8 @@ const leaders = [
     name: 'David Mitchell',
     role: 'President & CEO',
     modalRole: 'President & Chief Executive Officer',
-    image: '/assets/images/about/david-mitchell.png',
+    image: '/assets/images/about/team-mitchell.jpg',
+    modalImage: '/assets/images/about/bio-mitchell.jpg',
     bio: [
       'David Mitchell has served as President & CEO of Efficient Developments since its founding in 2019. With over 25 years of experience in heavy civil infrastructure, he has directed the successful completion of major highway systems, complex bridge structures, and massive utility networks across both North and South Carolina.',
       "Prior to founding Efficient Developments, David served as Vice President of Infrastructure at one of the country's largest civil contracting firms, where he championed the integration of GPS-guided grading technology and real-time project tracking. His leadership philosophy centers on meticulous planning, strict safety protocols, and a commitment to completing turnkey projects ahead of schedule.",
@@ -42,7 +43,8 @@ const leaders = [
     name: 'Sarah Jennings',
     role: 'Vice President of Operations',
     modalRole: 'Vice President of Operations',
-    image: '/assets/images/about/sarah-jennings.png',
+    image: '/assets/images/about/team-jennings.jpg',
+    modalImage: '/assets/images/about/team-jennings.jpg',
     bio: [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -52,7 +54,8 @@ const leaders = [
     name: 'Marcus Thompson',
     role: 'Director of Project Management',
     modalRole: 'Director of Project Management',
-    image: '/assets/images/about/marcus-thompson.png',
+    image: '/assets/images/about/team-thompson.jpg',
+    modalImage: '/assets/images/about/team-thompson.jpg',
     bio: [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -170,7 +173,7 @@ export function AboutPage() {
             role="dialog"
           >
             <div className="member-modal__portrait">
-              <img src={activeLeader.image} alt="" />
+              <img src={activeLeader.modalImage} alt="" />
             </div>
             <div className="member-modal__content">
               <header className="member-modal__header">

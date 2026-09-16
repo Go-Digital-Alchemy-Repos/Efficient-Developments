@@ -247,8 +247,7 @@
 
 .project-stripes {
   height: 71px;
-  background-color: var(--color-ink);
-  background-image: repeating-linear-gradient(135deg, transparent 0 11px, rgb(255 255 255 / 5%) 11px 13px);
+  background: var(--color-ink) url('/assets/images/projects/detail/diagonal-stripe-pattern.svg') center / cover no-repeat;
 }
 
 .project-lightbox { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 32px; background: rgb(0 0 0 / 84%); }

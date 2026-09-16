@@ -19,37 +19,37 @@ export type Project = {
 export const projects: Project[] = [
   {
     category: 'Asphalt',
-    image: '/assets/images/projects/roundabout.png',
+    image: '/assets/images/projects/asphalt.jpg',
     slug: 'n-rocky-river-rd-lawyers-rd-roundabout',
     title: 'N. Rocky River Rd / Lawyers Rd Roundabout',
   },
   {
     category: 'Commercial Concrete',
-    image: '/assets/images/projects/commercial-concrete.png',
+    image: '/assets/images/projects/commercial-concrete-source.jpg',
     slug: 'cabarrus-arena-events-center-parking',
     title: 'Cabarrus Arena & Events Center Parking',
   },
   {
     category: 'Residential Concrete',
-    image: '/assets/images/projects/residential-concrete.png',
+    image: '/assets/images/projects/residential-concrete-source.jpg',
     slug: 'westfield-meadows-subdivision-infrastructure',
     title: 'Westfield Meadows Subdivision Infrastructure',
   },
   {
     category: 'Greenways',
-    image: '/assets/images/projects/greenway.png',
+    image: '/assets/images/projects/greenways.jpg',
     slug: 'cabarrus-county-greenway-trail-extension',
     title: 'Cabarrus County Greenway Trail Extension',
   },
   {
     category: 'Roads & Bridges',
-    image: '/assets/images/projects/bridge.png',
+    image: '/assets/images/projects/roads-bridges.jpg',
     slug: 'i-485-express-lanes-bridge-deck',
     title: 'I-485 Express Lanes & Bridge Deck',
   },
   {
     category: 'Underground Utilities',
-    image: '/assets/images/projects/underground-utilities.png',
+    image: '/assets/images/projects/underground-utilities-source.jpg',
     slug: 'highway-74-storm-drainage-water-main',
     title: 'Highway 74 Storm Drainage & Water Main',
   },

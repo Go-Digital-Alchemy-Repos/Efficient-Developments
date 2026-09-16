@@ -7,25 +7,25 @@ const services = [
   {
     title: 'Asphalt Paving',
     description: 'Full-depth paving, resurfacing, and maintenance for roads, parking lots, and driveways.',
-    image: '/assets/images/service-asphalt.png',
+    image: '/assets/images/service-asphalt.jpg',
     to: '/services/asphalt-paving',
   },
   {
     title: 'Commercial Concrete',
     description: 'Slabs, foundations, sidewalks, curbs, and loading areas for commercial and municipal sites.',
-    image: '/assets/images/service-commercial-concrete.png',
+    image: '/assets/images/service-commercial-concrete.jpg',
     to: '/services/commercial-concrete',
   },
   {
     title: 'Residential Concrete',
     description: 'Concrete flatwork for housing developments, estates, and large residential properties.',
-    image: '/assets/images/service-residential-concrete.png',
+    image: '/assets/images/service-residential-concrete.jpg',
     to: '/services/residential-concrete',
   },
   {
     title: 'Greenways',
     description: 'Shared-use paths, trails, and pedestrian infrastructure for communities.',
-    image: '/assets/images/service-greenways.png',
+    image: '/assets/images/service-greenways.jpg',
     to: '/services/greenways',
   },
   {
@@ -170,7 +170,7 @@ export function HomePage() {
       </section>
 
       <section className="how-we-work" aria-labelledby="how-we-work-title">
-        <img className="how-we-work__image" src="/assets/images/home-how-we-work.png" alt="Road paving crew operating heavy equipment" />
+        <img className="how-we-work__image" src="/assets/images/home-how-we-work.jpg" alt="Road paving crew operating heavy equipment" />
         <div className="how-we-work__content">
           <div className="how-we-work__content-inner">
             <div className="how-we-work__heading">
@@ -300,7 +300,7 @@ export function HomePage() {
             <ButtonLink to="/projects">View Portfolio <span aria-hidden="true">↗</span></ButtonLink>
           </div>
           <div className="featured-project__body">
-            <img className="featured-project__image" src="/assets/images/home-featured-project.png" alt="N. Rocky River Road and Lawyers Road roundabout under construction" />
+            <img className="featured-project__image" src="/assets/images/home-featured-project.jpg" alt="N. Rocky River Road and Lawyers Road roundabout under construction" />
             <div className="featured-project__content">
               <div>
                 <Heading as="h3" size="card">N. Rocky River Rd / Lawyers Rd Roundabout</Heading>
@@ -333,7 +333,7 @@ export function HomePage() {
           <p>To discuss an upcoming project, get in touch with our team.</p>
           <ButtonLink to="/contact">Contact Us <span aria-hidden="true">↗</span></ButtonLink>
         </div>
-        <img className="service-area__map" src="/assets/images/home-service-area-map.png" alt="Map of the Efficient Developments service area across the Carolinas" />
+        <img className="service-area__map" src="/assets/images/home-service-area-map.jpg" alt="Map of the Efficient Developments service area across the Carolinas" />
       </section>
     </main>
   )

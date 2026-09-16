@@ -58,6 +58,9 @@ replacement, mobile-reference reconciliation, and production integration work.
   to `#7FA67A`, including shared states and local SVG assets.
 - Verified the latest implementation with ESLint, the TypeScript/Vite production
   build, major-route browser inspection, and a repository-wide old-color scan.
+- Replaced the matched homepage, About, service, project-list, and project-detail
+  imagery with the supplied source assets, retaining the established responsive
+  containers and verifying the affected routes at desktop and mobile widths.
 
 ## Known Limitations
 
