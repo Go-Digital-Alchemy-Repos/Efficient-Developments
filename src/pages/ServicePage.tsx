@@ -158,21 +158,22 @@ export function ServicePage() {
       <section
         aria-labelledby="service-page-title"
         className="service-hero"
+        data-reveal-sequence
         style={{
           '--service-hero-image': `url(${service.heroImage})`,
           '--service-hero-position': service.heroPosition ?? 'center',
         } as React.CSSProperties}
       >
-        <div className="service-hero__content" data-reveal>
-          <Eyebrow className="eyebrow--on-dark">Service</Eyebrow>
-          <Heading as="h1" className="service-hero__title" id="service-page-title" size="hero">{service.title}</Heading>
-          <p className="service-hero__support">{service.support}</p>
+        <div className="service-hero__content">
+          <Eyebrow className="eyebrow--on-dark" data-reveal-item>Service</Eyebrow>
+          <Heading as="h1" className="service-hero__title" data-reveal-delay="1" data-reveal-item id="service-page-title" size="hero">{service.title}</Heading>
+          <p className="service-hero__support" data-reveal-delay="2" data-reveal-item>{service.support}</p>
         </div>
       </section>
 
-      <section className="service-detail" style={{ '--service-detail-height': `${service.detailHeight}px`, '--service-detail-top': `${service.detailTop}px` } as React.CSSProperties}>
+      <section className="service-detail" data-reveal-sequence style={{ '--service-detail-height': `${service.detailHeight}px`, '--service-detail-top': `${service.detailTop}px` } as React.CSSProperties}>
         <div className="service-detail__inner">
-          <aside className="service-sidebar" aria-label="Services" data-reveal>
+          <aside className="service-sidebar" aria-label="Services" data-reveal-item>
             <nav>
               {services.map((item) => (
                 <NavLink className={({ isActive }) => `service-sidebar__link${isActive ? ' is-active' : ''}`} key={item.slug} to={`/services/${item.slug}`}>
@@ -186,37 +187,37 @@ export function ServicePage() {
           </aside>
 
           <div className="service-detail__content">
-            <div className="service-detail__copy service-detail__copy--overview" data-reveal>
-              <Heading as="h2" size="section">What We Do</Heading>
-              <p>{service.overview}</p>
+            <div className="service-detail__copy service-detail__copy--overview">
+              <Heading as="h2" data-reveal-delay="1" data-reveal-item size="section">What We Do</Heading>
+              <p data-reveal-delay="2" data-reveal-item>{service.overview}</p>
             </div>
-            <div className="service-detail__copy service-detail__copy--approach" data-reveal>
-              <Heading as="h2" size="section">{service.approachTitle}</Heading>
-              <p>{service.approach}</p>
-              <div className="service-detail__image"><img alt="" src={service.approachImage} /></div>
+            <div className="service-detail__copy service-detail__copy--approach">
+              <Heading as="h2" data-reveal-delay="3" data-reveal-item size="section">{service.approachTitle}</Heading>
+              <p data-reveal-delay="4" data-reveal-item>{service.approach}</p>
+              <div className="service-detail__image" data-reveal-delay="5" data-reveal-item><img alt="" src={service.approachImage} /></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="service-offerings" style={{ '--service-overlay-image': `url(${service.overlayImage})` } as React.CSSProperties}>
+      <section className="service-offerings" data-reveal-sequence style={{ '--service-overlay-image': `url(${service.overlayImage})` } as React.CSSProperties}>
         <div className="service-offerings__top">
-          <div className="service-offerings__heading" data-reveal>
-            <Eyebrow className="eyebrow--on-dark">Services</Eyebrow>
-            <Heading as="h2" size="section">
+          <div className="service-offerings__heading">
+            <Eyebrow className="eyebrow--on-dark" data-reveal-item>Services</Eyebrow>
+            <Heading as="h2" data-reveal-delay="1" data-reveal-item size="section">
               {service.overlayTitleLines.map((line) => (
                 <span key={line}>{line}</span>
               ))}
             </Heading>
           </div>
-          <div className="service-offerings__contact" data-reveal data-reveal-delay="1">
-            <p>To discuss an upcoming project,<br />get in touch with our team.</p>
-            <ButtonLink to="/contact">Contact Us <img aria-hidden="true" alt="" src="/assets/icons/cta-arrow.svg" /></ButtonLink>
+          <div className="service-offerings__contact">
+            <p data-reveal-delay="2" data-reveal-item>To discuss an upcoming project,<br />get in touch with our team.</p>
+            <ButtonLink data-reveal-delay="3" data-reveal-item to="/contact">Contact Us <img aria-hidden="true" alt="" src="/assets/icons/cta-arrow.svg" /></ButtonLink>
           </div>
         </div>
         <div className="service-offerings__cards" data-count={service.cards.length}>
           {service.cards.map((card, index) => (
-            <article className="service-offerings__card" data-reveal data-reveal-delay={String(index % 4)} key={card.title}>
+            <article className="service-offerings__card" data-reveal-delay={String(index + 4)} data-reveal-item key={card.title}>
               <div className="service-offerings__icon"><img aria-hidden="true" alt="" src={card.icon} /></div>
               <div>
                 <Heading as="h3" size="card">{card.title}</Heading>

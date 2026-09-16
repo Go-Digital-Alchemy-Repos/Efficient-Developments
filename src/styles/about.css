@@ -380,6 +380,10 @@
   .about-story__inner { grid-template-columns: 1fr; }
   .about-story__inner--reverse .about-story__copy { order: 1; }
   .about-story__inner--reverse .about-story__media { order: 2; }
+  .reveal-ready .about-story__inner--reverse .about-story__copy .eyebrow[data-reveal-item] { --reveal-delay: 0ms; }
+  .reveal-ready .about-story__inner--reverse .about-story__copy .heading[data-reveal-item] { --reveal-delay: 105ms; }
+  .reveal-ready .about-story__inner--reverse .about-story__copy > p:not(.eyebrow)[data-reveal-item] { --reveal-delay: 210ms; }
+  .reveal-ready .about-story__inner--reverse .about-story__media[data-reveal-item] { --reveal-delay: 315ms; }
   .about-story__media { height: 72vw; max-height: 435px; min-height: 280px; }
   .about-story__copy .heading { font-size: 34px; line-height: 42px; }
   .about-team { gap: 40px; padding: 56px 20px; }

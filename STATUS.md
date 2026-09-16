@@ -102,6 +102,9 @@ replacement, mobile-reference reconciliation, and production integration work.
   navigation spacing, hover states, service disclosure, and child-route active state.
 - Preserved a 32px desktop gap between wrapping project-detail titles and their
   hero images without changing the mobile title layout.
+- Re-sequenced viewport entry effects by section and visual hierarchy, slowed
+  their duration and stagger by 50%, and preserved one-time and reduced-motion
+  behavior across desktop and mobile layouts.
 
 ## Known Limitations
 

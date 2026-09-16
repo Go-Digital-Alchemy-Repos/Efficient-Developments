@@ -48,8 +48,8 @@ export function TestimonialCarousel() {
   return (
     <div
       className="testimonial-carousel"
-      data-reveal
       data-reveal-delay="1"
+      data-reveal-item
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={() => setIsPaused(true)}

@@ -19,14 +19,14 @@ export function ProjectsPage() {
 
   return (
     <main id="main-content" className="projects-page">
-      <section className="projects-index" aria-labelledby="projects-title">
+      <section className="projects-index" aria-labelledby="projects-title" data-reveal-sequence>
         <Container>
-          <header className="projects-index__header" data-reveal>
-            <h1 id="projects-title">Projects</h1>
-            <p>Explore our portfolio of civil infrastructure projects across the Carolinas. From highway interchanges<br className="projects-index__desktop-break" /> to underground utilities, each project reflects our commitment to quality, safety, and on-time delivery.</p>
+          <header className="projects-index__header">
+            <h1 data-reveal-item id="projects-title">Projects</h1>
+            <p data-reveal-delay="1" data-reveal-item>Explore our portfolio of civil infrastructure projects across the Carolinas. From highway interchanges<br className="projects-index__desktop-break" /> to underground utilities, each project reflects our commitment to quality, safety, and on-time delivery.</p>
           </header>
 
-          <div className="project-filters" aria-label="Filter projects" data-reveal data-reveal-delay="1">
+          <div className="project-filters" aria-label="Filter projects" data-reveal-delay="2" data-reveal-item>
             {(['All', ...projectCategories] as const).map((category) => (
               <button
                 aria-pressed={activeCategory === category}
@@ -46,7 +46,7 @@ export function ProjectsPage() {
 
           <div className="project-grid" aria-live="polite">
             {visibleProjects.map((project, index) => (
-              <Link className="project-card" data-reveal data-reveal-delay={String(index % 3)} key={project.slug} to={`/projects/${project.slug}`}>
+              <Link className="project-card" data-reveal-delay={String(index + 3)} data-reveal-item key={project.slug} to={`/projects/${project.slug}`}>
                 <span className="project-card__media">
                   <img src={project.image} alt="" />
                 </span>
@@ -63,7 +63,7 @@ export function ProjectsPage() {
           </div>
 
           {pageCount > 1 && (
-            <nav className="project-pagination" aria-label="Project pages" data-reveal>
+            <nav className="project-pagination" aria-label="Project pages" data-reveal-delay="9" data-reveal-item>
               <button disabled={page === 1} onClick={() => setPage((value) => value - 1)} type="button" aria-label="Previous project page">←</button>
               {Array.from({ length: pageCount }, (_, index) => index + 1).map((pageNumber) => (
                 <button

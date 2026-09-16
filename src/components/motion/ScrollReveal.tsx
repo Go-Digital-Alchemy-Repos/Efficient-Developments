@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-const revealSelector = '[data-reveal]'
+const revealSelector = '[data-reveal], [data-reveal-sequence]'
 
 export function ScrollReveal() {
   useLayoutEffect(() => {

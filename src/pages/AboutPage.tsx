@@ -97,47 +97,48 @@ export function AboutPage() {
 
   return (
     <main id="main-content" className="about-page">
-      <section className="about-hero" aria-labelledby="about-hero-title">
+      <section className="about-hero" aria-labelledby="about-hero-title" data-reveal-sequence>
         <div className="about-hero__shade" />
-        <div className="about-hero__content" data-reveal>
-          <Eyebrow className="eyebrow--on-dark">Efficient Developments</Eyebrow>
-          <Heading as="h1" id="about-hero-title" size="page">About Us</Heading>
-          <p>A heavy civil contractor building infrastructure across the Carolinas.</p>
+        <div className="about-hero__content">
+          <Eyebrow className="eyebrow--on-dark" data-reveal-item>Efficient Developments</Eyebrow>
+          <Heading as="h1" data-reveal-delay="1" data-reveal-item id="about-hero-title" size="page">About Us</Heading>
+          <p data-reveal-delay="2" data-reveal-item>A heavy civil contractor building infrastructure across the Carolinas.</p>
         </div>
       </section>
 
       {stories.map((story) => (
         <section
           className={`about-story${story.muted ? ' about-story--muted' : ''}`}
+          data-reveal-sequence
           key={story.eyebrow}
         >
           <div className={`about-story__inner${story.reverse ? ' about-story__inner--reverse' : ''}`}>
-            <div className="about-story__copy" data-reveal>
-              <Eyebrow>{story.eyebrow}</Eyebrow>
-              <Heading>{story.title}</Heading>
-              <p>{story.body}</p>
+            <div className="about-story__copy">
+              <Eyebrow data-reveal-delay={story.reverse ? '1' : '0'} data-reveal-item>{story.eyebrow}</Eyebrow>
+              <Heading data-reveal-delay={story.reverse ? '2' : '1'} data-reveal-item>{story.title}</Heading>
+              <p data-reveal-delay={story.reverse ? '3' : '2'} data-reveal-item>{story.body}</p>
             </div>
-            <div className="about-story__media" data-reveal data-reveal-delay="1">
+            <div className="about-story__media" data-reveal-delay={story.reverse ? '0' : '3'} data-reveal-item>
               <img src={story.image} alt={story.alt} />
             </div>
           </div>
         </section>
       ))}
 
-      <section className="about-team" aria-labelledby="about-team-title">
+      <section className="about-team" aria-labelledby="about-team-title" data-reveal-sequence>
         <div className="about-team__gradient" aria-hidden="true" />
-        <div className="about-team__heading" data-reveal>
-          <p>Our Team</p>
-          <Heading id="about-team-title">Meet the Leadership</Heading>
-          <p>Our experienced leadership team brings decades of heavy civil construction expertise to every project.</p>
+        <div className="about-team__heading">
+          <p data-reveal-item>Our Team</p>
+          <Heading data-reveal-delay="1" data-reveal-item id="about-team-title">Meet the Leadership</Heading>
+          <p data-reveal-delay="2" data-reveal-item>Our experienced leadership team brings decades of heavy civil construction expertise to every project.</p>
         </div>
         <div className="about-team__grid">
           {leaders.map((leader, index) => (
             <button
               aria-haspopup="dialog"
               className="leader-card"
-              data-reveal
-              data-reveal-delay={String(index)}
+              data-reveal-delay={String(index + 3)}
+              data-reveal-item
               key={leader.name}
               onClick={(event) => {
                 activeCardRef.current = event.currentTarget

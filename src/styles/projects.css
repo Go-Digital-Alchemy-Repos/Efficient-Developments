@@ -277,6 +277,15 @@
   .project-detail-hero { height: auto; }
   .project-detail-hero img { height: auto; aspect-ratio: 1.6 / 1; }
   .project-overview { min-height: 0; grid-template-columns: 1fr; gap: 56px; padding: 64px 0; }
+  .reveal-ready .project-facts h2[data-reveal-item] { --reveal-delay: 0ms; }
+  .reveal-ready .project-facts dl[data-reveal-item] { --reveal-delay: 105ms; }
+  .reveal-ready .project-facts a[data-reveal-item] { --reveal-delay: 210ms; }
+  .reveal-ready .project-overview__content h2[data-reveal-item] { --reveal-delay: 315ms; }
+  .reveal-ready .project-overview__content p:nth-of-type(1)[data-reveal-item] { --reveal-delay: 420ms; }
+  .reveal-ready .project-overview__content p:nth-of-type(2)[data-reveal-item] { --reveal-delay: 525ms; }
+  .reveal-ready .project-overview__content p:nth-of-type(3)[data-reveal-item] { --reveal-delay: 630ms; }
+  .reveal-ready .project-overview__content p:nth-of-type(4)[data-reveal-item] { --reveal-delay: 735ms; }
+  .reveal-ready .project-overview__media[data-reveal-item] { --reveal-delay: 840ms; }
   .project-facts__divider { width: 100%; }
   .project-gallery { height: 248px; }
   .project-gallery__inner { gap: 12px; padding-block: 24px; }
