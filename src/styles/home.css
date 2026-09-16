@@ -307,6 +307,11 @@
   .service-area__content { min-height: 460px; padding: 64px var(--page-gutter); }
 }
 
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .how-we-work { padding-top: 64px; }
+  .how-we-work__content { justify-content: flex-start; }
+}
+
 @media (max-width: 47.9375rem) {
   .home-hero { min-height: 620px; }
   .home-hero__content { top: 260px; }

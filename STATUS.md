@@ -86,6 +86,8 @@ replacement, mobile-reference reconciliation, and production integration work.
 - Added outside-click and Escape dismissal to the desktop Services dropdown.
 - Changed the desktop Who We Work With section to two equal fluid columns so
   both sides shrink proportionally with the viewport.
+- Set exact 64px top spacing above both the How We Work image and text content
+  throughout the 768px–1023px tablet range.
 
 ## Known Limitations
 
