@@ -71,7 +71,7 @@
 .home-intro strong { color: var(--color-ink); font-weight: 600; }
 
 .how-we-work {
-  height: 753px;
+  height: 813px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -80,12 +80,12 @@
 
 .how-we-work__image {
   width: 100%;
-  height: 753px;
+  height: 813px;
   object-fit: cover;
 }
 
 .how-we-work__content {
-  height: 753px;
+  height: 813px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -290,7 +290,8 @@
   .home-hero .heading { font-size: clamp(48px, 7vw, 64px); line-height: 1.08; }
   .home-intro { min-height: 360px; padding-inline: var(--page-gutter); }
   .how-we-work, .who-we-work-with, .service-area { grid-template-columns: 1fr; padding-left: 0; }
-  .how-we-work__image, .how-we-work__content, .who-we-work-with__image, .service-area__map { height: 620px; }
+  .how-we-work__image, .how-we-work__content { height: 680px; }
+  .who-we-work-with__image, .service-area__map { height: 620px; }
   .how-we-work__content { padding: 64px var(--page-gutter); }
   .how-we-work__content-inner { max-width: none; }
   .home-services { padding-block: 80px; }
@@ -313,7 +314,7 @@
   .home-hero__content > p { font-size: 19px; }
   .home-intro { padding-block: 72px; }
   .home-intro p { font-size: 20px; line-height: 30px; }
-  .how-we-work__image { height: 420px; }
+  .how-we-work__image { height: 480px; }
   .how-we-work__content { height: auto; }
   .home-services .home-section-heading { width: calc(100% - (2 * var(--page-gutter))); height: auto; }
   .home-section-heading .heading, .who-we-work-with__overlay .heading, .featured-project__header .heading, .testimonial .heading, .service-area__content .heading { font-size: 34px; line-height: 41px; }

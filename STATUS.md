@@ -72,6 +72,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   images with the owner-supplied service photography.
 - Converted the homepage testimonial into an accessible two-slide text carousel
   with paused-on-interaction autoplay and reduced-motion support.
+- Increased the homepage How We Work image and its aligned section by 60px at
+  each responsive layout size while preserving the image crop behavior.
 
 ## Known Limitations
 
