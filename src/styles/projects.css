@@ -124,7 +124,7 @@
   transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 
-.project-pagination button:hover:not(:disabled) { color: var(--color-green); border-color: var(--color-green); }
+.project-pagination button:hover:not(:disabled):not([data-active]) { color: var(--color-green); border-color: var(--color-green); }
 .project-pagination button[data-active] { color: var(--color-white); background: var(--color-green); border-color: var(--color-green); }
 .project-pagination button:disabled { color: #b6bac1; cursor: not-allowed; }
 

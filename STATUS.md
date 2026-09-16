@@ -94,6 +94,8 @@ replacement, mobile-reference reconciliation, and production integration work.
   and added 40px more space below its Contact Us button.
 - Aligned the Projects listing and project-detail content to the shared site
   container and responsive gutters while retaining full-width project navigation.
+- Prevented the active Projects pagination button from receiving the inactive
+  button hover treatment.
 
 ## Known Limitations
 
