@@ -28,6 +28,11 @@ replacement, mobile-reference reconciliation, and production integration work.
 
 ## Completed
 
+- Replaced the placeholder portfolio with all seven projects from efficientdev.com,
+  preserving the existing page styles and layouts. Imported project descriptions,
+  client details, work scopes, and 61 gallery photos; converted 67 source images
+  into responsive WebP variants. Added approved neutral photo placeholders for
+  the two source projects without photography. See `docs/PROJECT_CONTENT.md`.
 - Implemented the `/` route from Figma frame `565:3145` using exact exported
   imagery, logos, icons, and locally hosted Inter and Oswald fonts.
 - Reconciled the shared color and typography tokens used by the homepage against
@@ -133,8 +138,10 @@ replacement, mobile-reference reconciliation, and production integration work.
 ## Known Limitations
 
 - The contact form is presentational only and has no submission endpoint.
-- Phone, email, address, some leadership biographies, and several project entries
+- Phone, email, address, some leadership biographies, and a testimonial
   are placeholders awaiting final business content.
+- Davidson-Concord/Robert Walker and 832 Dobson await project photography;
+  their available source descriptions are implemented.
 - The exact primary green `#7FA67A` has 2.75:1 contrast against white; an approved
   foreground or palette change is required for WCAG AA text contrast.
 - The project currently has no automated test script.

@@ -1,28 +1,25 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { Container } from '../components/layout/Container'
 import { ModalCloseButton } from '../components/ui/ModalCloseButton'
 import { projects } from '../data/projects'
 
-const galleryImages = [
-  '/assets/images/projects/detail/gallery-01.jpg',
-  '/assets/images/projects/detail/gallery-02.jpg',
-  '/assets/images/projects/detail/gallery-03.jpg',
-  '/assets/images/projects/detail/gallery-04.jpg',
-  '/assets/images/projects/detail/hero-project-detail.jpg',
-  '/assets/images/projects/detail/at-a-glance.jpg',
-]
-
 export function ProjectDetailPage() {
-  const { projectSlug = projects[0].slug } = useParams()
-  const projectIndex = Math.max(0, projects.findIndex((project) => project.slug === projectSlug))
+  const { projectSlug } = useParams()
+  if (projectSlug === 'n-rocky-river-road-roundabout') {
+    return <Navigate replace to="/projects/n-rocky-river-rd-lawyers-rd-roundabout" />
+  }
+  const projectIndex = projects.findIndex((project) => project.slug === projectSlug)
+  if (projectIndex < 0) return <Navigate replace to="/projects" />
+  return <ProjectDetailContent key={projectSlug} projectIndex={projectIndex} />
+}
+
+function ProjectDetailContent({ projectIndex }: { projectIndex: number }) {
   const project = projects[projectIndex]
-  const previousProject = projectIndex === 0
-    ? projects.find((item) => item.slug === 'cms-bus-facility') ?? projects.at(-1)!
-    : projects[(projectIndex - 1 + projects.length) % projects.length]
-  const nextProject = projectIndex === 0
-    ? projects.find((item) => item.slug === 'beatties-ford-road-sidewalk') ?? projects[1]
-    : projects[(projectIndex + 1) % projects.length]
+  const galleryImages = project.gallery
+  const previousProject = projects[(projectIndex - 1 + projects.length) % projects.length]
+  const nextProject = projects[(projectIndex + 1) % projects.length]
+  const overviewImage = galleryImages[0] ?? project.hero
   const [galleryStart, setGalleryStart] = useState(0)
   const [visibleGalleryCount, setVisibleGalleryCount] = useState(4)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
@@ -31,20 +28,20 @@ export function ProjectDetailPage() {
   const isLightboxOpen = lightboxIndex !== null
   const visibleGallery = useMemo(
     () => galleryImages.slice(galleryStart, galleryStart + visibleGalleryCount),
-    [galleryStart, visibleGalleryCount],
+    [galleryImages, galleryStart, visibleGalleryCount],
   )
-  const maxGalleryStart = galleryImages.length - visibleGalleryCount
+  const maxGalleryStart = Math.max(0, galleryImages.length - visibleGalleryCount)
 
   useEffect(() => {
     const updateCount = () => {
-      const nextCount = window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 4
+      const nextCount = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 4
       setVisibleGalleryCount(nextCount)
-      setGalleryStart((value) => Math.min(value, galleryImages.length - nextCount))
+      setGalleryStart((value) => Math.min(value, Math.max(0, galleryImages.length - nextCount)))
     }
     updateCount()
     window.addEventListener('resize', updateCount)
     return () => window.removeEventListener('resize', updateCount)
-  }, [])
+  }, [galleryImages.length])
 
   useEffect(() => {
     if (!isLightboxOpen) return
@@ -71,7 +68,7 @@ export function ProjectDetailPage() {
       document.body.style.overflow = previousOverflow
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [isLightboxOpen])
+  }, [galleryImages.length, isLightboxOpen])
 
   return (
     <main id="main-content" className="project-detail-page">
@@ -84,7 +81,7 @@ export function ProjectDetailPage() {
 
       <Container data-reveal-sequence>
         <section className="project-detail-hero" aria-label={`${project.title} overview image`}>
-          <img data-reveal-item src={projectIndex === 0 ? '/assets/images/projects/detail/hero-project-detail.jpg' : project.image} alt="" />
+          <img data-reveal-item {...project.hero} sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1440px) calc(100vw - 144px), 1296px" fetchPriority="high" />
         </section>
       </Container>
 
@@ -95,10 +92,9 @@ export function ProjectDetailPage() {
             <div className="project-facts__divider" />
             <dl data-reveal-delay="2" data-reveal-item>
               <div><dt>Project Name</dt><dd>{project.title}</dd></div>
-              <div><dt>Location</dt><dd>Charlotte, NC</dd></div>
-              <div><dt>Duration</dt><dd>18 Months</dd></div>
-              <div><dt>Project Type</dt><dd>Roads &amp; Bridges</dd></div>
-              <div><dt>Status</dt><dd>Completed</dd></div>
+              <div><dt>{project.clientLabel}</dt><dd>{project.client}</dd></div>
+              {project.location && <div><dt>Location</dt><dd>{project.location}</dd></div>}
+              <div><dt>Project Type</dt><dd>{project.category}</dd></div>
             </dl>
             <div className="project-facts__divider" />
             <Link data-reveal-delay="4" data-reveal-item to="/projects">← Return to Portfolio</Link>
@@ -106,37 +102,36 @@ export function ProjectDetailPage() {
 
           <article className="project-overview__content">
             <h2 data-reveal-delay="1" data-reveal-item id="project-overview-title">Project Overview</h2>
-            <p data-reveal-delay="3" data-reveal-item>Efficient Developments was awarded the contract for the Highway 74 Interchange reconstruction project in Charlotte, NC. This complex infrastructure project involved the complete redesign and rebuild of a critical interchange connecting Highway 74 with Interstate 485, serving over 80,000 vehicles daily.</p>
-            <p data-reveal-delay="5" data-reveal-item>Our team managed all phases of the project including demolition of the existing interchange structure, earthwork and grading for the new alignment, construction of reinforced concrete bridge decks and abutments, installation of modern drainage systems, and integration of intelligent transportation systems.</p>
-            <p data-reveal-delay="6" data-reveal-item>The project was completed on schedule within the 18-month timeline, maintaining traffic flow throughout construction through carefully planned detour routes and phased construction sequences. Safety remained our top priority with zero lost-time incidents recorded across the project lifecycle.</p>
-            <p data-reveal-delay="7" data-reveal-item>Key achievements include the installation of 4 new bridge structures, over 12,000 linear feet of storm drainage, and 28,000 tons of asphalt paving. The new interchange design improves traffic capacity by 35% and significantly reduces accident rates at the intersection.</p>
-            <img className="project-overview__media" data-reveal-delay="8" data-reveal-item src="/assets/images/projects/detail/at-a-glance.jpg" alt="Aerial view of the roundabout under construction" />
+            <p data-reveal-delay="3" data-reveal-item>{project.description}</p>
+            <h2 data-reveal-delay="5" data-reveal-item>Type of Work</h2>
+            <p data-reveal-delay="6" data-reveal-item>{project.work}</p>
+            <img className="project-overview__media" data-reveal-delay="8" data-reveal-item {...overviewImage} sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1023px) 60vw, 757px" loading="lazy" decoding="async" />
           </article>
         </section>
       </Container>
 
-      <section className="project-gallery" aria-label="Project photos" data-reveal-sequence>
+      {galleryImages.length > 0 && <section className="project-gallery" aria-label="Project photos" data-reveal-sequence>
         <Container className="project-gallery__inner">
           <button className="project-gallery__arrow" data-reveal-item disabled={galleryStart === 0} onClick={() => setGalleryStart((value) => value - 1)} type="button" aria-label="Previous photos">‹</button>
-          <div className="project-gallery__row">
+          <div className="project-gallery__row" style={{ gridTemplateColumns: `repeat(${visibleGallery.length}, minmax(0, 1fr))` }}>
             {visibleGallery.map((image, index) => (
-              <button className="project-gallery__image" data-reveal-delay={String(index + 1)} data-reveal-item key={image} onClick={() => setLightboxIndex(galleryStart + index)} type="button" aria-label={`Enlarge project photo ${galleryStart + index + 1}`}>
-                <img src={image} alt="" />
+              <button className="project-gallery__image" data-reveal-delay={String(index + 1)} data-reveal-item key={image.src} onClick={() => setLightboxIndex(galleryStart + index)} type="button" aria-label={`Enlarge project photo ${galleryStart + index + 1}`}>
+                <img {...image} sizes="(max-width: 767px) calc(100vw - 112px), (max-width: 1023px) 40vw, 280px" loading="lazy" decoding="async" />
               </button>
             ))}
           </div>
           <button className="project-gallery__arrow" data-reveal-delay={String(visibleGallery.length + 1)} data-reveal-item disabled={galleryStart === maxGalleryStart} onClick={() => setGalleryStart((value) => value + 1)} type="button" aria-label="Next photos">›</button>
         </Container>
-      </section>
+      </section>}
 
       <nav className="project-sequence" aria-label="Adjacent projects" data-reveal-sequence>
         <Link className="project-sequence__item project-sequence__item--previous" data-reveal-item to={`/projects/${previousProject.slug}`}>
-          <img src="/assets/images/projects/detail/nav-prev.jpg" alt="" />
+          <img {...previousProject.image} alt="" sizes="220px" loading="lazy" decoding="async" />
           <span><small>← Previous Project</small><strong>{previousProject.title}</strong></span>
         </Link>
         <Link className="project-sequence__item project-sequence__item--next" data-reveal-delay="1" data-reveal-item to={`/projects/${nextProject.slug}`}>
           <span><small>Next Project →</small><strong>{nextProject.title}</strong></span>
-          <img src="/assets/images/projects/detail/nav-next.jpg" alt="" />
+          <img {...nextProject.image} alt="" sizes="220px" loading="lazy" decoding="async" />
         </Link>
       </nav>
       <div className="project-stripes" aria-hidden="true" />
@@ -145,7 +140,7 @@ export function ProjectDetailPage() {
         <div className="project-lightbox" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setLightboxIndex(null) }}>
           <section aria-label={`Enlarged project photo ${lightboxIndex + 1} of ${galleryImages.length}`} aria-modal="true" className="project-lightbox__dialog" ref={lightboxDialogRef} role="dialog">
             <div className="project-lightbox__content">
-              <img src={galleryImages[lightboxIndex]} alt={`Enlarged project view ${lightboxIndex + 1} of ${galleryImages.length}`} />
+              <img {...galleryImages[lightboxIndex]} sizes="(max-width: 1244px) calc(100vw - 144px), 1100px" />
             </div>
             <button aria-label="Previous project image" className="project-gallery__arrow project-lightbox__arrow project-lightbox__arrow--previous" disabled={lightboxIndex === 0} onClick={() => setLightboxIndex((value) => value === null ? null : value - 1)} type="button">‹</button>
             <ModalCloseButton className="modal-close--project-lightbox" aria-label="Close enlarged photo" onClick={() => setLightboxIndex(null)} ref={lightboxCloseRef} />

@@ -5,6 +5,7 @@ import { TestimonialCarousel } from '../components/sections/TestimonialCarousel'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
 import { serviceHeroImages } from '../data/serviceImages'
+import { featuredProject } from '../data/projects'
 
 const services = [
   {
@@ -305,12 +306,12 @@ export function HomePage() {
             <ButtonLink data-reveal-delay="2" data-reveal-item to="/projects">View Portfolio <span aria-hidden="true">↗</span></ButtonLink>
           </div>
           <div className="featured-project__body">
-            <img className="featured-project__image" data-reveal-delay="3" data-reveal-item src="/assets/images/home-featured-project.jpg" alt="N. Rocky River Road and Lawyers Road roundabout under construction" />
+            <img className="featured-project__image" data-reveal-delay="3" data-reveal-item {...featuredProject.image} sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 96px), 60vw" loading="lazy" decoding="async" />
             <div className="featured-project__content">
               <div>
-                <Heading as="h3" data-reveal-delay="4" data-reveal-item size="card">N. Rocky River Rd / Lawyers Rd Roundabout</Heading>
-                <p data-reveal-delay="5" data-reveal-item>The N. Rocky River Rd / Lawyers Rd Roundabout project was a complex infrastructure development designed to improve traffic flow and safety in the region. Our team managed the excavation, grading, and asphalt paving, ensuring a seamless transition for commuters and local residents. This project showcases our expertise in heavy civil construction and our commitment to delivering high-quality results on time.</p>
-                <ButtonLink data-reveal-delay="6" data-reveal-item variant="dark" to="/projects/n-rocky-river-road-roundabout">View Project <span aria-hidden="true">↗</span></ButtonLink>
+                <Heading as="h3" data-reveal-delay="4" data-reveal-item size="card">{featuredProject.title}</Heading>
+                <p data-reveal-delay="5" data-reveal-item>{featuredProject.description}</p>
+                <ButtonLink data-reveal-delay="6" data-reveal-item variant="dark" to={`/projects/${featuredProject.slug}`}>View Project <span aria-hidden="true">↗</span></ButtonLink>
               </div>
               <div className="project-stats" data-statistics>
                 <div data-reveal-delay="7" data-reveal-item><strong><StatCounter value="600+" /></strong><span>Projects Built</span></div>

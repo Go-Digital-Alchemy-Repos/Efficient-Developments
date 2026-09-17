@@ -48,7 +48,7 @@ export function ProjectsPage() {
             {visibleProjects.map((project, index) => (
               <Link className="project-card" data-reveal-delay={String(index + 3)} data-reveal-item key={project.slug} to={`/projects/${project.slug}`}>
                 <span className="project-card__media">
-                  <img src={project.image} alt="" />
+                  <img {...project.image} sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1023px) calc((100vw - 96px) / 2), (max-width: 1440px) calc((100vw - 192px) / 3), 416px" loading="lazy" decoding="async" />
                 </span>
                 <span className="project-card__content">
                   <span className="project-card__category">{project.category}</span>

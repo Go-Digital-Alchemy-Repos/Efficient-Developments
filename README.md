@@ -77,14 +77,17 @@ the homepage.
 - `src/components` — shared layout, navigation, and UI components
 - `src/styles/tokens.css` — canonical design tokens
 - `src/styles` — shared and route-specific styling
-- `src/data/projects.ts` — project listing data
+- `src/data/projects.ts` — shared project descriptions, facts, and responsive galleries
+- `docs/PROJECT_CONTENT.md` — source project mapping and image optimization details
 - `public/assets` — local fonts, logos, icons, and imagery
 - `src/routes/routeDefinitions.ts` — route/reference/Figma-node map
 
 ## Known follow-up work
 
-- Replace placeholder phone, email, address, project, and leadership copy when
+- Replace placeholder phone, email, address, testimonial, and leadership copy when
   final business content is supplied.
+- Supply project photos for Davidson-Concord/Robert Walker and 832 Dobson;
+  both use approved “Photos coming soon” placeholders.
 - Connect the Contact form to a real submission endpoint; it currently prevents
   submission and has no backend.
 - Add automated tests if the project moves beyond visual acceptance testing.
