@@ -69,3 +69,16 @@
   .careers-admin-job { flex-wrap: wrap; }
   .careers-notice { padding: 16px; }
 }
+
+/* Portfolio photography shares the full-width hero treatment used across the site. */
+.careers-page.careers-page--landing { padding-top: 0; }
+.careers-hero { position: relative; isolation: isolate; display: flex; align-items: flex-end; min-height: 580px; padding-block: 80px; margin-bottom: 72px; color: white; background: #303c31; }
+.careers-hero__image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 58%; }
+.careers-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(17 27 19 / 80%), rgb(17 27 19 / 48%) 65%, rgb(17 27 19 / 20%)); }
+.careers-heading.careers-hero__content { padding-bottom: 0; }
+.careers-hero__content h1, .careers-hero__content > p { color: white; }
+@media (max-width: 767px) {
+  .careers-hero { min-height: 560px; padding-block: 56px; margin-bottom: 48px; }
+  .careers-hero__image { object-position: 58% center; }
+  .careers-hero::before { background: rgb(17 27 19 / 65%); }
+}
