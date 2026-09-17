@@ -1,3 +1,4 @@
+import { ServiceAreaMap } from '../components/maps/ServiceAreaMap'
 import { type CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { StatCounter } from '../components/motion/StatCounter'
@@ -335,7 +336,7 @@ export function HomePage() {
           <p data-reveal-delay="2" data-reveal-item>To discuss an upcoming project, get in touch with our team.</p>
           <ButtonLink data-reveal-delay="3" data-reveal-item to="/contact">Contact Us <span aria-hidden="true">↗</span></ButtonLink>
         </div>
-        <img className="service-area__map" data-reveal-delay="4" data-reveal-item src="/assets/images/home-service-area-map.jpg" alt="Map of the Efficient Developments service area across the Carolinas" />
+        <ServiceAreaMap />
       </section>
     </main>
   )

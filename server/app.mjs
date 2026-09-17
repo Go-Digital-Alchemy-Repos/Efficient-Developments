@@ -55,7 +55,7 @@ export function createApp({ dbPath, adminHash, origins, production = false, trus
     res.setHeader('X-Content-Type-Options', 'nosniff')
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
     res.setHeader('X-Frame-Options', 'DENY')
-    res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
+    res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://tiles.openfreemap.org; worker-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
     const send = (status, data) => {
       res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' })
       res.end(JSON.stringify(data))
