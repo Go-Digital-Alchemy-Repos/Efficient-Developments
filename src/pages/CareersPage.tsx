@@ -20,7 +20,6 @@ export function CareersPage() {
           {loading && <p role="status">Loading opportunities…</p>}
           {error && <p role="alert" className="careers-notice">{error} <button type="button" onClick={() => window.location.reload()}>Try again</button></p>}
           {!loading && !error && jobs.length === 0 && <p className="careers-notice">There are no open positions right now. Please check back for new opportunities.</p>}
-          {jobs.some((job) => job.sample) && <p className="careers-notice">Reference postings are examples of roles on our team and are not currently accepting applications.</p>}
           <div className="careers-job-grid">
             {jobs.map((job) => <article className="careers-job-card" key={job.id}>
               <div className="careers-job-meta"><span>{job.department}</span>{job.sample && <span className="careers-badge">Reference posting</span>}</div>
