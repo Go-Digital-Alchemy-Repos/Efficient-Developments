@@ -144,10 +144,20 @@ replacement, mobile-reference reconciliation, and production integration work.
   their available source descriptions are implemented.
 - The exact primary green `#7FA67A` has 2.75:1 contrast against white; an approved
   foreground or palette change is required for WCAG AA text contrast.
-- The project currently has no automated test script.
+- Careers API integration tests are available via `pnpm test`.
+- Careers reference roles must be activated before accepting applications;
+  client operations, storage, and backup requirements are in `docs/CAREERS.md`.
 
 ## Next Action
 
 On the next device, follow the root `README.md`, pull `origin/main`, and verify a
 clean working tree before editing. Then identify available mobile Figma frames
 or replace placeholder business/contact content when final copy is provided.
+
+## Careers implementation — September 17, 2026
+
+About now contains Company and Careers. Careers includes three reference jobs,
+role-specific application forms, private PDF resumes, and a password-protected
+client dashboard for job publishing and application review. The Node server
+serves the existing Vite site and uses a persistent Railway SQLite volume.
+See `docs/CAREERS.md` for configuration, credential rotation, and operations.

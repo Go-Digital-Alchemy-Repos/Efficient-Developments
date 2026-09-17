@@ -3,6 +3,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ButtonLink } from '../ui/Button'
 import { Container } from '../layout/Container'
 import { Logo } from '../ui/Logo'
+import { AboutDropdown } from './AboutDropdown'
+import { aboutLinks } from '../../data/navigation'
 
 const primaryNavigation = [
   { label: 'Home', to: '/' },
@@ -26,6 +28,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [areServicesOpen, setAreServicesOpen] = useState(false)
   const [areMobileServicesOpen, setAreMobileServicesOpen] = useState(isServiceRoute)
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(pathname === '/about' || pathname.startsWith('/careers'))
   const desktopServicesRef = useRef<HTMLDivElement>(null)
   const desktopServicesTriggerRef = useRef<HTMLButtonElement>(null)
   const drawerRef = useRef<HTMLElement>(null)
@@ -87,7 +90,7 @@ export function Header() {
 
       if (event.key !== 'Tab' || !drawer) return
 
-      const currentFocusableElements = Array.from(drawer.querySelectorAll<HTMLElement>(focusableSelector))
+      const currentFocusableElements = Array.from(drawer.querySelectorAll<HTMLElement>(focusableSelector)).filter((element) => element.getClientRects().length > 0)
       const firstElement = currentFocusableElements[0]
       const lastElement = currentFocusableElements.at(-1)
 
@@ -151,11 +154,12 @@ export function Header() {
           data-open={isOpen || undefined}
           aria-label="Primary navigation"
         >
-          {primaryNavigation.slice(0, 2).map((item) => (
+          {primaryNavigation.slice(0, 1).map((item) => (
             <NavLink key={item.to} className={({ isActive }) => `primary-navigation__link${isActive ? ' is-active' : ''}`} end={item.to === '/'} to={item.to} onClick={() => setIsOpen(false)}>
               {item.label}
             </NavLink>
           ))}
+          <AboutDropdown />
           <div className="primary-navigation__services" ref={desktopServicesRef}>
             <button
               ref={desktopServicesTriggerRef}
@@ -204,7 +208,7 @@ export function Header() {
         aria-hidden={!isOpen}
       >
         <div className="mobile-navigation__links">
-          {primaryNavigation.slice(0, 2).map((item) => (
+          {primaryNavigation.slice(0, 1).map((item) => (
             <NavLink
               key={item.to}
               className={({ isActive }) => `mobile-navigation__link${isActive ? ' is-active' : ''}`}
@@ -219,6 +223,18 @@ export function Header() {
               {item.label}
             </NavLink>
           ))}
+          <div className="mobile-navigation__services">
+            <button type="button" aria-controls="mobile-about-links" aria-expanded={isMobileAboutOpen}
+              className="mobile-navigation__link mobile-navigation__services-trigger" tabIndex={isOpen ? 0 : -1}
+              onClick={() => setIsMobileAboutOpen((value) => !value)}>
+              <span>About</span><span aria-hidden="true" className="mobile-navigation__services-arrow">▾</span>
+            </button>
+            <div className="mobile-navigation__service-links" hidden={!isMobileAboutOpen} id="mobile-about-links">
+              {aboutLinks.map((item) => <NavLink key={item.to} to={item.to}
+                className={({ isActive }) => `mobile-navigation__service-link${isActive ? ' is-active' : ''}`}
+                onClick={() => closeMobileNavigation(false)} tabIndex={isOpen && isMobileAboutOpen ? 0 : -1}>{item.label}</NavLink>)}
+            </div>
+          </div>
           <div className="mobile-navigation__services">
             <button
               aria-controls="mobile-service-links"

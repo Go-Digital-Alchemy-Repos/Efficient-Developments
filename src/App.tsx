@@ -2,6 +2,9 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { PageShell } from './components/layout/PageShell'
 import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
+import { CareersPage } from './pages/CareersPage'
+import { CareerJobPage } from './pages/CareerJobPage'
+import { CareersAdminPage } from './pages/CareersAdminPage'
 import { HomePage } from './pages/HomePage'
 import { ProjectDetailPage } from './pages/ProjectDetailPage'
 import { ProjectsPage } from './pages/ProjectsPage'
@@ -15,6 +18,9 @@ export function App() {
       <Route element={<PageShell />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/careers/manage" element={<CareersAdminPage />} />
+        <Route path="/careers/:jobId" element={<CareerJobPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetailPage />} />

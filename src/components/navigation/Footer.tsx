@@ -32,7 +32,7 @@ export function Footer() {
           <p className="site-footer__heading">Company</p>
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
-          <Link to="/about">Careers</Link>
+          <Link to="/careers">Careers</Link>
           <Link to="/contact">Contact</Link>
         </nav>
         <div className="site-footer__contact">

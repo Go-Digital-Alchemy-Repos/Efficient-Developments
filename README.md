@@ -2,7 +2,7 @@
 
 Responsive React/Vite implementation of the Efficient Developments marketing
 website. The repository includes the completed homepage, About, Contact,
-Projects, Project Detail, and six service routes.
+Projects, Project Detail, Careers, a client hiring dashboard, and six service routes.
 
 ## Handoff baseline
 
@@ -32,8 +32,9 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Vite serves the site at `http://localhost:5173` by default. No environment
-variables are currently required for local development.
+Vite serves the site at `http://localhost:5173` by default. Run `pnpm dev:api`
+in a second terminal for careers. See [careers operations](docs/CAREERS.md)
+for dashboard credentials and production storage configuration.
 
 Before editing, confirm the expected baseline:
 
@@ -51,13 +52,16 @@ pnpm lint     # Run ESLint
 pnpm build    # Run TypeScript and create the production Vite build
 ```
 
-There is currently no automated test script. Use lint, build, and browser
+Run `pnpm test` for careers API integration tests, plus lint, build, and browser
 inspection of affected routes before pushing changes.
 
 ## Implemented routes
 
 - `/`
 - `/about`
+- `/careers`
+- `/careers/:jobId`
+- `/careers/manage`
 - `/contact`
 - `/projects`
 - `/projects/:projectSlug`
@@ -90,7 +94,8 @@ the homepage.
   both use approved “Photos coming soon” placeholders.
 - Connect the Contact form to a real submission endpoint; it currently prevents
   submission and has no backend.
-- Add automated tests if the project moves beyond visual acceptance testing.
+- Configure applicant-data backup and retention before activating real vacancies;
+  see [careers operations](docs/CAREERS.md).
 - Confirm mobile layouts against dedicated Figma mobile frames when available.
 - The specified primary green `#7FA67A` has a 2.75:1 contrast ratio against
   white. Exact green-on-white and white-on-green text does not meet WCAG AA;

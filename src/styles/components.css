@@ -107,6 +107,7 @@
 
 .primary-navigation__services:hover .service-dropdown,
 .service-dropdown[data-open] { display: flex; }
+.primary-navigation__about .service-dropdown[hidden] { display: none; }
 
 .service-dropdown__link {
   min-height: 41px;
