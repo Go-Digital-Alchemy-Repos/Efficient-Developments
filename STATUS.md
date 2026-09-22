@@ -145,8 +145,8 @@ replacement, mobile-reference reconciliation, and production integration work.
 - The exact primary green `#7FA67A` has 2.75:1 contrast against white; an approved
   foreground or palette change is required for WCAG AA text contrast.
 - Careers API integration tests are available via `pnpm test`.
-- Careers reference roles must be activated before accepting applications;
-  client operations, storage, and backup requirements are in `docs/CAREERS.md`.
+- Careers roles accept applications; client operations, storage, retention, and
+  backup requirements are in `docs/CAREERS.md`.
 
 ## Next Action
 
@@ -156,7 +156,7 @@ or replace placeholder business/contact content when final copy is provided.
 
 ## Careers implementation — September 17, 2026
 
-About now contains Company and Careers. Careers includes three reference jobs,
+About now contains Company and Careers. Careers includes three published jobs,
 role-specific application forms, private PDF resumes, and a password-protected
 client dashboard for job publishing and application review. The Node server
 serves the existing Vite site and uses a persistent Railway SQLite volume.

@@ -34,8 +34,18 @@ export function openStore(path) {
     db.exec('BEGIN')
     try {
       const insert = db.prepare('INSERT OR IGNORE INTO jobs VALUES (?,?,?,?,?,?,?,?,?,?,?)')
-      for (const job of sampleJobs) insert.run(job.id, job.title, job.department, job.location, job.employment, job.description, job.responsibilities, job.requirements, 'published', 1, new Date().toISOString())
+      for (const job of sampleJobs) insert.run(job.id, job.title, job.department, job.location, job.employment, job.description, job.responsibilities, job.requirements, 'published', 0, new Date().toISOString())
       db.prepare("INSERT INTO settings VALUES ('seeded','1')").run()
+      db.exec('COMMIT')
+    } catch (error) { db.exec('ROLLBACK'); throw error }
+  }
+  if (!db.prepare("SELECT value FROM settings WHERE key = 'activateSeededCareersJobsV1'").get()) {
+    db.exec('BEGIN')
+    try {
+      const activate = db.prepare("UPDATE jobs SET sample=0, description=replace(description, 'This example role', 'This role'), updatedAt=? WHERE id=? AND sample=1")
+      const now = new Date().toISOString()
+      for (const job of sampleJobs) activate.run(now, job.id)
+      db.prepare("INSERT INTO settings VALUES ('activateSeededCareersJobsV1','1')").run()
       db.exec('COMMIT')
     } catch (error) { db.exec('ROLLBACK'); throw error }
   }

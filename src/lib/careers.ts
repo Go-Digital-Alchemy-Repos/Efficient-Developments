@@ -1,10 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-
-export function useCareersScroll() {
-  const { pathname } = useLocation()
-  useLayoutEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [pathname])
-}
+import { useEffect, useState } from 'react'
 
 export type Job = {
   id: string

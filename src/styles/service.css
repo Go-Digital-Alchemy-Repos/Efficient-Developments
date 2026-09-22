@@ -160,6 +160,14 @@
   height: auto;
 }
 
+.service-page--asphalt-paving .service-detail__image img,
+.service-page--greenways .service-detail__image img,
+.service-page--roads-bridges .service-detail__image img {
+  aspect-ratio: 1898 / 870;
+  object-fit: cover;
+  object-position: center;
+}
+
 .service-offerings {
   position: relative;
   height: 623px;

@@ -6,6 +6,7 @@ import { join } from 'node:path'
 import { once } from 'node:events'
 import { createApp } from './app.mjs'
 import { hashPassword } from './security.mjs'
+import { openStore } from './store.mjs'
 
 const password = 'test-only-password-not-a-production-credential'
 const origin = 'http://localhost:5173'
@@ -32,15 +33,39 @@ async function setup(t) {
   return { request, json, login, createJob, apply, config, directory, restart: async () => { await stop(); await start() } }
 }
 
-test('public samples are visible but cannot accept applications; admin data is private', async (t) => {
+test('seeded openings accept applications while admin data remains private', async (t) => {
   const api = await setup(t)
   const response = await api.request('/jobs')
   const { jobs } = await response.json()
   assert.equal(jobs.length, 3)
-  assert(jobs.every((job) => job.sample))
-  assert.equal((await api.apply(jobs[0].id)).status, 409)
+  assert(jobs.every((job) => !job.sample))
+  assert(jobs.every((job) => !job.description.includes('example role')))
+  assert.equal((await api.apply(jobs[0].id)).status, 201)
   for (const path of ['/admin/jobs', '/admin/applications', '/admin/applications/anything/resume']) assert.equal((await api.request(path)).status, 401)
   assert.equal((await api.json('/admin/jobs', job)).status, 401)
+})
+
+test('existing seeded reference roles are activated without reopening closed roles', async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), 'careers-migration-test-'))
+  const dbPath = join(directory, 'careers.sqlite')
+  t.after(() => rm(directory, { recursive: true, force: true }))
+  let db = openStore(dbPath)
+  const openJob = db.prepare("SELECT id, description FROM jobs WHERE status='published' LIMIT 1").get()
+  const closedJob = db.prepare("SELECT id FROM jobs WHERE id<>? LIMIT 1").get(openJob.id)
+  db.prepare("UPDATE jobs SET sample=1, description=replace(description, 'This role', 'This example role') WHERE id=?").run(openJob.id)
+  db.prepare("UPDATE jobs SET sample=1, status='closed' WHERE id=?").run(closedJob.id)
+  db.prepare("DELETE FROM settings WHERE key='activateSeededCareersJobsV1'").run()
+  db.close()
+
+  db = openStore(dbPath)
+  const migratedOpenJob = db.prepare('SELECT sample, description, status FROM jobs WHERE id=?').get(openJob.id)
+  const migratedClosedJob = db.prepare('SELECT sample, status FROM jobs WHERE id=?').get(closedJob.id)
+  assert.equal(migratedOpenJob.sample, 0)
+  assert(!migratedOpenJob.description.includes('example role'))
+  assert.equal(migratedOpenJob.status, 'published')
+  assert.equal(migratedClosedJob.sample, 0)
+  assert.equal(migratedClosedJob.status, 'closed')
+  db.close()
 })
 
 test('admin publishes a job, an applicant uploads a private resume, and data survives restart', async (t) => {

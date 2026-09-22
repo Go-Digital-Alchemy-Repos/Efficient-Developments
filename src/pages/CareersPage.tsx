@@ -2,12 +2,11 @@ import { projects } from '../data/projects'
 import { Link } from 'react-router-dom'
 import { Container } from '../components/layout/Container'
 import { Eyebrow, Heading } from '../components/ui/Typography'
-import { useCareersScroll, useJobs } from '../lib/careers'
+import { useJobs } from '../lib/careers'
 
 const heroImage = projects.find((project) => project.slug === 'intersections-of-lawyers-rd-at-indian-trail-fairview-rd')!.hero
 
 export function CareersPage() {
-  useCareersScroll()
   const { jobs, loading, error } = useJobs()
   const openCount = jobs.filter((job) => !job.sample).length
   return (

@@ -4,7 +4,7 @@ import { Container } from '../components/layout/Container'
 import { Button } from '../components/ui/Button'
 import { FormField } from '../components/ui/FormField'
 import { Heading, Eyebrow } from '../components/ui/Typography'
-import { careersApi, useCareersScroll, useJobs, type Job } from '../lib/careers'
+import { careersApi, useJobs, type Job } from '../lib/careers'
 
 function ApplicationForm({ job }: { job: Job }) {
   const [pending, setPending] = useState(false)
@@ -48,7 +48,6 @@ function ApplicationForm({ job }: { job: Job }) {
 }
 
 export function CareerJobPage() {
-  useCareersScroll()
   const { jobId } = useParams()
   const { jobs, loading, error } = useJobs()
   const job = jobs.find((item) => item.id === jobId)

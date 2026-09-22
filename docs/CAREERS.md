@@ -5,9 +5,10 @@
 About → Company retains `/about`. About → Careers opens `/careers`.
 The password-protected dashboard is `/careers/manage`.
 Create or edit a position, choose Published, and save to accept applications.
-Draft and Closed positions are hidden from the public. Three seeded reference
-roles demonstrate the content and application layout; they do not accept real
-applications until their reference checkbox is cleared and they are published.
+Draft and Closed positions are hidden from the public. The three seeded roles
+are published openings and accept applications by default. The optional
+“Reference posting only” checkbox is reserved for previewing future role content
+without accepting applications.
 
 Applications appear in the dashboard with private PDF downloads and editable
 review statuses. No email notifications are sent. Check the dashboard regularly.

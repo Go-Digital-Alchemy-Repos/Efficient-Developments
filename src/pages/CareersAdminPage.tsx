@@ -4,7 +4,7 @@ import { Container } from '../components/layout/Container'
 import { Button } from '../components/ui/Button'
 import { FormField } from '../components/ui/FormField'
 import { Heading } from '../components/ui/Typography'
-import { careersApi, jsonRequest, useCareersScroll, type Application, type Job } from '../lib/careers'
+import { careersApi, jsonRequest, type Application, type Job } from '../lib/careers'
 
 const blankJob: Job = { id: '', title: '', department: 'Field Operations', location: 'Charlotte, NC', employment: 'Full-time', description: '', responsibilities: '', requirements: '', status: 'draft', sample: false }
 
@@ -57,7 +57,6 @@ function ApplicationCard({ application, refresh }: { application: Application; r
 }
 
 export function CareersAdminPage() {
-  useCareersScroll()
   const [authenticated, setAuthenticated] = useState<boolean | null>(null)
   const [jobs, setJobs] = useState<Job[]>([])
   const [applications, setApplications] = useState<Application[]>([])

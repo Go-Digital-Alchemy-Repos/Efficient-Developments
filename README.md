@@ -94,7 +94,7 @@ the homepage.
   both use approved “Photos coming soon” placeholders.
 - Connect the Contact form to a real submission endpoint; it currently prevents
   submission and has no backend.
-- Configure applicant-data backup and retention before activating real vacancies;
+- Configure applicant-data backup and retention before production promotion;
   see [careers operations](docs/CAREERS.md).
 - Confirm mobile layouts against dedicated Figma mobile frames when available.
 - The specified primary green `#7FA67A` has a 2.75:1 contrast ratio against
