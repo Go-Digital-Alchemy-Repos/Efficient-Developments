@@ -8,14 +8,8 @@ const contactDetails = [
   {
     icon: '/assets/icons/contact/phone.svg',
     label: 'Call Efficient Developments',
-    content: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
-  },
-  {
-    icon: '/assets/icons/contact/mail.svg',
-    label: 'Email Efficient Developments',
-    content: 'info@efficientdevelopments.com',
-    href: 'mailto:info@efficientdevelopments.com',
+    content: '704-317-5966',
+    href: 'tel:+17043175966',
   },
 ]
 
@@ -42,6 +36,13 @@ export function ContactPage() {
                   <span>{detail.content}</span>
                 </a>
               ))}
+              <div className="contact-page__detail contact-page__detail--hours" data-reveal-delay="3" data-reveal-item>
+                <img alt="" aria-hidden="true" src="/assets/icons/contact/clock.svg" />
+                <span>
+                  <strong>Business Hours</strong><br />
+                  Monday – Friday: 8:00 pm – 5:00 pm
+                </span>
+              </div>
               <div className="contact-page__detail contact-page__detail--address" data-reveal-delay="4" data-reveal-item>
                 <img alt="" aria-hidden="true" src="/assets/icons/contact/map-pin.svg" />
                 <span>

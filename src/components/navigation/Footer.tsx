@@ -37,8 +37,9 @@ export function Footer() {
         </nav>
         <div className="site-footer__contact">
           <p className="site-footer__heading">Contact</p>
-          <span>+1 (XXX) XXX-XXXX</span>
-          <span>info@example.com</span>
+          <a href="tel:+17043175966">704-317-5966</a>
+          <span>Monday – Friday</span>
+          <span>8:00 pm – 5:00 pm</span>
           <span>Address line</span>
         </div>
       </Container>
