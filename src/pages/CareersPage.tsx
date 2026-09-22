@@ -8,7 +8,7 @@ const heroImage = projects.find((project) => project.slug === 'intersections-of-
 
 export function CareersPage() {
   const { jobs, loading, error } = useJobs()
-  const openCount = jobs.filter((job) => !job.sample).length
+  const openCount = jobs.length
   return (
     <main id="main-content" className="careers-page careers-page--landing">
       <header className="careers-hero">
@@ -28,13 +28,13 @@ export function CareersPage() {
           {error && <p role="alert" className="careers-notice">{error} <button type="button" onClick={() => window.location.reload()}>Try again</button></p>}
           {!loading && !error && jobs.length === 0 && <p className="careers-notice">There are no open positions right now. Please check back for new opportunities.</p>}
           <div className="careers-job-grid">
-            {jobs.map((job) => <article className="careers-job-card" key={job.id}>
-              <div className="careers-job-meta"><span>{job.department}</span>{job.sample && <span className="careers-badge">Reference posting</span>}</div>
+            {jobs.map((job) => <Link aria-label={`View ${job.title} role and apply`} className="careers-job-card" key={job.id} to={`/careers/${job.id}`}>
+              <div className="careers-job-meta"><span>{job.department}</span></div>
               <Heading as="h3" size="card">{job.title}</Heading>
               <p className="careers-job-location">{job.location}<br />{job.employment}</p>
               <p className="careers-job-summary">{job.description}</p>
-              <Link className="careers-job-link" to={`/careers/${job.id}`}>{job.sample ? 'Explore sample role' : 'View role & apply'} <span aria-hidden="true">↗</span></Link>
-            </article>)}
+              <span className="careers-job-link">View role &amp; apply <span aria-hidden="true">↗</span></span>
+            </Link>)}
           </div>
         </section>
         <div className="careers-manage-link"><Link to="/careers/manage">Client sign in</Link></div>

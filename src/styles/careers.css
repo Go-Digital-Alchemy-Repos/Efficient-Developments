@@ -5,13 +5,14 @@
 .careers-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
 .careers-section-heading > span { color: var(--color-text-muted); white-space: nowrap; }
 .careers-job-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
-.careers-job-card { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px; background: var(--color-surface-muted); border-bottom: 4px solid var(--color-green); }
+.careers-job-card { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px; color: var(--color-ink); background: var(--color-surface-muted); border-bottom: 4px solid var(--color-green); text-decoration: none; transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.careers-job-card:hover { background: #e9ece8; border-bottom-color: var(--color-green-dark); transform: translateY(-2px); }
+.careers-job-card:focus-visible { outline: 3px solid var(--color-green-dark); outline-offset: 4px; }
 .careers-job-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; color: var(--color-green-dark); font-size: 12px; font-weight: 600; }
-.careers-badge { display: inline-block; background: #f4f5f2; color: var(--color-ink); padding: 5px 9px; border: 1px solid #c8ceca; font-size: 12px; font-weight: 600; }
 .careers-job-location { font-size: 14px; line-height: 1.8; }
 .careers-job-summary { font-size: 15px; line-height: 1.7; }
 .careers-job-link { display: flex; justify-content: space-between; width: 100%; gap: 16px; color: var(--color-ink); margin-top: auto; padding-top: 16px; border-top: 1px solid #bcc1bc; font-weight: 600; text-decoration: none; }
-.careers-job-link:hover { color: var(--color-green-dark); }
+.careers-job-card:hover .careers-job-link { color: var(--color-green-dark); }
 .careers-notice { padding: 20px 24px; background: #f1f4f0; border-left: 3px solid var(--color-green); line-height: 1.65; }
 .careers-manage-link { padding-top: 56px; font-size: 14px; }
 .careers-back { margin-bottom: 36px; }

@@ -87,7 +87,7 @@ export function createApp({ dbPath, adminHash, origins, production = false, trus
       const forwardedIp = req.headers['x-real-ip']
       const client = digest(trustRailway && typeof forwardedIp === 'string' && isIP(forwardedIp) ? forwardedIp : req.socket.remoteAddress ?? 'unknown')
       if (path === '/api/careers/jobs' && method === 'GET') {
-        return send(200, { jobs: db.prepare("SELECT * FROM jobs WHERE status='published' ORDER BY sample, updatedAt DESC, title").all().map(presentJob) })
+        return send(200, { jobs: db.prepare("SELECT * FROM jobs WHERE status='published' ORDER BY updatedAt DESC, title").all().map(presentJob) })
       }
       if (path === '/api/careers/session' && method === 'GET') return send(200, { authenticated: Boolean(authenticated(req)) })
       if (path === '/api/careers/login' && method === 'POST') {
@@ -117,7 +117,6 @@ export function createApp({ dbPath, adminHash, origins, production = false, trus
         const jobId = text(form.get('jobId'), 'job', 100)
         const job = db.prepare("SELECT * FROM jobs WHERE id=? AND status='published'").get(jobId)
         if (!job) throw fail(409, 'This position is no longer accepting applications.')
-        if (job.sample) throw fail(409, 'This is a reference posting and is not accepting applications.')
         const name = text(form.get('name'), 'name', 150)
         const email = text(form.get('email'), 'email address', 254).toLowerCase()
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw fail(400, 'Please enter a valid email address.')
@@ -132,7 +131,7 @@ export function createApp({ dbPath, adminHash, origins, production = false, trus
         const duplicate = db.prepare('SELECT id FROM applications WHERE jobId=? AND email=? AND submittedAt>?').get(jobId, email, new Date(Date.now() - 10 * 60_000).toISOString())
         if (duplicate) return send(200, { id: duplicate.id, message: 'Your application has already been received.' })
         // Recheck after reading the upload: the client may have closed the role meanwhile.
-        if (!db.prepare("SELECT id FROM jobs WHERE id=? AND status='published' AND sample=0").get(jobId)) throw fail(409, 'This position is no longer accepting applications.')
+        if (!db.prepare("SELECT id FROM jobs WHERE id=? AND status='published'").get(jobId)) throw fail(409, 'This position is no longer accepting applications.')
         const id = randomUUID()
         const resumeName = resume.name.replace(/[^a-zA-Z0-9._ -]/g, '_').slice(-120)
         db.prepare('INSERT INTO applications(id,jobId,jobTitle,name,email,phone,message,resume,resumeName,submittedAt,consentAt) VALUES(?,?,?,?,?,?,?,?,?,?,?)').run(id, jobId, job.title, name, email, phone, message, resumeBytes, resumeName, now, now)
@@ -144,10 +143,10 @@ export function createApp({ dbPath, adminHash, origins, production = false, trus
         if (path === '/api/careers/admin/jobs' && method === 'POST') {
           const data = await jsonBody(req)
           const values = jobFields.map((field) => text(data[field], field, ['description', 'responsibilities', 'requirements'].includes(field) ? 12000 : 200))
-          if (!['draft', 'published', 'closed'].includes(data.status) || typeof data.sample !== 'boolean') throw fail(400, 'Choose a valid job status.')
+          if (!['draft', 'published', 'closed'].includes(data.status)) throw fail(400, 'Choose a valid job status.')
           const id = data.id ? text(data.id, 'job identifier', 100) : randomUUID()
           if (data.id && !db.prepare('SELECT id FROM jobs WHERE id=?').get(id)) throw fail(404, 'Job not found.')
-          db.prepare(`INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET title=excluded.title,department=excluded.department,location=excluded.location,employment=excluded.employment,description=excluded.description,responsibilities=excluded.responsibilities,requirements=excluded.requirements,status=excluded.status,sample=excluded.sample,updatedAt=excluded.updatedAt`).run(id, ...values, data.status, Number(data.sample), new Date().toISOString())
+          db.prepare(`INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET title=excluded.title,department=excluded.department,location=excluded.location,employment=excluded.employment,description=excluded.description,responsibilities=excluded.responsibilities,requirements=excluded.requirements,status=excluded.status,sample=excluded.sample,updatedAt=excluded.updatedAt`).run(id, ...values, data.status, 0, new Date().toISOString())
           audit(db, 'save_job', id)
           return send(200, { job: presentJob(db.prepare('SELECT * FROM jobs WHERE id=?').get(id)) })
         }

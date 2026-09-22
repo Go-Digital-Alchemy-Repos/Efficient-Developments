@@ -5,10 +5,9 @@
 About → Company retains `/about`. About → Careers opens `/careers`.
 The password-protected dashboard is `/careers/manage`.
 Create or edit a position, choose Published, and save to accept applications.
-Draft and Closed positions are hidden from the public. The three seeded roles
-are published openings and accept applications by default. The optional
-“Reference posting only” checkbox is reserved for previewing future role content
-without accepting applications.
+Draft and Closed positions are hidden from the public. Published positions are
+visible on Careers and accept applications. The three seeded roles are published
+openings until hiring staff replace or update them in the dashboard.
 
 Applications appear in the dashboard with private PDF downloads and editable
 review statuses. No email notifications are sent. Check the dashboard regularly.
@@ -78,7 +77,7 @@ permissions are restricted to the service account.
 ## Verification and rollback
 
 `pnpm test` covers authentication, authorization, upload validation, persistence
-across restart, reference/draft restrictions, closing roles, application status
+across restart, draft restrictions, closing roles, application status
 and deletion, session revocation, and throttling. Also run lint/build and browser
 checks. Use local synthetic applicants; do not seed real personal data.
 

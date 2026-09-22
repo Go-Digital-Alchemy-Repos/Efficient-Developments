@@ -45,7 +45,7 @@ test('seeded openings accept applications while admin data remains private', asy
   assert.equal((await api.json('/admin/jobs', job)).status, 401)
 })
 
-test('existing seeded reference roles are activated without reopening closed roles', async (t) => {
+test('legacy seeded role flags are removed without reopening closed roles', async (t) => {
   const directory = await mkdtemp(join(tmpdir(), 'careers-migration-test-'))
   const dbPath = join(directory, 'careers.sqlite')
   t.after(() => rm(directory, { recursive: true, force: true }))
@@ -55,6 +55,7 @@ test('existing seeded reference roles are activated without reopening closed rol
   db.prepare("UPDATE jobs SET sample=1, description=replace(description, 'This role', 'This example role') WHERE id=?").run(openJob.id)
   db.prepare("UPDATE jobs SET sample=1, status='closed' WHERE id=?").run(closedJob.id)
   db.prepare("DELETE FROM settings WHERE key='activateSeededCareersJobsV1'").run()
+  db.prepare("DELETE FROM settings WHERE key='removeCareerSamplesV2'").run()
   db.close()
 
   db = openStore(dbPath)

@@ -376,8 +376,8 @@ html.mobile-navigation-open body {
 .site-footer__legal p { display: flex; gap: 4px; font-size: 13px; }
 .site-footer__legal p span { font-size: 13px; }
 .site-footer__made-by { display: flex; align-items: center; gap: 4px; color: var(--color-text-muted); }
-.site-footer__made-by span { width: 66px; font-size: 14px; }
-.digital-alchemy-logo { width: 165px; height: auto; }
+.site-footer__made-by span { width: 66px; font-size: 13px; }
+.digital-alchemy-logo { width: 82.5px; height: auto; }
 .digital-alchemy-logo__mark,
 .digital-alchemy-logo__wordmark { fill: #6b7280; }
 .digital-alchemy-logo__wordmark { transition: fill 160ms ease; }

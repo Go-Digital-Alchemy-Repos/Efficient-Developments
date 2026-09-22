@@ -14,7 +14,7 @@ function JobEditor({ job, onSave, onCancel }: { job: Job; onSave: (job: Job) => 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); setPending(true); setError('')
     const form = new FormData(event.currentTarget)
-    const data = { ...job, ...Object.fromEntries(form), sample: form.get('sample') === 'on' } as Job
+    const data = { ...job, ...Object.fromEntries(form), sample: false } as Job
     try { await onSave(data) } catch (error) { setError((error as Error).message) } finally { setPending(false) }
   }
   return <section className="careers-editor"><Heading as="h2" size="card">{job.id ? 'Edit position' : 'Create position'}</Heading>
@@ -26,8 +26,6 @@ function JobEditor({ job, onSave, onCancel }: { job: Job; onSave: (job: Job) => 
       <FormField multiline label="Responsibilities (one per line)" name="responsibilities" defaultValue={job.responsibilities} maxLength={12000} required />
       <FormField multiline label="Requirements (one per line)" name="requirements" defaultValue={job.requirements} maxLength={12000} required />
       <label className="form-field"><span className="form-field__label">Status</span><select className="form-field__control" name="status" defaultValue={job.status}><option value="draft">Draft — hidden from the public</option><option value="published">Published — visible on Careers</option><option value="closed">Closed — applications stopped</option></select></label>
-      <label className="careers-consent"><input type="checkbox" name="sample" defaultChecked={job.sample} /><span>Reference posting only — do not accept applications</span></label>
-      <p className="careers-privacy">To activate a sample role, update its details, uncheck “Reference posting only,” and save it as Published.</p>
       {error && <p role="alert" className="careers-error">{error}</p>}
       <div className="careers-actions"><Button type="submit">{pending ? 'Saving…' : 'Save position'}</Button><Button type="button" variant="outline" onClick={onCancel}>Cancel</Button></div>
     </fieldset></form>
@@ -89,7 +87,7 @@ export function CareersAdminPage() {
     {notice && <p role="status" className="careers-success">{notice}</p>}
     {authenticated === null ? <p role="status">Checking your session…</p> : !authenticated ? <form className="careers-login contact-form-card" onSubmit={login}><Heading as="h2" size="card">Client sign in</Heading><p>Manage job postings and review applications in one place.</p><FormField label="Password" type="password" name="password" autoComplete="current-password" maxLength={256} required /><Button type="submit" disabled={pending}>{pending ? 'Signing in…' : 'Sign in'}</Button></form> : <>
       <section className="careers-admin-section" aria-labelledby="manage-jobs"><div className="careers-section-heading"><Heading as="h2" id="manage-jobs">Job postings</Heading><Button type="button" onClick={() => { setEditing({ ...blankJob }); setNotice('') }}>Create position</Button></div>
-        <div className="careers-admin-jobs">{jobs.map((job) => <article className="careers-admin-job" key={job.id}><div><h3>{job.title}</h3><p>{job.status}{job.sample ? ' · Reference posting' : ''} · {job.location}</p></div><Button variant="outline" type="button" onClick={() => { setEditing(job); setNotice('') }}>Edit<span className="sr-only"> {job.title}</span></Button></article>)}</div>
+        <div className="careers-admin-jobs">{jobs.map((job) => <article className="careers-admin-job" key={job.id}><div><h3>{job.title}</h3><p>{job.status} · {job.location}</p></div><Button variant="outline" type="button" onClick={() => { setEditing(job); setNotice('') }}>Edit<span className="sr-only"> {job.title}</span></Button></article>)}</div>
         {editing && <JobEditor key={`${editing.id}-${editing.updatedAt ?? 'new'}`} job={editing} onCancel={() => setEditing(null)} onSave={async (job) => { await careersApi('/admin/jobs', jsonRequest('POST', job)); await refresh(); setEditing(null); setNotice('Position saved. Published roles are now visible on Careers.') }} />}
       </section>
       <section className="careers-admin-section" aria-labelledby="manage-applications"><div className="careers-section-heading"><Heading as="h2" id="manage-applications">Applications ({applications.length})</Heading><Button type="button" variant="outline" onClick={() => void refresh().catch((error) => setError(error.message))}>Refresh</Button></div>

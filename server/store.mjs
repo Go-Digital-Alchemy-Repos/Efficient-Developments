@@ -49,6 +49,14 @@ export function openStore(path) {
       db.exec('COMMIT')
     } catch (error) { db.exec('ROLLBACK'); throw error }
   }
+  if (!db.prepare("SELECT value FROM settings WHERE key = 'removeCareerSamplesV2'").get()) {
+    db.exec('BEGIN')
+    try {
+      db.prepare("UPDATE jobs SET sample=0, description=replace(description, 'This example role', 'This role')").run()
+      db.prepare("INSERT INTO settings VALUES ('removeCareerSamplesV2','1')").run()
+      db.exec('COMMIT')
+    } catch (error) { db.exec('ROLLBACK'); throw error }
+  }
   return db
 }
 
