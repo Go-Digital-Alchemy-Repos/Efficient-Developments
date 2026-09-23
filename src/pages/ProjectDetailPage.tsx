@@ -3,6 +3,9 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { Container } from '../components/layout/Container'
 import { ModalCloseButton } from '../components/ui/ModalCloseButton'
 import { projects } from '../data/projects'
+import { Seo } from '../components/seo/Seo'
+import { seoSiteOrigin } from '../components/seo/config'
+import { NotFoundPage } from './NotFoundPage'
 
 export function ProjectDetailPage() {
   const { projectSlug } = useParams()
@@ -10,7 +13,7 @@ export function ProjectDetailPage() {
     return <Navigate replace to="/projects/n-rocky-river-rd-lawyers-rd-roundabout" />
   }
   const projectIndex = projects.findIndex((project) => project.slug === projectSlug)
-  if (projectIndex < 0) return <Navigate replace to="/projects" />
+  if (projectIndex < 0) return <NotFoundPage />
   return <ProjectDetailContent key={projectSlug} projectIndex={projectIndex} />
 }
 
@@ -72,6 +75,14 @@ function ProjectDetailContent({ projectIndex }: { projectIndex: number }) {
 
   return (
     <main id="main-content" className="project-detail-page">
+      <Seo path={`/projects/${project.slug}`} title={project.title} description={project.description} image={project.hero.src} structuredData={{
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: project.title,
+        description: project.description,
+        image: new URL(project.hero.src, seoSiteOrigin).toString(),
+        creator: { '@type': 'Organization', name: 'Efficient Developments' },
+      }} />
       <Container data-reveal-sequence>
         <header className="project-detail-heading">
           <p data-reveal-item><span aria-hidden="true" />{project.category}</p>

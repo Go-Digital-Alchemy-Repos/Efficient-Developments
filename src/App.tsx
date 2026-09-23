@@ -1,20 +1,25 @@
+import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { PageShell } from './components/layout/PageShell'
-import { AboutPage } from './pages/AboutPage'
-import { ContactPage } from './pages/ContactPage'
-import { CareersPage } from './pages/CareersPage'
-import { CareerJobPage } from './pages/CareerJobPage'
-import { CareersAdminPage } from './pages/CareersAdminPage'
-import { HomePage } from './pages/HomePage'
-import { ProjectDetailPage } from './pages/ProjectDetailPage'
-import { ProjectsPage } from './pages/ProjectsPage'
-import { RouteScaffold } from './pages/RouteScaffold'
-import { ServicePage } from './pages/ServicePage'
 import { routeDefinitions } from './routes/routeDefinitions'
+
+const AboutPage = lazy(() => import('./pages/AboutPage').then((module) => ({ default: module.AboutPage })))
+const ContactPage = lazy(() => import('./pages/ContactPage').then((module) => ({ default: module.ContactPage })))
+const CareersPage = lazy(() => import('./pages/CareersPage').then((module) => ({ default: module.CareersPage })))
+const CareerJobPage = lazy(() => import('./pages/CareerJobPage').then((module) => ({ default: module.CareerJobPage })))
+const CareersAdminPage = lazy(() => import('./pages/CareersAdminPage').then((module) => ({ default: module.CareersAdminPage })))
+const HomePage = lazy(() => import('./pages/HomePage').then((module) => ({ default: module.HomePage })))
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage').then((module) => ({ default: module.ProjectDetailPage })))
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage').then((module) => ({ default: module.ProjectsPage })))
+const RouteScaffold = lazy(() => import('./pages/RouteScaffold').then((module) => ({ default: module.RouteScaffold })))
+const ServicePage = lazy(() => import('./pages/ServicePage').then((module) => ({ default: module.ServicePage })))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then((module) => ({ default: module.NotFoundPage })))
+const PrivacyPage = lazy(() => import('./pages/LegalPage').then((module) => ({ default: module.PrivacyPage })))
+const TermsPage = lazy(() => import('./pages/LegalPage').then((module) => ({ default: module.TermsPage })))
 
 export function App() {
   return (
-    <Routes>
+    <Suspense fallback={<main className="route-loading" id="main-content"><p role="status">Loading…</p></main>}><Routes>
       <Route element={<PageShell />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -25,6 +30,8 @@ export function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetailPage />} />
         <Route path="/services/:serviceSlug" element={<ServicePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         {routeDefinitions
           .filter((route) => (
             route.path !== '/'
@@ -42,8 +49,8 @@ export function App() {
             />
           ))}
         <Route path="/services" element={<Navigate replace to="/services/asphalt-paving" />} />
-        <Route path="*" element={<Navigate replace to="/" />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
-    </Routes>
+    </Routes></Suspense>
   )
 }

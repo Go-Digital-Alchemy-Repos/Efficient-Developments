@@ -1,7 +1,5 @@
-import type { FormEvent } from 'react'
 import { Container } from '../components/layout/Container'
-import { Button } from '../components/ui/Button'
-import { FormField } from '../components/ui/FormField'
+import { Seo } from '../components/seo/Seo'
 import { Heading } from '../components/ui/Typography'
 
 const contactDetails = [
@@ -14,12 +12,9 @@ const contactDetails = [
 ]
 
 export function ContactPage() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-  }
-
   return (
     <main className="contact-page" id="main-content">
+      <Seo path="/contact" title="Contact" description="Call Efficient Developments to discuss an upcoming heavy civil construction project in the Carolinas." />
       <section className="contact-page__section" aria-labelledby="contact-page-title" data-reveal-sequence>
         <Container className="contact-page__layout" size="wide">
           <div className="contact-page__intro">
@@ -43,55 +38,18 @@ export function ContactPage() {
                   Monday – Friday: 8:00 pm – 5:00 pm
                 </span>
               </div>
-              <div className="contact-page__detail contact-page__detail--address" data-reveal-delay="4" data-reveal-item>
-                <img alt="" aria-hidden="true" src="/assets/icons/contact/map-pin.svg" />
-                <span>
-                  123 Main Street, Suite 400<br />
-                  Charlotte, NC 28202
-                </span>
-              </div>
             </address>
 
             <p className="contact-page__service-note" data-reveal-delay="5" data-reveal-item>Serving municipalities and developers across the Carolinas.</p>
           </div>
 
-          <div className="contact-form-card">
-            <h2 className="contact-form-card__title" data-reveal-delay="6" data-reveal-item>Send Us a Message</h2>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="contact-form__fields">
-                <div className="contact-form__row" data-reveal-delay="7" data-reveal-item>
-                  <FormField autoComplete="name" label="Name" name="name" placeholder="Your full name" />
-                  <FormField
-                    autoComplete="organization"
-                    label="Company / Municipality"
-                    name="organization"
-                    placeholder="Organization name"
-                  />
-                </div>
-                <div className="contact-form__row" data-reveal-delay="8" data-reveal-item>
-                  <FormField
-                    autoComplete="email"
-                    label="Email"
-                    name="email"
-                    placeholder="name@example.com"
-                    type="email"
-                  />
-                  <FormField autoComplete="tel" label="Phone" name="phone" placeholder="(555) 123-4567" type="tel" />
-                </div>
-                <div data-reveal-delay="9" data-reveal-item>
-                  <FormField
-                    label="Tell us about the project"
-                    multiline
-                    name="projectDetails"
-                    placeholder="Share your vision, timeline, and budget..."
-                  />
-                </div>
-              </div>
-              <Button className="contact-form__submit" data-reveal-delay="10" data-reveal-item type="submit">
-                Send Message
-                <img alt="" aria-hidden="true" src="/assets/icons/cta-arrow.svg" />
-              </Button>
-            </form>
+          <div className="contact-form-card contact-call-card">
+            <h2 className="contact-form-card__title" data-reveal-delay="6" data-reveal-item>Start a conversation</h2>
+            <p data-reveal-delay="7" data-reveal-item>Call our team during business hours to discuss your project, schedule, and next steps.</p>
+            <a className="button contact-form__submit" data-reveal-delay="8" data-reveal-item href="tel:+17043175966">
+              Call 704-317-5966
+              <img alt="" aria-hidden="true" src="/assets/icons/cta-arrow.svg" />
+            </a>
           </div>
         </Container>
       </section>

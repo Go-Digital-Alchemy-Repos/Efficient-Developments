@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ModalCloseButton } from '../components/ui/ModalCloseButton'
 import { Eyebrow, Heading } from '../components/ui/Typography'
+import { Seo } from '../components/seo/Seo'
 
 const stories = [
   {
@@ -40,28 +41,6 @@ const leaders = [
       "Prior to founding Efficient Developments, David served as Vice President of Infrastructure at one of the country's largest civil contracting firms, where he championed the integration of GPS-guided grading technology and real-time project tracking. His leadership philosophy centers on meticulous planning, strict safety protocols, and a commitment to completing turnkey projects ahead of schedule.",
     ],
   },
-  {
-    name: 'Sarah Jennings',
-    role: 'Vice President of Operations',
-    modalRole: 'Vice President of Operations',
-    image: '/assets/images/about/team-jennings.jpg',
-    modalImage: '/assets/images/about/team-jennings.jpg',
-    bio: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    ],
-  },
-  {
-    name: 'Marcus Thompson',
-    role: 'Director of Project Management',
-    modalRole: 'Director of Project Management',
-    image: '/assets/images/about/team-thompson.jpg',
-    modalImage: '/assets/images/about/team-thompson.jpg',
-    bio: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    ],
-  },
 ]
 
 export function AboutPage() {
@@ -98,6 +77,7 @@ export function AboutPage() {
 
   return (
     <main id="main-content" className="about-page">
+      <Seo path="/about" title="About" image="/assets/images/about/hero.png" description="Meet the Efficient Developments team and learn how our self-performing crews deliver heavy civil infrastructure across the Carolinas." />
       <section className="about-hero" aria-labelledby="about-hero-title" data-reveal-sequence>
         <div className="about-hero__shade" />
         <div className="about-hero__content">
@@ -120,7 +100,7 @@ export function AboutPage() {
               <p data-reveal-delay={story.reverse ? '3' : '2'} data-reveal-item>{story.body}</p>
             </div>
             <div className="about-story__media" data-reveal-delay={story.reverse ? '0' : '3'} data-reveal-item>
-              <img src={story.image} alt={story.alt} />
+              <img src={story.image} alt={story.alt} loading="lazy" decoding="async" />
             </div>
           </div>
         </section>
@@ -147,7 +127,7 @@ export function AboutPage() {
               }}
               type="button"
             >
-              <img className="leader-card__photo" src={leader.image} alt={`${leader.name}, ${leader.role}`} />
+              <img className="leader-card__photo" src={leader.image} alt={`${leader.name}, ${leader.role}`} loading="lazy" decoding="async" />
               <div className="leader-card__panel">
                 <div>
                   <h3>{leader.name}</h3>

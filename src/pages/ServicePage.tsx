@@ -1,7 +1,10 @@
-import { Navigate, NavLink, useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
 import { serviceHeroImages } from '../data/serviceImages'
+import { Seo } from '../components/seo/Seo'
+import { seoSiteOrigin } from '../components/seo/config'
+import { NotFoundPage } from './NotFoundPage'
 
 type ServiceCard = {
   description: string
@@ -152,10 +155,18 @@ export function ServicePage() {
   const { serviceSlug } = useParams()
   const service = serviceSlug ? serviceBySlug[serviceSlug] : undefined
 
-  if (!service) return <Navigate replace to="/services/asphalt-paving" />
+  if (!service) return <NotFoundPage />
 
   return (
     <main className={`service-page service-page--${service.slug}`}>
+      <Seo path={`/services/${service.slug}`} title={service.title.replace('\n', ' ')} description={service.support} image={service.heroImage} structuredData={{
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: service.title.replace('\n', ' '),
+        description: service.support,
+        areaServed: ['North Carolina', 'South Carolina'],
+        provider: { '@type': 'Organization', name: 'Efficient Developments', url: seoSiteOrigin },
+      }} />
       <section
         aria-labelledby="service-page-title"
         className="service-hero"
@@ -195,7 +206,7 @@ export function ServicePage() {
             <div className="service-detail__copy service-detail__copy--approach">
               <Heading as="h2" data-reveal-delay="3" data-reveal-item size="section">{service.approachTitle}</Heading>
               <p data-reveal-delay="4" data-reveal-item>{service.approach}</p>
-              <div className="service-detail__image" data-reveal-delay="5" data-reveal-item><img alt="" src={service.approachImage} /></div>
+              <div className="service-detail__image" data-reveal-delay="5" data-reveal-item><img alt="" src={service.approachImage} loading="lazy" decoding="async" /></div>
             </div>
           </div>
         </div>

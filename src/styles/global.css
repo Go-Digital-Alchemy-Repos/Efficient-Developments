@@ -158,6 +158,33 @@ p {
   min-height: 18rem;
 }
 
+.route-loading,
+.status-page,
+.legal-page {
+  min-height: 60vh;
+  padding: clamp(6rem, 12vw, 10rem) 0;
+}
+
+.route-loading {
+  display: grid;
+  place-items: center;
+}
+
+.status-page__code {
+  margin: 0 0 0.5rem;
+  color: var(--color-green);
+  font: 600 1rem/1 var(--font-body);
+  letter-spacing: 0.12em;
+}
+
+.status-page .heading,
+.legal-page .heading { margin-bottom: 1.25rem; }
+.status-page p { max-width: 42rem; margin-bottom: 2rem; }
+.legal-page__updated { color: var(--color-muted); }
+.legal-page__content { max-width: 52rem; margin: 3rem 0; }
+.legal-page__content h2 { margin: 2.25rem 0 0.75rem; font-family: var(--font-heading); text-transform: uppercase; }
+.legal-page__content p { line-height: 1.75; }
+
 .reveal-ready [data-reveal] {
   opacity: 0;
   transform: translate3d(0, 14px, 0);

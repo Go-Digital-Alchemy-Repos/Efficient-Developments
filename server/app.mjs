@@ -55,6 +55,8 @@ export function createApp({ dbPath, adminHash, origins, production = false, trus
     res.setHeader('X-Content-Type-Options', 'nosniff')
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
     res.setHeader('X-Frame-Options', 'DENY')
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=(), usb=()')
+    if (production) res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
     res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://tiles.openfreemap.org; worker-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
     const send = (status, data) => {
       res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' })
@@ -67,13 +69,17 @@ export function createApp({ dbPath, adminHash, origins, production = false, trus
       if (!path.startsWith('/api/')) {
         if (method !== 'GET' && method !== 'HEAD') throw fail(405, 'Method not allowed.')
         let file = resolve(dist, '.' + decodeURIComponent(path))
+        let spaFallback = false
         if (file !== dist && !file.startsWith(dist + sep)) throw fail(404, 'Not found.')
-        try { if (!(await stat(file)).isFile()) file = resolve(dist, 'index.html') } catch {
+        try { if (!(await stat(file)).isFile()) { file = resolve(dist, 'index.html'); spaFallback = true } } catch {
           if (extname(path)) throw fail(404, 'Not found.')
           file = resolve(dist, 'index.html')
+          spaFallback = true
         }
         const bytes = await readFile(file)
-        res.writeHead(200, { 'Content-Type': contentTypes[extname(file)] ?? 'application/octet-stream', 'Content-Length': bytes.length,
+        const knownRoute = /^\/(?:$|about\/?$|contact\/?$|careers(?:\/manage|\/[\w-]+)?\/?$|projects(?:\/[\w-]+)?\/?$|services(?:\/[\w-]+)?\/?$|privacy-policy\/?$|terms\/?$)/.test(path)
+        const status = spaFallback && !knownRoute ? 404 : 200
+        res.writeHead(status, { 'Content-Type': contentTypes[extname(file)] ?? 'application/octet-stream', 'Content-Length': bytes.length,
           'Cache-Control': extname(file) === '.html' ? 'no-cache' : /\/assets\/index-[\w-]+\./.test(path) ? 'public, max-age=31536000, immutable' : 'public, max-age=3600' })
         return res.end(method === 'HEAD' ? undefined : bytes)
       }

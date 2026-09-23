@@ -2,11 +2,11 @@ import { ServiceAreaMap } from '../components/maps/ServiceAreaMap'
 import { type CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { StatCounter } from '../components/motion/StatCounter'
-import { TestimonialCarousel } from '../components/sections/TestimonialCarousel'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
 import { serviceHeroImages } from '../data/serviceImages'
 import { featuredProject } from '../data/projects'
+import { Seo } from '../components/seo/Seo'
 
 const services = [
   {
@@ -155,6 +155,7 @@ export function HomePage() {
 
   return (
     <main id="main-content" className="home-page">
+      <Seo path="/" image="/assets/images/home-hero.png" description="Efficient Developments self-performs asphalt, concrete, utilities, greenways, and road and bridge construction across the Carolinas." />
       <section className="home-hero" aria-labelledby="home-hero-title">
         <div className="home-hero__shade" />
         <div className="home-hero__content" data-reveal-sequence>
@@ -175,7 +176,7 @@ export function HomePage() {
       </section>
 
       <section className="how-we-work" aria-labelledby="how-we-work-title" data-reveal-sequence>
-        <img className="how-we-work__image" data-reveal-item src="/assets/images/home-how-we-work.jpg" alt="Road paving crew operating heavy equipment" />
+        <img className="how-we-work__image" data-reveal-item src="/assets/images/home-how-we-work.jpg" alt="Road paving crew operating heavy equipment" loading="lazy" decoding="async" />
         <div className="how-we-work__content">
           <div className="how-we-work__content-inner">
             <div className="how-we-work__heading">
@@ -229,7 +230,7 @@ export function HomePage() {
             <div className="services-carousel__row">
               {services.map((service, index) => (
                 <Link className="service-card" data-reveal-delay={String(index + 3)} data-reveal-item to={service.to} key={service.title}>
-                  <img src={service.image} alt="" />
+                  <img src={service.image} alt="" loading="lazy" decoding="async" />
                   <div className="service-card__panel">
                     <div>
                       <h3>{service.title}</h3>
@@ -268,7 +269,7 @@ export function HomePage() {
           ))}
         </div>
         <div className="who-we-work-with__image">
-          <img data-reveal-delay="8" data-reveal-item src="/assets/images/home-who-we-work-with.png" alt="Civil construction site serving a growing community" />
+          <img data-reveal-delay="8" data-reveal-item src="/assets/images/home-who-we-work-with.png" alt="Civil construction site serving a growing community" loading="lazy" decoding="async" />
           <div className="who-we-work-with__overlay">
             <Eyebrow className="eyebrow--on-dark" data-reveal-delay="9" data-reveal-item>Who We Work With</Eyebrow>
             <Heading data-reveal-delay="10" data-reveal-item id="who-title">Building For Those Who Build Communities</Heading>
@@ -321,12 +322,6 @@ export function HomePage() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="testimonial" aria-labelledby="testimonial-title" data-reveal-sequence>
-        <div className="testimonial__shade" />
-        <Heading data-reveal-item id="testimonial-title">What Our Clients Say</Heading>
-        <TestimonialCarousel />
       </section>
 
       <section className="service-area" aria-labelledby="service-area-title" data-reveal-sequence>

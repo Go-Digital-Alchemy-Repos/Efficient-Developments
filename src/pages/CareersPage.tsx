@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Container } from '../components/layout/Container'
 import { Eyebrow, Heading } from '../components/ui/Typography'
 import { useJobs } from '../lib/careers'
+import { Seo } from '../components/seo/Seo'
 
 const heroImage = projects.find((project) => project.slug === 'intersections-of-lawyers-rd-at-indian-trail-fairview-rd')!.hero
 
@@ -11,6 +12,7 @@ export function CareersPage() {
   const openCount = jobs.length
   return (
     <main id="main-content" className="careers-page careers-page--landing">
+      <Seo path="/careers" title="Careers" image={heroImage.src} description="Explore current heavy civil construction career opportunities with Efficient Developments in the Carolinas." />
       <header className="careers-hero">
         <img className="careers-hero__image" src={heroImage.src} srcSet={heroImage.srcSet} sizes="100vw" width={heroImage.width} height={heroImage.height} alt={heroImage.alt} fetchPriority="high" />
         <Container>

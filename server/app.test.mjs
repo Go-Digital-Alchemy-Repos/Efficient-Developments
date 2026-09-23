@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtemp, rm, stat } from 'node:fs/promises'
+import { mkdir, mkdtemp, rm, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { once } from 'node:events'
@@ -43,6 +43,27 @@ test('seeded openings accept applications while admin data remains private', asy
   assert.equal((await api.apply(jobs[0].id)).status, 201)
   for (const path of ['/admin/jobs', '/admin/applications', '/admin/applications/anything/resume']) assert.equal((await api.request(path)).status, 401)
   assert.equal((await api.json('/admin/jobs', job)).status, 401)
+})
+
+test('static responses use security headers and return a real status for unknown routes', async (t) => {
+  const directory = await mkdtemp(join(tmpdir(), 'static-route-test-'))
+  const distPath = join(directory, 'dist')
+  await mkdir(distPath)
+  await writeFile(join(distPath, 'index.html'), '<!doctype html><title>Test app</title>')
+  const server = createApp({ dbPath: join(directory, 'careers.sqlite'), origins: [origin], production: true, distPath })
+  server.listen(0, '127.0.0.1')
+  await once(server, 'listening')
+  const base = `http://127.0.0.1:${server.address().port}`
+  t.after(async () => { await new Promise((done) => server.close(done)); await rm(directory, { recursive: true, force: true }) })
+
+  const page = await fetch(`${base}/about`)
+  assert.equal(page.status, 200)
+  assert.equal(page.headers.get('x-frame-options'), 'DENY')
+  assert.match(page.headers.get('permissions-policy'), /camera=\(\)/)
+  assert.match(page.headers.get('strict-transport-security'), /max-age=31536000/)
+  const missing = await fetch(`${base}/definitely-not-a-route`)
+  assert.equal(missing.status, 404)
+  assert.match(await missing.text(), /Test app/)
 })
 
 test('legacy seeded role flags are removed without reopening closed roles', async (t) => {

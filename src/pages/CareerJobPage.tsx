@@ -5,6 +5,8 @@ import { Button } from '../components/ui/Button'
 import { FormField } from '../components/ui/FormField'
 import { Heading, Eyebrow } from '../components/ui/Typography'
 import { careersApi, useJobs, type Job } from '../lib/careers'
+import { Seo } from '../components/seo/Seo'
+import { seoSiteOrigin } from '../components/seo/config'
 
 const careerHeroImages = [
   '/assets/images/careers/roundabout-construction.webp',
@@ -65,6 +67,23 @@ export function CareerJobPage() {
   const { jobs, loading, error } = useJobs()
   const job = jobs.find((item) => item.id === jobId)
   return <main id="main-content" className="careers-page careers-page--job">
+    <Seo
+      path={`/careers/${jobId ?? ''}`}
+      title={job?.title ?? 'Career opportunity'}
+      description={job?.description ?? 'Career opportunity with Efficient Developments.'}
+      image={job ? getCareerHeroImage(job.id) : undefined}
+      noIndex={!loading && !job}
+      structuredData={job ? {
+        '@context': 'https://schema.org',
+        '@type': 'JobPosting',
+        title: job.title,
+        description: job.description,
+        employmentType: job.employment,
+        hiringOrganization: { '@type': 'Organization', name: 'Efficient Developments', sameAs: seoSiteOrigin },
+        jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: job.location, addressCountry: 'US' } },
+        url: `${seoSiteOrigin}/careers/${job.id}`,
+      } : undefined}
+    />
     {loading || error || !job ? <Container className="careers-job-state">
       <div className="careers-back"><Link to="/careers">← All opportunities</Link></div>
       {loading ? <p role="status">Loading role…</p> : error ? <p role="alert">{error}</p> : <><Heading as="h1">Position unavailable</Heading><p>This position is no longer listed. Explore our other opportunities.</p></>}

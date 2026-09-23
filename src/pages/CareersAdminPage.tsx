@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button'
 import { FormField } from '../components/ui/FormField'
 import { Heading } from '../components/ui/Typography'
 import { careersApi, jsonRequest, type Application, type Job } from '../lib/careers'
+import { Seo } from '../components/seo/Seo'
 
 const blankJob: Job = { id: '', title: '', department: 'Field Operations', location: 'Charlotte, NC', employment: 'Full-time', description: '', responsibilities: '', requirements: '', status: 'draft', sample: false }
 
@@ -80,7 +81,7 @@ export function CareersAdminPage() {
     try { await careersApi('/logout', { method: 'POST' }); setAuthenticated(false); setJobs([]); setApplications([]); setEditing(null); setNotice('') }
     catch (error) { setError((error as Error).message) }
   }
-  return <main id="main-content" className="careers-page careers-admin"><Container>
+  return <main id="main-content" className="careers-page careers-admin"><Seo path="/careers/manage" title="Careers dashboard" noIndex /><Container>
     <div className="careers-back"><Link to="/careers">← Careers</Link></div>
     <header className="careers-section-heading"><Heading as="h1" size="page">Careers dashboard</Heading>{authenticated && <Button variant="outline" type="button" onClick={() => void logout()}>Sign out</Button>}</header>
     {error && <p role="alert" className="careers-error">{error}</p>}

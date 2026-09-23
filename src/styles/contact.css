@@ -100,6 +100,17 @@ a.contact-page__detail:hover {
   line-height: 32px;
 }
 
+.contact-call-card {
+  align-self: start;
+}
+
+.contact-call-card > p {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
 .contact-form {
   width: 100%;
   display: flex;

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Container } from '../components/layout/Container'
 import { projects, projectCategories, type ProjectCategory } from '../data/projects'
+import { Seo } from '../components/seo/Seo'
 
 const pageSize = 6
 
@@ -19,6 +20,7 @@ export function ProjectsPage() {
 
   return (
     <main id="main-content" className="projects-page">
+      <Seo path="/projects" title="Projects" image={projects[0]?.image.src} description="Explore Efficient Developments road, concrete, utility, drainage, and civil infrastructure projects across the Carolinas." />
       <section className="projects-index" aria-labelledby="projects-title" data-reveal-sequence>
         <Container>
           <header className="projects-index__header">

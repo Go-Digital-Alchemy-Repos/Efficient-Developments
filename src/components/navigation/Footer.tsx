@@ -40,7 +40,6 @@ export function Footer() {
           <a href="tel:+17043175966">704-317-5966</a>
           <span>Monday – Friday</span>
           <span>8:00 pm – 5:00 pm</span>
-          <span>Address line</span>
         </div>
       </Container>
       <div className="site-footer__legal">
