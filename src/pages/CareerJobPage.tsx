@@ -6,6 +6,20 @@ import { FormField } from '../components/ui/FormField'
 import { Heading, Eyebrow } from '../components/ui/Typography'
 import { careersApi, useJobs, type Job } from '../lib/careers'
 
+const careerHeroImages = [
+  '/assets/images/careers/roundabout-construction.webp',
+  '/assets/images/careers/utility-installation.webp',
+  '/assets/images/careers/roadside-utilities.webp',
+  '/assets/images/careers/utility-earthwork.webp',
+  '/assets/images/services/roads-bridges-roadwork-aerial-1536.webp',
+  '/assets/images/services/asphalt-paving-roadwork.jpg',
+]
+
+function getCareerHeroImage(jobId: string) {
+  const imageIndex = Array.from(jobId).reduce((total, character) => total + character.charCodeAt(0), 0) % careerHeroImages.length
+  return careerHeroImages[imageIndex]
+}
+
 function ApplicationForm({ job }: { job: Job }) {
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
@@ -50,17 +64,31 @@ export function CareerJobPage() {
   const { jobId } = useParams()
   const { jobs, loading, error } = useJobs()
   const job = jobs.find((item) => item.id === jobId)
-  return <main id="main-content" className="careers-page"><Container>
-    <div className="careers-back"><Link to="/careers">← All opportunities</Link></div>
-    {loading ? <p role="status">Loading role…</p> : error ? <p role="alert">{error}</p> : !job ? <><Heading as="h1">Position unavailable</Heading><p>This position is no longer listed. Explore our other opportunities.</p></> : <>
-      <header className="careers-heading careers-heading--role"><Eyebrow>{job.department}</Eyebrow><Heading as="h1" size="page">{job.title}</Heading><p>{job.location} · {job.employment}</p></header>
-      <div className="careers-detail-grid">
-        <article className="careers-description"><Heading as="h2" size="card">About the role</Heading><p>{job.description}</p>
-          <Heading as="h2" size="card">What you’ll do</Heading><ul>{job.responsibilities.split('\n').filter(Boolean).map((line, i) => <li key={i}>{line}</li>)}</ul>
-          <Heading as="h2" size="card">What you’ll bring</Heading><ul>{job.requirements.split('\n').filter(Boolean).map((line, i) => <li key={i}>{line}</li>)}</ul>
-        </article>
-        <ApplicationForm job={job} key={job.id} />
-      </div>
+  return <main id="main-content" className="careers-page careers-page--job">
+    {loading || error || !job ? <Container className="careers-job-state">
+      <div className="careers-back"><Link to="/careers">← All opportunities</Link></div>
+      {loading ? <p role="status">Loading role…</p> : error ? <p role="alert">{error}</p> : <><Heading as="h1">Position unavailable</Heading><p>This position is no longer listed. Explore our other opportunities.</p></>}
+    </Container> : <>
+      <header className="career-role-hero">
+        <img alt="" aria-hidden="true" className="career-role-hero__image" fetchPriority="high" src={getCareerHeroImage(job.id)} />
+        <Container className="career-role-hero__inner">
+          <div className="careers-back careers-back--hero"><Link to="/careers">← All opportunities</Link></div>
+          <div className="careers-heading careers-heading--role">
+            <Eyebrow className="eyebrow--on-dark">{job.department}</Eyebrow>
+            <Heading as="h1" size="page">{job.title}</Heading>
+            <p>{job.location} · {job.employment}</p>
+          </div>
+        </Container>
+      </header>
+      <Container className="career-role-content">
+        <div className="careers-detail-grid">
+          <article className="careers-description"><Heading as="h2" size="card">About the role</Heading><p>{job.description}</p>
+            <Heading as="h2" size="card">What you’ll do</Heading><ul>{job.responsibilities.split('\n').filter(Boolean).map((line, i) => <li key={i}>{line}</li>)}</ul>
+            <Heading as="h2" size="card">What you’ll bring</Heading><ul>{job.requirements.split('\n').filter(Boolean).map((line, i) => <li key={i}>{line}</li>)}</ul>
+          </article>
+          <ApplicationForm job={job} key={job.id} />
+        </div>
+      </Container>
     </>}
-  </Container></main>
+  </main>
 }
