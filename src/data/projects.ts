@@ -24,9 +24,6 @@ export type Project = {
   sourceUrl: string
   clientLabel: 'Owner' | 'GC/CM'
   client: string
-  contractAwardDate?: string
-  contractValue?: string
-  contractor?: string
   location?: string
   description: string
   work: string
@@ -175,17 +172,13 @@ export const projects: Project[] = [
   },
   {
     "slug": "n-rocky-river-rd-lawyers-rd-roundabout",
-    "title": "Rocky River Road Intersection Improvements",
-    "category": "Roads & Bridges",
+    "title": "N. Rocky River Rd / Lawyers Rd Roundabout",
+    "category": "Asphalt",
     "sourceUrl": "https://efficientdev.com/project/n-rocky-river-rd-lawyers-rd-roundabout/",
-    "clientLabel": "Owner",
-    "client": "North Carolina Department of Transportation (NCDOT)",
-    "contractAwardDate": "September 9, 2025",
-    "contractValue": "$2,188,674.00",
-    "contractor": "Efficient Developments",
-    "location": "Intersection of US 74, James Hamilton Road, SR-1514 (Rocky River Road), and Myers Road in Union County, North Carolina.",
-    "description": "Efficient Developments was awarded a $2.19 million NCDOT contract to improve the intersection of US 74, Rocky River Road, James Hamilton Road, and Myers Road. The project includes roadway grading, drainage improvements, paving, concrete island construction, curb and gutter installation, and final pavement markings. These improvements will enhance traffic operations, improve stormwater management, and increase safety for motorists traveling through this heavily used corridor.",
-    "work": "Roadway grading, drainage improvements, paving, concrete island construction, curb and gutter installation, and final pavement markings.",
+    "clientLabel": "GC/CM",
+    "client": "NCDOT",
+    "description": "Construction from a 4 way stop intersection to a new Roundabout, Realignment of existing Rocky River Road and Lawyers Road",
+    "work": "Grading, Drainage, Concrete Curb & Gutter, Monolithic Concrete Islands, Milling, Paving, Waterline and Pavement Markings",
     "gallery": [
       {
         "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-01-1728.webp",

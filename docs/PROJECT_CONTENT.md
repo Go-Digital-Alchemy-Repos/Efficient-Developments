@@ -58,12 +58,3 @@ assets outside this migration are retained to avoid affecting other site section
 - All seven detail pages checked at 1440px and 390px without horizontal overflow.
 - Listing pagination, gallery/lightbox endpoints, Escape dismissal, and gallery
   reset between projects checked in the browser.
-
-## Owner content update — October 20, 2026
-
-The owner supplied the Rocky River Road Intersection Improvements title,
-intersection overview, comma-separated work scope, NCDOT owner, September 9,
-2025 award date, $2,188,674.00 contract value, Efficient Developments contractor,
-and full Union County location. These replace imported copy for the existing
-Rocky River slug; its URL and gallery remain unchanged. Optional contract fields
-are rendered in At a Glance when supplied.

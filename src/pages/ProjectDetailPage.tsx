@@ -104,9 +104,6 @@ function ProjectDetailContent({ projectIndex }: { projectIndex: number }) {
             <dl data-reveal-delay="2" data-reveal-item>
               <div><dt>Project Name</dt><dd>{project.title}</dd></div>
               <div><dt>{project.clientLabel}</dt><dd>{project.client}</dd></div>
-              {project.contractAwardDate && <div><dt>Contract Award Date</dt><dd>{project.contractAwardDate}</dd></div>}
-              {project.contractValue && <div><dt>Contract Value</dt><dd>{project.contractValue}</dd></div>}
-              {project.contractor && <div><dt>Contractor</dt><dd>{project.contractor}</dd></div>}
               {project.location && <div><dt>Location</dt><dd>{project.location}</dd></div>}
               <div><dt>Project Type</dt><dd>{project.category}</dd></div>
             </dl>

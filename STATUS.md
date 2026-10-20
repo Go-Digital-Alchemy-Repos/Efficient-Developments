@@ -28,10 +28,6 @@ replacement, mobile-reference reconciliation, and production integration work.
 
 ## Completed
 
-- Updated the Rocky River project with the owner's supplied intersection
-  improvement overview, comma-separated work scope, and all six At a Glance
-  fields. Preserved its existing URL and gallery.
-
 - Replaced the placeholder portfolio with all seven projects from efficientdev.com,
   preserving the existing page styles and layouts. Imported project descriptions,
   client details, work scopes, and 61 gallery photos; converted 67 source images
