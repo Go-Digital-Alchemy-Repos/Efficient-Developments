@@ -15,6 +15,8 @@ export function ProjectDetailPage() {
   const { projectSlug = projects[0].slug } = useParams()
   const projectIndex = Math.max(0, projects.findIndex((project) => project.slug === projectSlug))
   const project = projects[projectIndex]
+  const isRockyRiverProject = project.slug === 'n-rocky-river-rd-lawyers-rd-roundabout'
+  const projectTitle = isRockyRiverProject ? 'Rocky River Road Intersection Improvements' : project.title
   const previousProject = projectIndex === 0
     ? projects.find((item) => item.slug === 'cms-bus-facility') ?? projects.at(-1)!
     : projects[(projectIndex - 1 + projects.length) % projects.length]
@@ -65,7 +67,7 @@ export function ProjectDetailPage() {
     <main id="main-content" className="project-detail-page">
       <header className="project-detail-heading">
         <p><span aria-hidden="true" />{project.category}</p>
-        <h1>{project.title}</h1>
+        <h1>{projectTitle}</h1>
       </header>
 
       <section className="project-detail-hero" aria-label={`${project.title} overview image`}>
@@ -77,11 +79,23 @@ export function ProjectDetailPage() {
           <h2 id="project-facts-title">At a Glance</h2>
           <div className="project-facts__divider" />
           <dl>
-            <div><dt>Project Name</dt><dd>{project.title}</dd></div>
-            <div><dt>Location</dt><dd>Charlotte, NC</dd></div>
-            <div><dt>Duration</dt><dd>18 Months</dd></div>
-            <div><dt>Project Type</dt><dd>Roads &amp; Bridges</dd></div>
-            <div><dt>Status</dt><dd>Completed</dd></div>
+            <div><dt>Project Name</dt><dd>{projectTitle}</dd></div>
+            {isRockyRiverProject ? (
+              <>
+                <div><dt>Owner</dt><dd>North Carolina Department of Transportation (NCDOT)</dd></div>
+                <div><dt>Contract Award Date</dt><dd>September 9, 2025</dd></div>
+                <div><dt>Contract Value</dt><dd>$2,188,674.00</dd></div>
+                <div><dt>Contractor</dt><dd>Efficient Developments</dd></div>
+                <div><dt>Location</dt><dd>Intersection of US 74, James Hamilton Road, SR-1514 (Rocky River Road), and Myers Road in Union County, North Carolina.</dd></div>
+              </>
+            ) : (
+              <>
+                <div><dt>Location</dt><dd>Charlotte, NC</dd></div>
+                <div><dt>Duration</dt><dd>18 Months</dd></div>
+                <div><dt>Project Type</dt><dd>Roads &amp; Bridges</dd></div>
+                <div><dt>Status</dt><dd>Completed</dd></div>
+              </>
+            )}
           </dl>
           <div className="project-facts__divider" />
           <Link to="/projects">← Return to Portfolio</Link>
@@ -89,10 +103,20 @@ export function ProjectDetailPage() {
 
         <article className="project-overview__content">
           <h2 id="project-overview-title">Project Overview</h2>
-          <p>Efficient Developments was awarded the contract for the Highway 74 Interchange reconstruction project in Charlotte, NC. This complex infrastructure project involved the complete redesign and rebuild of a critical interchange connecting Highway 74 with Interstate 485, serving over 80,000 vehicles daily.</p>
-          <p>Our team managed all phases of the project including demolition of the existing interchange structure, earthwork and grading for the new alignment, construction of reinforced concrete bridge decks and abutments, installation of modern drainage systems, and integration of intelligent transportation systems.</p>
-          <p>The project was completed on schedule within the 18-month timeline, maintaining traffic flow throughout construction through carefully planned detour routes and phased construction sequences. Safety remained our top priority with zero lost-time incidents recorded across the project lifecycle.</p>
-          <p>Key achievements include the installation of 4 new bridge structures, over 12,000 linear feet of storm drainage, and 28,000 tons of asphalt paving. The new interchange design improves traffic capacity by 35% and significantly reduces accident rates at the intersection.</p>
+          {isRockyRiverProject ? (
+            <>
+              <p>Efficient Developments was awarded a $2.19 million NCDOT contract to improve the intersection of US 74, Rocky River Road, James Hamilton Road, and Myers Road. The project includes roadway grading, drainage improvements, paving, concrete island construction, curb and gutter installation, and final pavement markings. These improvements will enhance traffic operations, improve stormwater management, and increase safety for motorists traveling through this heavily used corridor.</p>
+              <h2>Scope of Work</h2>
+              <p>Roadway grading, drainage improvements, paving, concrete island construction, curb and gutter installation, and final pavement markings.</p>
+            </>
+          ) : (
+            <>
+              <p>Efficient Developments was awarded the contract for the Highway 74 Interchange reconstruction project in Charlotte, NC. This complex infrastructure project involved the complete redesign and rebuild of a critical interchange connecting Highway 74 with Interstate 485, serving over 80,000 vehicles daily.</p>
+              <p>Our team managed all phases of the project including demolition of the existing interchange structure, earthwork and grading for the new alignment, construction of reinforced concrete bridge decks and abutments, installation of modern drainage systems, and integration of intelligent transportation systems.</p>
+              <p>The project was completed on schedule within the 18-month timeline, maintaining traffic flow throughout construction through carefully planned detour routes and phased construction sequences. Safety remained our top priority with zero lost-time incidents recorded across the project lifecycle.</p>
+              <p>Key achievements include the installation of 4 new bridge structures, over 12,000 linear feet of storm drainage, and 28,000 tons of asphalt paving. The new interchange design improves traffic capacity by 35% and significantly reduces accident rates at the intersection.</p>
+            </>
+          )}
           <img className="project-overview__media" src="/assets/images/projects/detail/overview-roundabout.png" alt="Aerial view of the roundabout under construction" />
         </article>
       </section>

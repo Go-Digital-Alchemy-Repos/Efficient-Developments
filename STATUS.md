@@ -28,6 +28,12 @@ replacement, mobile-reference reconciliation, and production integration work.
 
 ## Completed
 
+- Replaced the Rocky River project detail overview with the owner's supplied
+  NCDOT intersection improvement description, added comma-separated Scope of
+  Work copy, and included all six supplied contract/project fields in At a Glance.
+  The existing project URL is preserved. Validated with lint, production build,
+  and desktop browser inspection.
+
 - Implemented the `/` route from Figma frame `565:3145` using exact exported
   imagery, logos, icons, and locally hosted Inter and Oswald fonts.
 - Reconciled the shared color and typography tokens used by the homepage against
