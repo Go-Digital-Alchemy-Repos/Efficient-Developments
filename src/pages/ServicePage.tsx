@@ -1,6 +1,10 @@
-import { Navigate, NavLink, useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { ButtonLink } from '../components/ui/Button'
 import { Eyebrow, Heading } from '../components/ui/Typography'
+import { serviceHeroImages } from '../data/serviceImages'
+import { Seo } from '../components/seo/Seo'
+import { seoSiteOrigin } from '../components/seo/config'
+import { NotFoundPage } from './NotFoundPage'
 
 type ServiceCard = {
   description: string
@@ -30,8 +34,8 @@ const services: ServicePageDefinition[] = [
     slug: 'asphalt-paving',
     title: 'Asphalt Paving',
     support: 'Quality paving for roads, parking lots, and driveways across the Carolinas.',
-    heroImage: '/assets/images/services/asphalt-paving-hero.jpg',
-    approachImage: '/assets/images/services/asphalt-paving-approach.jpg',
+    heroImage: serviceHeroImages['asphalt-paving'],
+    approachImage: '/assets/images/services/asphalt-paving-roadwork.jpg?v=20260922',
     overlayImage: '/assets/images/services/asphalt-paving-overlay.png',
     detailHeight: 958,
     detailTop: 80,
@@ -49,8 +53,8 @@ const services: ServicePageDefinition[] = [
     slug: 'commercial-concrete',
     title: 'Commercial Concrete',
     support: 'Structural and flatwork concrete for commercial and municipal sites.',
-    heroImage: '/assets/images/services/commercial-concrete-hero.jpg',
-    approachImage: '/assets/images/services/commercial-concrete-approach.jpg',
+    heroImage: serviceHeroImages['commercial-concrete'],
+    approachImage: '/assets/images/services/commercial-concrete-approach-provided.jpg',
     overlayImage: '/assets/images/services/commercial-concrete-overlay.jpg',
     detailHeight: 904,
     detailTop: 80,
@@ -68,8 +72,8 @@ const services: ServicePageDefinition[] = [
     slug: 'residential-concrete',
     title: 'Residential Concrete',
     support: 'Concrete flatwork for housing developments, estates, and large residential properties.',
-    heroImage: '/assets/images/services/residential-concrete-hero.jpg',
-    approachImage: '/assets/images/services/residential-concrete-approach.jpg',
+    heroImage: serviceHeroImages['residential-concrete'],
+    approachImage: '/assets/images/services/residential-concrete-approach-provided.jpg',
     overlayImage: '/assets/images/services/residential-concrete-overlay.jpg',
     detailHeight: 958,
     detailTop: 80,
@@ -87,9 +91,9 @@ const services: ServicePageDefinition[] = [
     slug: 'greenways',
     title: 'Greenways',
     support: 'Trail and greenway construction connecting parks, neighborhoods, and schools.',
-    heroImage: '/assets/images/services/greenways-hero.jpg',
-    approachImage: '/assets/images/services/greenways-approach.jpg',
-    overlayImage: '/assets/images/services/greenways-overlay.jpg',
+    heroImage: serviceHeroImages.greenways,
+    approachImage: '/assets/images/services/greenways-trail-construction-1440.webp?v=20260922',
+    overlayImage: '/assets/images/services/greenways-overlay-provided.jpg',
     detailHeight: 948,
     detailTop: 80,
     overview: 'We build greenways and multi-use trails for municipalities, counties, and park systems - from clearing and grading through drainage, surfacing, and pedestrian bridges. Our crews carry a trail project from the first survey stake to a finished, open path.',
@@ -107,8 +111,8 @@ const services: ServicePageDefinition[] = [
     slug: 'roads-bridges',
     title: 'Roads & Bridges',
     support: 'Road and bridge construction for municipalities and DOT projects across the Carolinas.',
-    heroImage: '/assets/images/services/roads-bridges-hero.jpg',
-    approachImage: '/assets/images/services/roads-bridges-approach.jpg',
+    heroImage: '/assets/images/services/roads-bridges-hero-roadwork.jpg?v=20260922',
+    approachImage: '/assets/images/services/roads-bridges-roadwork-aerial-1536.webp?v=20260922',
     overlayImage: '/assets/images/services/roads-bridges-overlay.jpg',
     detailHeight: 924,
     detailTop: 80,
@@ -127,8 +131,8 @@ const services: ServicePageDefinition[] = [
     slug: 'underground-utilities',
     title: 'Underground Utilities',
     support: 'Water, sewer, and storm line installation for municipalities and developments.',
-    heroImage: '/assets/images/services/underground-utilities-hero.jpg',
-    approachImage: '/assets/images/services/underground-utilities-approach.jpg',
+    heroImage: serviceHeroImages['underground-utilities'],
+    approachImage: '/assets/images/services/underground-utilities-approach-provided.jpg',
     overlayImage: '/assets/images/services/underground-utilities-overlay.jpg',
     detailHeight: 924,
     detailTop: 80,
@@ -151,28 +155,37 @@ export function ServicePage() {
   const { serviceSlug } = useParams()
   const service = serviceSlug ? serviceBySlug[serviceSlug] : undefined
 
-  if (!service) return <Navigate replace to="/services/asphalt-paving" />
+  if (!service) return <NotFoundPage />
 
   return (
     <main className={`service-page service-page--${service.slug}`}>
+      <Seo path={`/services/${service.slug}`} title={service.title.replace('\n', ' ')} description={service.support} image={service.heroImage} structuredData={{
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: service.title.replace('\n', ' '),
+        description: service.support,
+        areaServed: ['North Carolina', 'South Carolina'],
+        provider: { '@type': 'Organization', name: 'Efficient Developments', url: seoSiteOrigin },
+      }} />
       <section
         aria-labelledby="service-page-title"
         className="service-hero"
+        data-reveal-sequence
         style={{
           '--service-hero-image': `url(${service.heroImage})`,
           '--service-hero-position': service.heroPosition ?? 'center',
         } as React.CSSProperties}
       >
         <div className="service-hero__content">
-          <Eyebrow className="eyebrow--on-dark">Service</Eyebrow>
-          <Heading as="h1" className="service-hero__title" id="service-page-title" size="hero">{service.title}</Heading>
-          <p className="service-hero__support">{service.support}</p>
+          <Eyebrow className="eyebrow--on-dark" data-reveal-item>Service</Eyebrow>
+          <Heading as="h1" className="service-hero__title" data-reveal-delay="1" data-reveal-item id="service-page-title" size="hero">{service.title}</Heading>
+          <p className="service-hero__support" data-reveal-delay="2" data-reveal-item>{service.support}</p>
         </div>
       </section>
 
-      <section className="service-detail" style={{ '--service-detail-height': `${service.detailHeight}px`, '--service-detail-top': `${service.detailTop}px` } as React.CSSProperties}>
+      <section className="service-detail" data-reveal-sequence style={{ '--service-detail-height': `${service.detailHeight}px`, '--service-detail-top': `${service.detailTop}px` } as React.CSSProperties}>
         <div className="service-detail__inner">
-          <aside className="service-sidebar" aria-label="Services">
+          <aside className="service-sidebar" aria-label="Services" data-reveal-item>
             <nav>
               {services.map((item) => (
                 <NavLink className={({ isActive }) => `service-sidebar__link${isActive ? ' is-active' : ''}`} key={item.slug} to={`/services/${item.slug}`}>
@@ -187,36 +200,36 @@ export function ServicePage() {
 
           <div className="service-detail__content">
             <div className="service-detail__copy service-detail__copy--overview">
-              <Heading as="h2" size="section">What We Do</Heading>
-              <p>{service.overview}</p>
+              <Heading as="h2" data-reveal-delay="1" data-reveal-item size="section">What We Do</Heading>
+              <p data-reveal-delay="2" data-reveal-item>{service.overview}</p>
             </div>
             <div className="service-detail__copy service-detail__copy--approach">
-              <Heading as="h2" size="section">{service.approachTitle}</Heading>
-              <p>{service.approach}</p>
-              <div className="service-detail__image"><img alt="" src={service.approachImage} /></div>
+              <Heading as="h2" data-reveal-delay="3" data-reveal-item size="section">{service.approachTitle}</Heading>
+              <p data-reveal-delay="4" data-reveal-item>{service.approach}</p>
+              <div className="service-detail__image" data-reveal-delay="5" data-reveal-item><img alt="" src={service.approachImage} loading="lazy" decoding="async" /></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="service-offerings" style={{ '--service-overlay-image': `url(${service.overlayImage})` } as React.CSSProperties}>
+      <section className="service-offerings" data-reveal-sequence style={{ '--service-overlay-image': `url(${service.overlayImage})` } as React.CSSProperties}>
         <div className="service-offerings__top">
           <div className="service-offerings__heading">
-            <Eyebrow className="eyebrow--on-dark">Services</Eyebrow>
-            <Heading as="h2" size="section">
+            <Eyebrow className="eyebrow--on-dark" data-reveal-item>Services</Eyebrow>
+            <Heading as="h2" data-reveal-delay="1" data-reveal-item size="section">
               {service.overlayTitleLines.map((line) => (
                 <span key={line}>{line}</span>
               ))}
             </Heading>
           </div>
           <div className="service-offerings__contact">
-            <p>To discuss an upcoming project,<br />get in touch with our team.</p>
-            <ButtonLink to="/contact">Contact Us <img aria-hidden="true" alt="" src="/assets/icons/cta-arrow.svg" /></ButtonLink>
+            <p data-reveal-delay="2" data-reveal-item>To discuss an upcoming project,<br />get in touch with our team.</p>
+            <ButtonLink data-reveal-delay="3" data-reveal-item to="/contact">Contact Us <img aria-hidden="true" alt="" src="/assets/icons/cta-arrow.svg" /></ButtonLink>
           </div>
         </div>
         <div className="service-offerings__cards" data-count={service.cards.length}>
-          {service.cards.map((card) => (
-            <article className="service-offerings__card" key={card.title}>
+          {service.cards.map((card, index) => (
+            <article className="service-offerings__card" data-reveal-delay={String(index + 4)} data-reveal-item key={card.title}>
               <div className="service-offerings__icon"><img aria-hidden="true" alt="" src={card.icon} /></div>
               <div>
                 <Heading as="h3" size="card">{card.title}</Heading>

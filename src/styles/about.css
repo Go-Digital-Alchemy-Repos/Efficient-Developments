@@ -37,7 +37,7 @@
   font-weight: 400;
   line-height: 96px;
   letter-spacing: -0.4px;
-  text-transform: none;
+  text-transform: uppercase;
   text-shadow: 0 2px 12px rgb(0 0 0 / 25%);
 }
 
@@ -249,7 +249,7 @@
   place-items: center;
   padding: 24px;
   overflow-y: auto;
-  background: rgb(26 29 33 / 96%);
+  background: rgb(51 51 51 / 96%);
   backdrop-filter: blur(8px);
 }
 
@@ -342,25 +342,6 @@
 
 .member-modal__bio p:first-child { opacity: 0.9; }
 
-.member-modal__close {
-  position: absolute;
-  top: 23px;
-  right: 23px;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 160ms ease;
-}
-
-.member-modal__close:hover { background: var(--color-border); }
-.member-modal__close img { width: 16px; height: 16px; }
-
 @media (max-width: 63.9375rem) {
   .about-hero { padding: 72px 32px; }
   .about-story { height: auto; padding: 64px 32px; }
@@ -380,6 +361,10 @@
   .about-story__inner { grid-template-columns: 1fr; }
   .about-story__inner--reverse .about-story__copy { order: 1; }
   .about-story__inner--reverse .about-story__media { order: 2; }
+  .reveal-ready .about-story__inner--reverse .about-story__copy .eyebrow[data-reveal-item] { --reveal-delay: 0ms; }
+  .reveal-ready .about-story__inner--reverse .about-story__copy .heading[data-reveal-item] { --reveal-delay: 105ms; }
+  .reveal-ready .about-story__inner--reverse .about-story__copy > p:not(.eyebrow)[data-reveal-item] { --reveal-delay: 210ms; }
+  .reveal-ready .about-story__inner--reverse .about-story__media[data-reveal-item] { --reveal-delay: 315ms; }
   .about-story__media { height: 72vw; max-height: 435px; min-height: 280px; }
   .about-story__copy .heading { font-size: 34px; line-height: 42px; }
   .about-team { gap: 40px; padding: 56px 20px; }
@@ -393,5 +378,4 @@
   .member-modal__identity { padding-right: 32px; }
   .member-modal__identity .heading { font-size: 34px; line-height: 42px; }
   .member-modal__identity > p { font-size: 18px; line-height: 24px; }
-  .member-modal__close { top: 16px; right: 16px; }
 }

@@ -1,0 +1,1819 @@
+{
+  "sourceHomepage": "https://efficientdev.com/",
+  "importedAt": "2026-09-17",
+  "encoding": {
+    "format": "WebP",
+    "quality": 82,
+    "method": 6,
+    "maxLongEdge": 1920,
+    "targetMaxBytes": 480000,
+    "upscale": false
+  },
+  "images": [
+    {
+      "project": "cms-bus-facility",
+      "role": "card",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/03/Bus-Station.png",
+      "sourceBytes": 964900,
+      "sourceWidth": 945,
+      "sourceHeight": 485,
+      "sourceSha256": "77347c6478f2b70ce5f32236d0a601256b7e5d97da22457039f98f2dd8c5b447",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/card-480.webp",
+          "width": 480,
+          "height": 246,
+          "bytes": 31038
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/card-945.webp",
+          "width": 945,
+          "height": 485,
+          "bytes": 112544
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-01",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_0224.jpeg",
+      "sourceBytes": 1989486,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "9540a307efe208b3e46dbfcf5f7c5f14ce4120cff7c90e5a0c2a89c31b7d50eb",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-01-480.webp",
+          "width": 480,
+          "height": 641,
+          "bytes": 117000
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-01-944.webp",
+          "width": 944,
+          "height": 1260,
+          "bytes": 438412
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-02",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1265.jpeg",
+      "sourceBytes": 1713390,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "4455f73772c229c03c24affb4da7476aa553e0d77e4c9ef50eddc5a336478ead",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-02-480.webp",
+          "width": 480,
+          "height": 641,
+          "bytes": 105112
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-02-944.webp",
+          "width": 944,
+          "height": 1260,
+          "bytes": 403312
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-03",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1267.jpeg",
+      "sourceBytes": 1576615,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "d615751667c3afff74365050b5c9d8f381f648c69ec08e428267e5186b3f4077",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-03-480.webp",
+          "width": 480,
+          "height": 641,
+          "bytes": 89232
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-03-960.webp",
+          "width": 960,
+          "height": 1281,
+          "bytes": 366596
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-03-1049.webp",
+          "width": 1049,
+          "height": 1400,
+          "bytes": 430804
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-04",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1272.jpeg",
+      "sourceBytes": 1262757,
+      "sourceWidth": 2048,
+      "sourceHeight": 1536,
+      "sourceSha256": "620918793460478cf35db1b2b2f5c6c39223cdadc3d9f9461f81a6121129918a",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-04-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 36338
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-04-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 154150
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-04-1728.webp",
+          "width": 1728,
+          "height": 1296,
+          "bytes": 471100
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-05",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1329.jpeg",
+      "sourceBytes": 1459062,
+      "sourceWidth": 2048,
+      "sourceHeight": 1536,
+      "sourceSha256": "2383613e25eeacc8d45008dd0a50a39df443ce6ac59d23451bde3d96d5f36f8a",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-05-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 40366
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-05-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 175360
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-05-1555.webp",
+          "width": 1555,
+          "height": 1166,
+          "bytes": 447084
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-06",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1330.jpeg",
+      "sourceBytes": 1544135,
+      "sourceWidth": 2048,
+      "sourceHeight": 1536,
+      "sourceSha256": "584b40dc4eaa42e2bf69d5e22a510654cf5846fe3e20e94f0e5ec25be3676357",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-06-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42674
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-06-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 187284
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-06-1555.webp",
+          "width": 1555,
+          "height": 1166,
+          "bytes": 479974
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-07",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1331.jpeg",
+      "sourceBytes": 1492174,
+      "sourceWidth": 2048,
+      "sourceHeight": 1536,
+      "sourceSha256": "c295d31293f06ee3e2b41492189dea4b47c0fac9c841b966255f1ac8c9e74185",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-07-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42550
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-07-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 180712
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-07-1555.webp",
+          "width": 1555,
+          "height": 1166,
+          "bytes": 459930
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-08",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1332.jpeg",
+      "sourceBytes": 1332341,
+      "sourceWidth": 2048,
+      "sourceHeight": 1536,
+      "sourceSha256": "4d4993283254446e20eb913942b3c98fc328b3147d4e5f5cb6f97d3436be9dfd",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-08-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 35782
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-08-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 153808
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-08-1728.webp",
+          "width": 1728,
+          "height": 1296,
+          "bytes": 479032
+        }
+      ]
+    },
+    {
+      "project": "cms-bus-facility",
+      "role": "gallery-09",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1333.jpeg",
+      "sourceBytes": 1334788,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "26405edccfbacc33f46be94d19223ecef3ae1e01272a3f09400608a28aed2f9b",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-09-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 68874
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-09-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 287712
+        },
+        {
+          "src": "/assets/images/projects/current/cms-bus-facility/gallery-09-1166.webp",
+          "width": 1166,
+          "height": 1555,
+          "bytes": 412250
+        }
+      ]
+    },
+    {
+      "project": "franklin-blvd-and-trenton-street",
+      "role": "card",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/03/Franklin-Trenton.png",
+      "sourceBytes": 1916671,
+      "sourceWidth": 1296,
+      "sourceHeight": 680,
+      "sourceSha256": "9a5baf6270ff4159f17cf6168930d28119376dfd40a9c68a9b023a42d2457be0",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/card-480.webp",
+          "width": 480,
+          "height": 252,
+          "bytes": 32274
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/card-960.webp",
+          "width": 960,
+          "height": 504,
+          "bytes": 113724
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/card-1296.webp",
+          "width": 1296,
+          "height": 680,
+          "bytes": 210174
+        }
+      ]
+    },
+    {
+      "project": "franklin-blvd-and-trenton-street",
+      "role": "gallery-01",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20250323_135618_222_1742751482094_photo_optimized-scaled.jpg",
+      "sourceBytes": 884971,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "6856c8fc923f1fd7dfa18fcb89edab008c789ce199f9dbabf5e404135c2474a9",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-01-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 41064
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-01-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 138574
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-01-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 449358
+        }
+      ]
+    },
+    {
+      "project": "franklin-blvd-and-trenton-street",
+      "role": "gallery-02",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20250323_135628_224_1742751481134_photo_optimized-scaled.jpg",
+      "sourceBytes": 884545,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "291a68c9f0913d2f59dee2fca50a13736eaab704dfc8d1be75076daafd8c4ba7",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-02-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 40940
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-02-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 137260
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-02-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 448584
+        }
+      ]
+    },
+    {
+      "project": "franklin-blvd-and-trenton-street",
+      "role": "gallery-03",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20250323_135742_228_1742751478082_photo_optimized-scaled.jpg",
+      "sourceBytes": 813994,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "448c32fa74748a6689579564da5910197d816efe2754e48bc07cdb9a4aeb6208",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-03-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 37450
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-03-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 124044
+        },
+        {
+          "src": "/assets/images/projects/current/franklin-blvd-and-trenton-street/gallery-03-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 390260
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "card",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/03/N.-Rocky-River-Lawyers.png",
+      "sourceBytes": 1821261,
+      "sourceWidth": 1286,
+      "sourceHeight": 675,
+      "sourceSha256": "8eb2ca37884b77c33bb070c8493dde828aaad4c2bdb43be03439c4d129e4f0be",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/card-480.webp",
+          "width": 480,
+          "height": 252,
+          "bytes": 31820
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/card-960.webp",
+          "width": 960,
+          "height": 504,
+          "bytes": 106812
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/card-1286.webp",
+          "width": 1286,
+          "height": 675,
+          "bytes": 187306
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-01",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240620_151208_95_1718918676384_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 1014407,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "425474de99272817fc8c07be9b509ed6ba256990446106e9f73e67ec72190562",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-01-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 44984
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-01-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 166824
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-01-1728.webp",
+          "width": 1728,
+          "height": 972,
+          "bytes": 461428
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-02",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240620_151208_95_1718918676384_photo_optimized-2-scaled.jpg",
+      "sourceBytes": 1014407,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "425474de99272817fc8c07be9b509ed6ba256990446106e9f73e67ec72190562",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-02-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 44984
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-02-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 166824
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-02-1728.webp",
+          "width": 1728,
+          "height": 972,
+          "bytes": 461428
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-03",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240815_144822_123_1727196942572_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 833890,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "bbfdcb219004e66869cebfb4a2f0ee789c3c2e69c273dc50c83041539db6f0b5",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-03-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 34338
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-03-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 126592
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-03-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 422474
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-04",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240815_145004_124_1727196942107_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 885083,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "1e975f5daaf46a3bcb58a1102e020c20230f16710e77b00cdae9b9e9c07d5367",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-04-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 35830
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-04-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 132134
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-04-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 464314
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-05",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240819_151440_134_1727196941096_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 774121,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "6a694f8ec1823a1df9196d80fc42acfcf447582c1b004b742fa850b5952d67d8",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-05-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 32090
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-05-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 115054
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-05-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 382128
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-06",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240819_151550_136_1727196940640_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 775234,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "58262f0afa6e17625ce375ff8a4e58cae3a1a29166397c3848afe667dc576365",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-06-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 35534
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-06-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 125016
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-06-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 378890
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-07",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240819_151630_138_1727196939718_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 768953,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "76915b335ae9b1c1779f5c1a8b36fb9ccae0d53fefe4d60641b0672979fa8a54",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-07-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 34012
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-07-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 120390
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-07-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 381374
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-08",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240826_081340_143_1727196938860_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 933746,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "a8d090d0701ac747eb996a20b271198b2d398d696c6fa0a54ea7790cf8543285",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-08-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 38928
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-08-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 142850
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-08-1728.webp",
+          "width": 1728,
+          "height": 972,
+          "bytes": 411322
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-09",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240826_081442_146_1727196937922_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 908950,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "d3f7c7aa74a423432f1a831883b04a9b4d971b9b37c61e476a0a04029a809c2d",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-09-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 37534
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-09-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 140420
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-09-1728.webp",
+          "width": 1728,
+          "height": 972,
+          "bytes": 395870
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-10",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240830_134850_167_1727196936620_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 734780,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "4b061a35bd11b50ddbf25217d264f573b75242f65443c59ed84bbb8354c7693d",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-10-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 31794
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-10-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 109786
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-10-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 354262
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-11",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240830_134934_168_1727196936171_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 871255,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "100c10d53faf9a2da49596530f44884a31dc3e2fdd805d1e60a2724cf2c052e8",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-11-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 38028
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-11-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 137452
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-11-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 456242
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-12",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240909_135410_174_1727196935204_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 776499,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "e814d27cf1c12628e14a3e11d486935f8bf40d0a5cb0dce07e3a010bf42c2763",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-12-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 31606
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-12-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 111960
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-12-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 383308
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-13",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240924_125746_190_1727196932388_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 803487,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "9dfe93e5b181ba1f4058a2d820f433d0801dabe963c803e480ac83e6999ed163",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-13-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 34258
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-13-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 122496
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-13-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 393206
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-14",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/dji_fly_20240924_125812_192_1727196931408_photo_optimized-1-scaled.jpg",
+      "sourceBytes": 756734,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "b655e79657f808214c0f1ad704dc7bcdc677d838b9f727ca890706849efcb1c7",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-14-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 31376
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-14-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 111094
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-14-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 359978
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-15",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_2189-1.jpeg",
+      "sourceBytes": 1473819,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "4bd8b30c76bd008771eee0c6d1d4ababbabdf2650aff448da87b857253a67098",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-15-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 74934
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-15-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 327736
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-15-1166.webp",
+          "width": 1166,
+          "height": 1555,
+          "bytes": 468782
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-16",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_2191-1.jpeg",
+      "sourceBytes": 1301207,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "10f4c44c120865c848c0735896293c013dc59a7df0a48b91e2db427f86388be4",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-16-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 64550
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-16-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 277274
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-16-1166.webp",
+          "width": 1166,
+          "height": 1555,
+          "bytes": 401412
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-17",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_2192-1.jpeg",
+      "sourceBytes": 1012109,
+      "sourceWidth": 2048,
+      "sourceHeight": 1536,
+      "sourceSha256": "3c933f18b65cd3ebc5994cdf38bcb0ae15725bc02896a2546c0050c2caf1656a",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-17-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 23194
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-17-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 108302
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-17-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "bytes": 411694
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-18",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_2196-1.jpeg",
+      "sourceBytes": 1697637,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "10314428b551b5b4aaca7beacf5eb8afc96c240bbabccb431a7367ee6f23c9c2",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-18-480.webp",
+          "width": 480,
+          "height": 641,
+          "bytes": 91242
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-18-960.webp",
+          "width": 960,
+          "height": 1281,
+          "bytes": 382024
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-18-1049.webp",
+          "width": 1049,
+          "height": 1400,
+          "bytes": 458408
+        }
+      ]
+    },
+    {
+      "project": "n-rocky-river-rd-lawyers-rd-roundabout",
+      "role": "gallery-19",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_2207-1.jpeg",
+      "sourceBytes": 897057,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "e6607ab96a0b8537bae9d74d026f617fd352dc6c3ce238cecd086f36438ffcfd",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-19-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 37378
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-19-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 157348
+        },
+        {
+          "src": "/assets/images/projects/current/n-rocky-river-rd-lawyers-rd-roundabout/gallery-19-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 311488
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "card",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/03/Beattys-Ford-Rd-Sidewalk.png",
+      "sourceBytes": 1756165,
+      "sourceWidth": 1137,
+      "sourceHeight": 666,
+      "sourceSha256": "846a5e61a1ed698d1eb7e99f0219be011a4d00bf7e46385d97f0d28e8bab17d9",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/card-480.webp",
+          "width": 480,
+          "height": 281,
+          "bytes": 42622
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/card-960.webp",
+          "width": 960,
+          "height": 562,
+          "bytes": 155530
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/card-1137.webp",
+          "width": 1137,
+          "height": 666,
+          "bytes": 212290
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "gallery-01",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1050.jpeg",
+      "sourceBytes": 1160378,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "e6491eca047641c696d3e8b9d265fd70a5a2f995d35d1ab7666d5c24c3fd178a",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-01-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 57306
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-01-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 243874
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-01-1296.webp",
+          "width": 1296,
+          "height": 1728,
+          "bytes": 422152
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "gallery-02",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1049.jpeg",
+      "sourceBytes": 1640973,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "16592e518f77b5d3cb5e4285b5d7adb6d02e97ed4d0ad5e7c6344c7e1da3837c",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-02-480.webp",
+          "width": 480,
+          "height": 641,
+          "bytes": 89318
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-02-960.webp",
+          "width": 960,
+          "height": 1281,
+          "bytes": 365940
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-02-1049.webp",
+          "width": 1049,
+          "height": 1400,
+          "bytes": 440110
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "gallery-03",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_1048.jpeg",
+      "sourceBytes": 1497416,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "1d29e02eeacca51aa744e48b1281ebe0669576f0e2d19670f5d086789a4c2e3d",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-03-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 79856
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-03-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 329742
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-03-1166.webp",
+          "width": 1166,
+          "height": 1555,
+          "bytes": 474322
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "gallery-04",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_0936.jpeg",
+      "sourceBytes": 1303618,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "70cab3cc6b937dff4ede85daec9d9c4c1e0707e0d4d0c58ebf6fbbf297310359",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-04-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 72940
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-04-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 279930
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-04-1296.webp",
+          "width": 1296,
+          "height": 1728,
+          "bytes": 455342
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "gallery-05",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_0935.jpeg",
+      "sourceBytes": 1773009,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "a63835b59cd5aebe9c40c15ccecbd41b564f72dd211a93083e1cdf1466f217d4",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-05-480.webp",
+          "width": 480,
+          "height": 641,
+          "bytes": 108876
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-05-944.webp",
+          "width": 944,
+          "height": 1260,
+          "bytes": 412346
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "gallery-06",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_0897.jpeg",
+      "sourceBytes": 952955,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "5e0c8908805f1556e80bad09215b28ed0dd635af2a1d5700c1d532a4efb4a7c4",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-06-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 40676
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-06-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 169314
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-06-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 345120
+        }
+      ]
+    },
+    {
+      "project": "beatties-ford-road-sidewalk",
+      "role": "gallery-07",
+      "source": "https://efficientdev.com/wp-content/uploads/2025/04/IMG_0896.jpeg",
+      "sourceBytes": 1241352,
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceSha256": "cb7e34ea45fc4bb5b46eb31517596655c28aa19c6793f0f2170543fe29a7bbe5",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-07-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 63574
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-07-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 266472
+        },
+        {
+          "src": "/assets/images/projects/current/beatties-ford-road-sidewalk/gallery-07-1296.webp",
+          "width": 1296,
+          "height": 1728,
+          "bytes": 441852
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "card",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/Roundabout-Background.png",
+      "sourceBytes": 3182869,
+      "sourceWidth": 2000,
+      "sourceHeight": 1125,
+      "sourceSha256": "fca3de951f30bf1be5f6a08062375c40dea7f662fbd6c2457037d63fe638380f",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/card-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 27934
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/card-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 107012
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/card-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 369940
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "hero",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/dji_fly_20240620_152650_101_1718918633567_photo_optimized-scaled.jpg",
+      "sourceBytes": 722947,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "a80384331feb685b162841a9ecf3d7344f9fd3af6875127ee293b6de2441a15e",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/hero-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 28244
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/hero-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 100426
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/hero-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 334302
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-01",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1317-Medium.jpeg",
+      "sourceBytes": 133238,
+      "sourceWidth": 640,
+      "sourceHeight": 480,
+      "sourceSha256": "72685f54fb8a766e54bcd9604e91479e882da659d88b9d0497c5797eda400503",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-01-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42580
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-01-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 75530
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-02",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/Roundabout-Stage-1.jpg",
+      "sourceBytes": 315886,
+      "sourceWidth": 2000,
+      "sourceHeight": 1125,
+      "sourceSha256": "ac54815fc5bd7bbf0c0dc3fb30f377477bf363c38664ce29d4be7a1b3446e717",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-02-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 28084
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-02-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 107026
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-02-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 369634
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-03",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1352-Medium.jpeg",
+      "sourceBytes": 175948,
+      "sourceWidth": 640,
+      "sourceHeight": 480,
+      "sourceSha256": "f5ac096c31ef490d1d78daee61c85fba4f2293cb9c4132cc3f26d6473455617c",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-03-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 62616
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-03-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 112836
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-04",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1391-Medium.jpeg",
+      "sourceBytes": 119297,
+      "sourceWidth": 640,
+      "sourceHeight": 480,
+      "sourceSha256": "c1bb0f7eab800867b46605244825a989c31dc8cd6d8df81c686380269b00917f",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-04-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 37024
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-04-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 66062
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-05",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/dji_fly_20240503_120730_0010_1717872884889_photo-scaled.jpg",
+      "sourceBytes": 690009,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "c7473407fa1fa07c77ecfb87380001a2c2994adcbc0eca10dd1389fdb5c7f895",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-05-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 21748
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-05-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 83588
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-05-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 277006
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-06",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1603-Medium.jpeg",
+      "sourceBytes": 113128,
+      "sourceWidth": 640,
+      "sourceHeight": 480,
+      "sourceSha256": "e454b2c1d13c056976d5db6c2fa686b37063a0cead6113db7234b492e4a7818a",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-06-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 34520
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-06-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 61690
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-07",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1612-Medium.jpeg",
+      "sourceBytes": 96625,
+      "sourceWidth": 640,
+      "sourceHeight": 480,
+      "sourceSha256": "ae0c8f4b02ced9a8ff7fd18e1b486eb5317039f027cdeb9bb60d6dae49a420ee",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-07-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 27226
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-07-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 48624
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-08",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1527-Medium.jpeg",
+      "sourceBytes": 102293,
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "sourceSha256": "92c233fce29a0201e6ca89b03a30ca8b9390f7cd9db5d068094bc15ed5ed3fee",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-08-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 52262
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-09",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1607-Medium.jpeg",
+      "sourceBytes": 82971,
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "sourceSha256": "83b0b0bd5776cac308588b40344f6eb49deb182690e87a32bda9702266d58544",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-09-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 36456
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-10",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1610-Medium.jpeg",
+      "sourceBytes": 86352,
+      "sourceWidth": 640,
+      "sourceHeight": 480,
+      "sourceSha256": "e836d72bf84bda1e9654487b6e89a95c922a7c7500268931b965371028eb175c",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-10-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 23008
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-10-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 41116
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-11",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1645-Medium.jpeg",
+      "sourceBytes": 96367,
+      "sourceWidth": 640,
+      "sourceHeight": 480,
+      "sourceSha256": "cab231a6ecb0d68568c10487b93cbfba6acbcbecb143f2a4be58249f3a3bf6ed",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-11-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 27304
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-11-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 48864
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-12",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1663-Medium.jpeg",
+      "sourceBytes": 116504,
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "sourceSha256": "1e670c65d07036e01bc1c1fa1fac87236a36a8f7239873b92e0bac7ffb112314",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-12-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 59546
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-13",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/dji_fly_20240531_092259_0039_1717872887467_photo-scaled.jpg",
+      "sourceBytes": 1050116,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "8a4d566a3ffad941a5f4a9cd736ffb5b955676171864a850455ad58a44bb243c",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-13-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 39534
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-13-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 148734
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-13-1728.webp",
+          "width": 1728,
+          "height": 972,
+          "bytes": 438022
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-14",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1699-Medium.jpeg",
+      "sourceBytes": 129207,
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "sourceSha256": "15eb1eb2fad12b8b284a9a9e9f3d9c039f7bbedb5595eff3bd614d1d40fe4c0b",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-14-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 69140
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-15",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1684-Medium.jpeg",
+      "sourceBytes": 130951,
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "sourceSha256": "f3b00adcc5f56bd35a9d8be126e70612e26e88d71181fa910d951d8f2d5a0c81",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-15-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 73646
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-16",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1702-scaled.jpg",
+      "sourceBytes": 669329,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "cff2e01bce01c97f752f2a0f9cbddbb6df35eb8c017561080f9384606bb849bf",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-16-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 27014
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-16-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 100298
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-16-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 314984
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-17",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/dji_fly_20240607_065813_0052_1717872890783_photo-scaled.jpg",
+      "sourceBytes": 886068,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "15cec665d56712765bbf8fd748133cc56c63c1286ac2e2ae71bd0969dbbf0447",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-17-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 38102
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-17-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 138370
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-17-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 423312
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-18",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1769-Medium.jpeg",
+      "sourceBytes": 108517,
+      "sourceWidth": 480,
+      "sourceHeight": 640,
+      "sourceSha256": "171e00ce8edd1087f71b6b1185a5f1f7773c005992a6b44c791df29227d67c4d",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-18-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 53658
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-19",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1803-scaled.jpg",
+      "sourceBytes": 927434,
+      "sourceWidth": 1920,
+      "sourceHeight": 2560,
+      "sourceSha256": "4cd6cccb473c2bf1d11516abcd07dbcde3202ac4059891a933ac36a500bb24de",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-19-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 67110
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-19-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 245636
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-19-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 468364
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-20",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/IMG_1809-1-scaled-e1721066587386.jpg",
+      "sourceBytes": 997545,
+      "sourceWidth": 1920,
+      "sourceHeight": 1860,
+      "sourceSha256": "b3ea0b2ae1d8fa479f4618b3973e11c0dd41cbbb54eb623a6f9935e30e39c0a6",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-20-480.webp",
+          "width": 480,
+          "height": 465,
+          "bytes": 58080
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-20-960.webp",
+          "width": 960,
+          "height": 930,
+          "bytes": 259606
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-20-1260.webp",
+          "width": 1260,
+          "height": 1220,
+          "bytes": 429254
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-21",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/dji_fly_20240610_163834_65_1718839888463_photo_optimized-scaled.jpg",
+      "sourceBytes": 865372,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "f1a20aaddf5806ad8d3b5373f1c6c3028486b2a16c35acd75b7c392761edce18",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-21-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 40044
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-21-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 141662
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-21-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 457834
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-22",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/dji_fly_20240613_140942_68_1718839873182_photo_optimized-scaled.jpg",
+      "sourceBytes": 902578,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "c999f4099333c94603a3c54bcefc7d97e0223ac6f744935a7d83a2efb328426c",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-22-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 34094
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-22-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 132448
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-22-1920.webp",
+          "width": 1920,
+          "height": 1080,
+          "bytes": 478912
+        }
+      ]
+    },
+    {
+      "project": "intersections-of-lawyers-rd-at-indian-trail-fairview-rd",
+      "role": "gallery-23",
+      "source": "https://efficientdev.com/wp-content/uploads/2024/07/dji_fly_20240618_081414_85_1718839767707_photo_optimized-scaled.jpg",
+      "sourceBytes": 1021869,
+      "sourceWidth": 2560,
+      "sourceHeight": 1440,
+      "sourceSha256": "423787580c190906148a620fb9a8b2bbf59c1c1bc796661df3b84abb9888612b",
+      "variants": [
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-23-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 37160
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-23-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 148874
+        },
+        {
+          "src": "/assets/images/projects/current/intersections-of-lawyers-rd-at-indian-trail-fairview-rd/gallery-23-1728.webp",
+          "width": 1728,
+          "height": 972,
+          "bytes": 457876
+        }
+      ]
+    }
+  ]
+}

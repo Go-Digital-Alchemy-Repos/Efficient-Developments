@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ButtonLink } from '../ui/Button'
 import { Container } from '../layout/Container'
 import { Logo } from '../ui/Logo'
+import { AboutDropdown } from './AboutDropdown'
+import { aboutLinks } from '../../data/navigation'
 
 const primaryNavigation = [
   { label: 'Home', to: '/' },
@@ -21,10 +23,105 @@ const serviceNavigation = [
 ]
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [areServicesOpen, setAreServicesOpen] = useState(false)
   const { pathname } = useLocation()
   const isServiceRoute = pathname.startsWith('/services/')
+  const [isOpen, setIsOpen] = useState(false)
+  const [areServicesOpen, setAreServicesOpen] = useState(false)
+  const [areMobileServicesOpen, setAreMobileServicesOpen] = useState(isServiceRoute)
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(pathname === '/about' || pathname.startsWith('/careers'))
+  const desktopServicesRef = useRef<HTMLDivElement>(null)
+  const desktopServicesTriggerRef = useRef<HTMLButtonElement>(null)
+  const drawerRef = useRef<HTMLElement>(null)
+  const toggleRef = useRef<HTMLButtonElement>(null)
+  const shouldRestoreFocusRef = useRef(false)
+  const closeMobileNavigation = useCallback((restoreFocus = false) => {
+    shouldRestoreFocusRef.current = restoreFocus
+    setIsOpen(false)
+  }, [])
+
+  useEffect(() => {
+    if (!areServicesOpen) return
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!(event.target instanceof Node)) return
+      if (desktopServicesRef.current?.contains(event.target)) return
+      setAreServicesOpen(false)
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setAreServicesOpen(false)
+      desktopServicesTriggerRef.current?.focus()
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [areServicesOpen])
+
+  useEffect(() => {
+    if (isOpen) return
+    if (!shouldRestoreFocusRef.current) return
+
+    shouldRestoreFocusRef.current = false
+    window.requestAnimationFrame(() => toggleRef.current?.focus())
+  }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen) return
+
+    const root = document.documentElement
+    const drawer = drawerRef.current
+    const focusableSelector = 'a[href], button:not([disabled])'
+    const focusableElements = drawer?.querySelectorAll<HTMLElement>(focusableSelector)
+
+    root.classList.add('mobile-navigation-open')
+    window.requestAnimationFrame(() => focusableElements?.[0]?.focus())
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        closeMobileNavigation(true)
+        return
+      }
+
+      if (event.key !== 'Tab' || !drawer) return
+
+      const currentFocusableElements = Array.from(drawer.querySelectorAll<HTMLElement>(focusableSelector)).filter((element) => element.getClientRects().length > 0)
+      const firstElement = currentFocusableElements[0]
+      const lastElement = currentFocusableElements.at(-1)
+
+      if (!firstElement || !lastElement) return
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault()
+        lastElement.focus()
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault()
+        firstElement.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      root.classList.remove('mobile-navigation-open')
+    }
+  }, [closeMobileNavigation, isOpen])
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia('(min-width: 75.0625rem)')
+    const closeAtDesktopWidth = (event: MediaQueryListEvent | MediaQueryList) => {
+      if (event.matches) closeMobileNavigation(false)
+    }
+
+    closeAtDesktopWidth(desktopQuery)
+    desktopQuery.addEventListener('change', closeAtDesktopWidth)
+    return () => desktopQuery.removeEventListener('change', closeAtDesktopWidth)
+  }, [closeMobileNavigation])
 
   return (
     <header className="site-header">
@@ -33,13 +130,20 @@ export function Header() {
           <Logo className="site-header__logo" variant="header" />
         </Link>
         <button
+          ref={toggleRef}
           type="button"
           className="mobile-nav-toggle"
           aria-expanded={isOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setIsOpen((value) => !value)}
+          aria-controls="mobile-navigation"
+          aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
+          onClick={() => {
+            if (isOpen) {
+              closeMobileNavigation(true)
+            } else {
+              setIsOpen(true)
+            }
+          }}
         >
-          <span className="sr-only">Toggle navigation</span>
           <span aria-hidden="true" className="mobile-nav-toggle__line" />
           <span aria-hidden="true" className="mobile-nav-toggle__line" />
           <span aria-hidden="true" className="mobile-nav-toggle__line" />
@@ -50,14 +154,17 @@ export function Header() {
           data-open={isOpen || undefined}
           aria-label="Primary navigation"
         >
-          {primaryNavigation.slice(0, 2).map((item) => (
+          {primaryNavigation.slice(0, 1).map((item) => (
             <NavLink key={item.to} className={({ isActive }) => `primary-navigation__link${isActive ? ' is-active' : ''}`} end={item.to === '/'} to={item.to} onClick={() => setIsOpen(false)}>
               {item.label}
             </NavLink>
           ))}
-          <div className="primary-navigation__services">
+          <AboutDropdown />
+          <div className="primary-navigation__services" ref={desktopServicesRef}>
             <button
+              ref={desktopServicesTriggerRef}
               aria-expanded={areServicesOpen}
+              aria-controls="service-dropdown"
               aria-haspopup="menu"
               className={`primary-navigation__link primary-navigation__services-trigger${isServiceRoute ? ' is-active' : ''}`}
               onClick={() => setAreServicesOpen((value) => !value)}
@@ -65,7 +172,7 @@ export function Header() {
             >
               Services <span aria-hidden="true">▾</span>
             </button>
-            <div aria-label="Services submenu" className="service-dropdown" data-open={areServicesOpen || undefined} role="menu">
+            <div id="service-dropdown" aria-label="Services submenu" className="service-dropdown" data-open={areServicesOpen || undefined} role="menu">
               {serviceNavigation.map((item) => (
                 <NavLink
                   className={({ isActive }) => `service-dropdown__link${isActive ? ' is-active' : ''}`}
@@ -92,6 +199,95 @@ export function Header() {
           Contact Us <img aria-hidden="true" src="/assets/icons/cta-arrow.svg" alt="" />
         </ButtonLink>
       </Container>
+      <nav
+        ref={drawerRef}
+        id="mobile-navigation"
+        className="mobile-navigation"
+        data-open={isOpen || undefined}
+        aria-label="Mobile navigation"
+        aria-hidden={!isOpen}
+      >
+        <div className="mobile-navigation__links">
+          {primaryNavigation.slice(0, 1).map((item) => (
+            <NavLink
+              key={item.to}
+              className={({ isActive }) => `mobile-navigation__link${isActive ? ' is-active' : ''}`}
+              end={item.to === '/'}
+              to={item.to}
+              onClick={() => {
+                setAreMobileServicesOpen(false)
+                closeMobileNavigation(false)
+              }}
+              tabIndex={isOpen ? 0 : -1}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <div className="mobile-navigation__services">
+            <button type="button" aria-controls="mobile-about-links" aria-expanded={isMobileAboutOpen}
+              className="mobile-navigation__link mobile-navigation__services-trigger" tabIndex={isOpen ? 0 : -1}
+              onClick={() => setIsMobileAboutOpen((value) => !value)}>
+              <span>About</span><span aria-hidden="true" className="mobile-navigation__services-arrow">▾</span>
+            </button>
+            <div className="mobile-navigation__service-links" hidden={!isMobileAboutOpen} id="mobile-about-links">
+              {aboutLinks.map((item) => <NavLink key={item.to} to={item.to}
+                className={({ isActive }) => `mobile-navigation__service-link${isActive ? ' is-active' : ''}`}
+                onClick={() => closeMobileNavigation(false)} tabIndex={isOpen && isMobileAboutOpen ? 0 : -1}>{item.label}</NavLink>)}
+            </div>
+          </div>
+          <div className="mobile-navigation__services">
+            <button
+              aria-controls="mobile-service-links"
+              aria-expanded={areMobileServicesOpen}
+              className="mobile-navigation__link mobile-navigation__services-trigger"
+              onClick={() => setAreMobileServicesOpen((value) => !value)}
+              tabIndex={isOpen ? 0 : -1}
+              type="button"
+            >
+              <span>Services</span>
+              <span aria-hidden="true" className="mobile-navigation__services-arrow">▾</span>
+            </button>
+            <div className="mobile-navigation__service-links" hidden={!areMobileServicesOpen} id="mobile-service-links">
+              {serviceNavigation.map((item) => (
+                <NavLink
+                  className={({ isActive }) => `mobile-navigation__service-link${isActive ? ' is-active' : ''}`}
+                  key={item.to}
+                  onClick={() => closeMobileNavigation(false)}
+                  tabIndex={isOpen && areMobileServicesOpen ? 0 : -1}
+                  to={item.to}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
+          {primaryNavigation.slice(2).map((item) => (
+            <NavLink
+              key={item.to}
+              className={({ isActive }) => `mobile-navigation__link${isActive ? ' is-active' : ''}`}
+              to={item.to}
+              onClick={() => {
+                setAreMobileServicesOpen(false)
+                closeMobileNavigation(false)
+              }}
+              tabIndex={isOpen ? 0 : -1}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </div>
+        <ButtonLink
+          className="mobile-navigation__cta"
+          to="/contact"
+          onClick={() => {
+            setAreMobileServicesOpen(false)
+            closeMobileNavigation(false)
+          }}
+          tabIndex={isOpen ? 0 : -1}
+        >
+          Contact Us <img aria-hidden="true" src="/assets/icons/cta-arrow.svg" alt="" />
+        </ButtonLink>
+      </nav>
     </header>
   )
 }

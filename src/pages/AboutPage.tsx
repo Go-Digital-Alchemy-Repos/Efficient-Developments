@@ -1,19 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
+import { ModalCloseButton } from '../components/ui/ModalCloseButton'
 import { Eyebrow, Heading } from '../components/ui/Typography'
+import { Seo } from '../components/seo/Seo'
 
 const stories = [
   {
     eyebrow: 'Background',
     title: <>Heavy Civil Work,<br />Done Right</>,
     body: 'Efficient Developments is a turnkey civil contractor serving municipalities and developers across the Carolinas. We build the roads, bridges, and underground systems that keep communities running. Since 2019, we have grown into a trusted name in civil infrastructure, known for finishing quality work ahead of schedule.',
-    image: '/assets/images/about/aerial-intersection.png',
+    image: '/assets/images/about/aerial-view-4-way-stop.jpg',
     alt: 'Aerial view of a completed downtown road and pedestrian intersection',
   },
   {
     eyebrow: 'Differentiator',
     title: <>Built Around Efficiency</>,
     body: 'Efficiency is how we operate, not just our name. Prompt estimates, fast mobilization, and tight scheduling keep projects moving from bid through completion. It is the reason much of our work comes from long-standing relationships with the municipalities and agencies we serve.',
-    image: '/assets/images/about/graded-site.png',
+    image: '/assets/images/about/road-construction-paved-dirt.jpg',
     alt: 'Graded construction site beside a municipal building',
     reverse: true,
     muted: true,
@@ -22,7 +24,7 @@ const stories = [
     eyebrow: 'Multi-Disciplinary',
     title: <>Heavy Civil Work,<br />Done Right</>,
     body: 'On our jobs, the grading crew, the paving crew, and the utility crew all answer to the same project team. We self-perform across disciplines, so a single contractor manages the full scope of work and there is always one clear point of responsibility.',
-    image: '/assets/images/about/roundabout.png',
+    image: '/assets/images/about/roundabout-concrete-edge.jpg',
     alt: 'Crew installing the concrete edge of a roundabout',
   },
 ]
@@ -32,30 +34,11 @@ const leaders = [
     name: 'David Mitchell',
     role: 'President & CEO',
     modalRole: 'President & Chief Executive Officer',
-    image: '/assets/images/about/david-mitchell.png',
+    image: '/assets/images/about/team-mitchell.jpg',
+    modalImage: '/assets/images/about/bio-mitchell.jpg',
     bio: [
       'David Mitchell has served as President & CEO of Efficient Developments since its founding in 2019. With over 25 years of experience in heavy civil infrastructure, he has directed the successful completion of major highway systems, complex bridge structures, and massive utility networks across both North and South Carolina.',
       "Prior to founding Efficient Developments, David served as Vice President of Infrastructure at one of the country's largest civil contracting firms, where he championed the integration of GPS-guided grading technology and real-time project tracking. His leadership philosophy centers on meticulous planning, strict safety protocols, and a commitment to completing turnkey projects ahead of schedule.",
-    ],
-  },
-  {
-    name: 'Sarah Jennings',
-    role: 'Vice President of Operations',
-    modalRole: 'Vice President of Operations',
-    image: '/assets/images/about/sarah-jennings.png',
-    bio: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    ],
-  },
-  {
-    name: 'Marcus Thompson',
-    role: 'Director of Project Management',
-    modalRole: 'Director of Project Management',
-    image: '/assets/images/about/marcus-thompson.png',
-    bio: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     ],
   },
 ]
@@ -94,45 +77,49 @@ export function AboutPage() {
 
   return (
     <main id="main-content" className="about-page">
-      <section className="about-hero" aria-labelledby="about-hero-title">
+      <Seo path="/about" title="About" image="/assets/images/about/hero.png" description="Meet the Efficient Developments team and learn how our self-performing crews deliver heavy civil infrastructure across the Carolinas." />
+      <section className="about-hero" aria-labelledby="about-hero-title" data-reveal-sequence>
         <div className="about-hero__shade" />
         <div className="about-hero__content">
-          <Eyebrow className="eyebrow--on-dark">Efficient Developments</Eyebrow>
-          <Heading as="h1" id="about-hero-title" size="page">About Us</Heading>
-          <p>A heavy civil contractor building infrastructure across the Carolinas.</p>
+          <Eyebrow className="eyebrow--on-dark" data-reveal-item>Efficient Developments</Eyebrow>
+          <Heading as="h1" data-reveal-delay="1" data-reveal-item id="about-hero-title" size="page">About Us</Heading>
+          <p data-reveal-delay="2" data-reveal-item>A heavy civil contractor building infrastructure across the Carolinas.</p>
         </div>
       </section>
 
       {stories.map((story) => (
         <section
           className={`about-story${story.muted ? ' about-story--muted' : ''}`}
+          data-reveal-sequence
           key={story.eyebrow}
         >
           <div className={`about-story__inner${story.reverse ? ' about-story__inner--reverse' : ''}`}>
             <div className="about-story__copy">
-              <Eyebrow>{story.eyebrow}</Eyebrow>
-              <Heading>{story.title}</Heading>
-              <p>{story.body}</p>
+              <Eyebrow data-reveal-delay={story.reverse ? '1' : '0'} data-reveal-item>{story.eyebrow}</Eyebrow>
+              <Heading data-reveal-delay={story.reverse ? '2' : '1'} data-reveal-item>{story.title}</Heading>
+              <p data-reveal-delay={story.reverse ? '3' : '2'} data-reveal-item>{story.body}</p>
             </div>
-            <div className="about-story__media">
-              <img src={story.image} alt={story.alt} />
+            <div className="about-story__media" data-reveal-delay={story.reverse ? '0' : '3'} data-reveal-item>
+              <img src={story.image} alt={story.alt} loading="lazy" decoding="async" />
             </div>
           </div>
         </section>
       ))}
 
-      <section className="about-team" aria-labelledby="about-team-title">
+      <section className="about-team" aria-labelledby="about-team-title" data-reveal-sequence>
         <div className="about-team__gradient" aria-hidden="true" />
         <div className="about-team__heading">
-          <p>Our Team</p>
-          <Heading id="about-team-title">Meet the Leadership</Heading>
-          <p>Our experienced leadership team brings decades of heavy civil construction expertise to every project.</p>
+          <p data-reveal-item>Our Team</p>
+          <Heading data-reveal-delay="1" data-reveal-item id="about-team-title">Meet the Leadership</Heading>
+          <p data-reveal-delay="2" data-reveal-item>Our experienced leadership team brings decades of heavy civil construction expertise to every project.</p>
         </div>
         <div className="about-team__grid">
-          {leaders.map((leader) => (
+          {leaders.map((leader, index) => (
             <button
               aria-haspopup="dialog"
               className="leader-card"
+              data-reveal-delay={String(index + 3)}
+              data-reveal-item
               key={leader.name}
               onClick={(event) => {
                 activeCardRef.current = event.currentTarget
@@ -140,7 +127,7 @@ export function AboutPage() {
               }}
               type="button"
             >
-              <img className="leader-card__photo" src={leader.image} alt={`${leader.name}, ${leader.role}`} />
+              <img className="leader-card__photo" src={leader.image} alt={`${leader.name}, ${leader.role}`} loading="lazy" decoding="async" />
               <div className="leader-card__panel">
                 <div>
                   <h3>{leader.name}</h3>
@@ -170,7 +157,7 @@ export function AboutPage() {
             role="dialog"
           >
             <div className="member-modal__portrait">
-              <img src={activeLeader.image} alt="" />
+              <img src={activeLeader.modalImage} alt="" />
             </div>
             <div className="member-modal__content">
               <header className="member-modal__header">
@@ -185,15 +172,11 @@ export function AboutPage() {
                 {activeLeader.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
             </div>
-            <button
+            <ModalCloseButton
               aria-label={`Close ${activeLeader.name} profile`}
-              className="member-modal__close"
               onClick={closeModal}
               ref={closeButtonRef}
-              type="button"
-            >
-              <img src="/assets/icons/modal-close.svg" alt="" />
-            </button>
+            />
           </section>
         </div>
       )}

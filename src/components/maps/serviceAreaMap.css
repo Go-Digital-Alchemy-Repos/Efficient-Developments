@@ -1,0 +1,9 @@
+.service-area-map { position: relative; min-width: 0; overflow: hidden; background: #f5f6f2; border: 1px solid #d7ded2; }
+.service-area-map__canvas { position: absolute; inset: 0; }
+.service-area-map .maplibregl-ctrl-top-right { top: 12px; right: 12px; }
+.service-area-map .maplibregl-ctrl-group { border-radius: 0; box-shadow: 0 0 0 1px #d7ded2; }
+.service-area-map .maplibregl-ctrl-group button { width: 40px; height: 40px; }
+.service-area-map__reset { position: absolute; top: 103px; right: 22px; width: 40px; height: 40px; border: 1px solid #d7ded2; background: white; color: #383b37; font-size: 27px; cursor: pointer; }
+.service-area-map__reset:focus-visible { outline: 2px solid #3f563c; outline-offset: 2px; }
+.service-area-map__status { position: absolute; left: 16px; bottom: 36px; max-width: calc(100% - 32px); padding: 12px; background: #f5f6f2; color: #383b37; font-size: 14px; }
+.service-area-map .maplibregl-ctrl-attrib { font-size: 10px; }

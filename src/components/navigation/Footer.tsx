@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Container } from '../layout/Container'
+import { DigitalAlchemyLogo } from '../ui/DigitalAlchemyLogo'
 import { Logo } from '../ui/Logo'
 
 const serviceLinks = [
@@ -21,24 +22,24 @@ export function Footer() {
           </Link>
           <p>Heavy civil infrastructure contractor serving municipalities and developers across the Carolinas.</p>
         </div>
-        <nav aria-label="Services">
+        <nav aria-label="Services" className="site-footer__services">
           <p className="site-footer__heading">Services</p>
           {serviceLinks.map(([label, to]) => (
             <Link key={to} to={to}>{label}</Link>
           ))}
         </nav>
-        <nav aria-label="Company">
+        <nav aria-label="Company" className="site-footer__company">
           <p className="site-footer__heading">Company</p>
           <Link to="/about">About</Link>
           <Link to="/projects">Projects</Link>
-          <Link to="/about">Careers</Link>
+          <Link to="/careers">Careers</Link>
           <Link to="/contact">Contact</Link>
         </nav>
         <div className="site-footer__contact">
           <p className="site-footer__heading">Contact</p>
-          <span>+1 (XXX) XXX-XXXX</span>
-          <span>info@example.com</span>
-          <span>Address line</span>
+          <a href="tel:+17043175966">704-317-5966</a>
+          <span>Monday – Friday</span>
+          <span>8:00 pm – 5:00 pm</span>
         </div>
       </Container>
       <div className="site-footer__legal">
@@ -48,10 +49,14 @@ export function Footer() {
           <span aria-hidden="true">·</span>
           <Link to="/terms">Terms</Link>
         </p>
-        <div className="site-footer__made-by">
+        <a
+          aria-label="Visit Digital Alchemy"
+          className="site-footer__made-by"
+          href="https://godigitalalchemy.com/"
+        >
           <span>Made by</span>
-          <img src="/assets/logos/digital-alchemy.svg" alt="Digital Alchemy" />
-        </div>
+          <DigitalAlchemyLogo />
+        </a>
       </div>
     </footer>
   )

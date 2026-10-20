@@ -42,7 +42,7 @@
   font-size: 96px;
   font-weight: 400;
   line-height: 96px;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .service-hero__support {
@@ -57,7 +57,7 @@
 .service-page--underground-utilities .service-hero__title { white-space: nowrap; }
 
 .service-detail {
-  height: var(--service-detail-height);
+  min-height: var(--service-detail-height);
   padding: var(--service-detail-top) 0 0;
 }
 
@@ -151,14 +151,19 @@
 
 .service-detail__image {
   width: 100%;
-  height: 435px;
   margin-top: 24px;
-  overflow: hidden;
 }
 
 .service-detail__image img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+
+.service-page--asphalt-paving .service-detail__image img,
+.service-page--greenways .service-detail__image img,
+.service-page--roads-bridges .service-detail__image img {
+  aspect-ratio: 1898 / 870;
   object-fit: cover;
   object-position: center;
 }
@@ -229,7 +234,7 @@
   padding: 26px;
   color: var(--color-ink);
   background: var(--color-white);
-  border-bottom: 4px solid #4ac87c;
+  border-bottom: 4px solid var(--color-green);
 }
 
 .service-offerings__icon {
@@ -262,7 +267,6 @@
   .service-hero { padding-inline: 32px; }
   .service-hero__content { width: 100%; }
   .service-detail__inner { width: min(calc(100% - 64px), 960px); }
-  .service-detail { height: auto; min-height: var(--service-detail-height); }
   .service-detail__inner { grid-template-columns: 210px 1px minmax(0, 1fr); gap: 32px; }
   .service-offerings { height: auto; min-height: 623px; padding-bottom: 72px; }
   .service-offerings__top,
@@ -279,14 +283,13 @@
   .service-hero__support { max-width: 100%; font-size: 20px; line-height: 1.45; }
   .service-page--underground-utilities .service-hero__title { white-space: normal; }
   .service-detail { padding: 56px 0; }
-  .service-detail { height: auto; }
   .service-detail__inner { width: calc(100% - 40px); display: block; }
   .service-detail__inner::before { display: none; }
-  .service-sidebar { min-height: 0; padding: 0 0 40px; border-right: 0; }
+  .service-sidebar { min-height: 0; padding: 0 0 80px; border-right: 0; }
   .service-sidebar nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
   .service-sidebar__link { font-size: 15px; }
+  .service-sidebar__link:first-child { border-top: 0; }
   .service-detail__copy h2 { font-size: 34px; line-height: 42px; }
-  .service-detail__image { height: min(435px, 62vw); }
   .service-offerings { padding: 48px 20px 56px; }
   .service-offerings__top,
   .service-offerings__cards { width: 100%; }

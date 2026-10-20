@@ -1,0 +1,113 @@
+import { useState, type FormEvent } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { Container } from '../components/layout/Container'
+import { Button } from '../components/ui/Button'
+import { FormField } from '../components/ui/FormField'
+import { Heading, Eyebrow } from '../components/ui/Typography'
+import { careersApi, useJobs, type Job } from '../lib/careers'
+import { Seo } from '../components/seo/Seo'
+import { seoSiteOrigin } from '../components/seo/config'
+
+const careerHeroImages = [
+  '/assets/images/careers/roundabout-construction.webp',
+  '/assets/images/careers/utility-installation.webp',
+  '/assets/images/careers/roadside-utilities.webp',
+  '/assets/images/careers/utility-earthwork.webp',
+  '/assets/images/services/roads-bridges-roadwork-aerial-1536.webp',
+  '/assets/images/services/asphalt-paving-roadwork.jpg',
+]
+
+function getCareerHeroImage(jobId: string) {
+  const imageIndex = Array.from(jobId).reduce((total, character) => total + character.charCodeAt(0), 0) % careerHeroImages.length
+  return careerHeroImages[imageIndex]
+}
+
+function ApplicationForm({ job }: { job: Job }) {
+  const [pending, setPending] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (pending) return
+    const form = new FormData(event.currentTarget)
+    const resume = form.get('resume') as File | null
+    if (!resume || resume.size === 0 || resume.size > 5 * 1024 * 1024 || !/\.pdf$/i.test(resume.name)) {
+      setError('Please attach a PDF resume, up to 5 MB.'); return
+    }
+    setPending(true); setError('')
+    try {
+      const result = await careersApi<{ message: string }>('/applications', { method: 'POST', body: form })
+      setSuccess(result.message)
+    } catch (error) { setError((error as Error).message) } finally { setPending(false) }
+  }
+  return <section className="careers-application contact-form-card" aria-labelledby="application-title">
+    <Heading as="h2" id="application-title" size="card">Apply for this role</Heading>
+    {success ? <div role="status" className="careers-success"><h3>Application received</h3><p>{success}</p><Link to="/careers">Back to careers</Link></div> : <form className="contact-form" onSubmit={submit}>
+      <fieldset disabled={pending} className="careers-fieldset">
+        <input type="hidden" name="jobId" value={job.id} />
+        <div className="careers-honeypot" aria-hidden="true"><label>Website<input name="website" autoComplete="off" tabIndex={-1} /></label></div>
+        <FormField label="Full name" name="name" autoComplete="name" maxLength={150} required />
+        <div className="contact-form__row">
+          <FormField label="Email address" name="email" type="email" autoComplete="email" maxLength={254} required />
+          <FormField label="Phone number" name="phone" type="tel" autoComplete="tel" maxLength={40} required />
+        </div>
+        <FormField label="Tell us about yourself (optional)" multiline name="message" maxLength={5000} placeholder="Share relevant experience or anything else you would like our team to know." />
+        <FormField label="Resume (PDF, up to 5 MB)" name="resume" type="file" accept=".pdf,application/pdf" required />
+        <label className="careers-consent"><input type="checkbox" name="consent" value="yes" required /><span>I consent to Efficient Developments storing my application and resume for recruitment and contacting me about this role.</span></label>
+        <p className="careers-privacy">Your application and resume are accessible only through the private careers dashboard. Please do not include sensitive identity or financial documents.</p>
+        {error && <p role="alert" className="careers-error">{error}</p>}
+        <Button type="submit" disabled={pending}>{pending ? 'Submitting…' : 'Submit application'} <span aria-hidden="true">↗</span></Button>
+      </fieldset>
+    </form>}
+  </section>
+}
+
+export function CareerJobPage() {
+  const { jobId } = useParams()
+  const { jobs, loading, error } = useJobs()
+  const job = jobs.find((item) => item.id === jobId)
+  return <main id="main-content" className="careers-page careers-page--job">
+    <Seo
+      path={`/careers/${jobId ?? ''}`}
+      title={job?.title ?? 'Career opportunity'}
+      description={job?.description ?? 'Career opportunity with Efficient Developments.'}
+      image={job ? getCareerHeroImage(job.id) : undefined}
+      noIndex={!loading && !job}
+      structuredData={job ? {
+        '@context': 'https://schema.org',
+        '@type': 'JobPosting',
+        title: job.title,
+        description: job.description,
+        employmentType: job.employment,
+        hiringOrganization: { '@type': 'Organization', name: 'Efficient Developments', sameAs: seoSiteOrigin },
+        jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: job.location, addressCountry: 'US' } },
+        url: `${seoSiteOrigin}/careers/${job.id}`,
+      } : undefined}
+    />
+    {loading || error || !job ? <Container className="careers-job-state">
+      <div className="careers-back"><Link to="/careers">← All opportunities</Link></div>
+      {loading ? <p role="status">Loading role…</p> : error ? <p role="alert">{error}</p> : <><Heading as="h1">Position unavailable</Heading><p>This position is no longer listed. Explore our other opportunities.</p></>}
+    </Container> : <>
+      <header className="career-role-hero">
+        <img alt="" aria-hidden="true" className="career-role-hero__image" fetchPriority="high" src={getCareerHeroImage(job.id)} />
+        <Container className="career-role-hero__inner">
+          <div className="careers-back careers-back--hero"><Link to="/careers">← All opportunities</Link></div>
+          <div className="careers-heading careers-heading--role">
+            <Eyebrow className="eyebrow--on-dark">{job.department}</Eyebrow>
+            <Heading as="h1" size="page">{job.title}</Heading>
+            <p>{job.location} · {job.employment}</p>
+          </div>
+        </Container>
+      </header>
+      <Container className="career-role-content">
+        <div className="careers-detail-grid">
+          <article className="careers-description"><Heading as="h2" size="card">About the role</Heading><p>{job.description}</p>
+            <Heading as="h2" size="card">What you’ll do</Heading><ul>{job.responsibilities.split('\n').filter(Boolean).map((line, i) => <li key={i}>{line}</li>)}</ul>
+            <Heading as="h2" size="card">What you’ll bring</Heading><ul>{job.requirements.split('\n').filter(Boolean).map((line, i) => <li key={i}>{line}</li>)}</ul>
+          </article>
+          <ApplicationForm job={job} key={job.id} />
+        </div>
+      </Container>
+    </>}
+  </main>
+}
